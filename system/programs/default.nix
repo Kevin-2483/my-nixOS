@@ -1,3 +1,4 @@
+
 {
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
@@ -11,6 +12,8 @@
     ./fzf
     ./nix-ld
     ./zsh
+    ./hyprland
+    ./proxychains-ng
+    
     ];
-
 }

@@ -15,6 +15,13 @@
 	appimage-run
 	gnome.gnome-remote-desktop
 	frp
+	brightnessctl
+	sass
+	ydotool
+	slurp
+	gojq
+	wl-clipboard
+	grim
   ];
   
 }

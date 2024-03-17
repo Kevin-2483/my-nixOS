@@ -7,6 +7,7 @@
 	./git
 	./yazi
 	./zsh
+	#./hyprland
 
     ];
 

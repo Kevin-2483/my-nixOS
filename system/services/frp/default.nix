@@ -7,30 +7,38 @@
   		      enable = true;
   		      role = "client";
   		      settings = {
-  		      common={
-  		      server_addr  = "222.186.150.252";
-  		      server_port = 54529;
+  		      serverAddr  = "222.186.150.252";
+  		      serverPort = 54529;
+  		      proxies = [
+  		     """
+  		      	type = tcp
+  		      	localIp = 127.0.0.1
+  		      	localPort = 3389
+  		      	remotePort = 3389
+  		      	name = RDPTCP
+  		      	
+  		      
+  		        type = udp
+  		      	localIp = 127.0.0.1
+  		      	localPort = 3389
+  		      	remotePort = 3389
+  		      	name = RDPUDP
+				
+  		      
+  		      	type = tcp
+  		      	localIp = 127.0.0.1
+  		      	localPort = 22
+  		      	remotePort = 3388
+  		      	name = SSH
+  		      	"""
+  		      	];
+  		      	
+  		      
+  		      	
   		      };
-  		      RDPTCP = {
-  		      	type = "tcp";
-  		      	local_ip = "127.0.0.1";
-  		      	local_port = "3389";
-  		      	remote_port = "3389";
-  		      };
-  		      RDPUDP = {
-  		      	      	type = "udp";
-  		      	      	local_ip = "127.0.0.1";
-  		      	      	local_port = "3389";
-  		      	      	remote_port = "3389";
-  		      	      };
-  		      SSH = {
-  		      	type = "tcp";
-  		        local_ip = "127.0.0.1";
-  		      	local_port = "22";
-  		      	remote_port = "3388";
-  		      };
+  		      
   		          
-  		      };
+  		      
   		    };
 
 }

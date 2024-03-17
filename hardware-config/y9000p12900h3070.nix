@@ -17,6 +17,7 @@ in
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
+    package = pkgs.unstable.mesa.drivers;
     driSupport = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
@@ -107,7 +108,6 @@ in
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   environment.systemPackages = [
-      pkgs.mesa
-      pkgs.mesa-demos
+      pkgs.unstable.mesa-demos
     ];
 }

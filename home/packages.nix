@@ -59,7 +59,7 @@
     btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
-    nvtop
+    #nvtop
 
     # system call monitoring
     strace # system call monitoring

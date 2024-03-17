@@ -29,9 +29,9 @@
     };
 
   swapDevices = [
-  	{
-       device = "/dev/nvme0n1p8";
-    }
+  	# {
+   #     device = "/dev/nvme0n1p8";
+   #  }
       ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
