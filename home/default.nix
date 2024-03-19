@@ -9,9 +9,10 @@
   };
  
    imports = [ 
-   	inputs.ags.homeManagerModules.default # ags bar
+   	# inputs.ags.homeManagerModules.default # ags bar
    	./packages.nix #programs list
    	./programs #program setting
+   	# ./theme.nix
    ];
    # Let Home Manager install and manage itself.
    programs.home-manager.enable = true;

@@ -12,26 +12,37 @@
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  boot.supportedFilesystems = [ "ntfs" ];
+  boot.plymouth = rec {
+        enable = true;
+        # black_hud circle_hud cross_hud square_hud
+        # circuit connect cuts_alt seal_2 seal_3
+        theme = "connect";
+        themePackages = with pkgs; [(
+          adi1090x-plymouth-themes.override {
+            selected_themes = [ theme ];
+          }
+        )];
+      };
+    
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2e8548a8-b3bb-494c-828e-32506af306cd";
+    { device = "/dev/disk/by-uuid/4f924559-c5aa-4099-8ba0-e3e25677c975";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B10B-8F2A";
+    { device = "/dev/disk/by-uuid/0882-C4BF";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/9175cf51-ab96-4144-a7c0-b1ed483c8fa8";
+    { device = "/dev/disk/by-uuid/43543fa6-37b0-4989-bd0c-3eff8ff2b386";
       fsType = "ext4";
     };
 
   swapDevices = [
-  	# {
-   #     device = "/dev/nvme0n1p8";
-   #  }
+  	{device = "/dev/disk/by-uuid/7a153321-46c6-4aaa-a684-e60d310ba694";}
       ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -45,5 +56,16 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  # Enable sound with pipewire.
+    sound.enable = true;
+    hardware.pulseaudio.enable = false;
+
   services.thermald.enable = true;
+
+  # bluetooth
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+      settings.General.Experimental = true; # for gnome-bluetooth percentage
+    };
 }
