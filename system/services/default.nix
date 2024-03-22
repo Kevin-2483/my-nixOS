@@ -71,12 +71,15 @@
   };
 
   services = {
+
+  	  v2raya.enable = true;
       gvfs.enable = true;
       devmon.enable = true;
       udisks2.enable = true;
       upower.enable = true;
       power-profiles-daemon.enable = true;
       accounts-daemon.enable = true;
+      #blueman.enable = true;
       gnome = {
         evolution-data-server.enable = true;
         glib-networking.enable = true;
@@ -105,18 +108,18 @@
         	      };
         	    };
 
-      system.activationScripts.wallpaper = ''
-          PATH=$PATH:${pkgs.coreutils}/bin:${pkgs.gawk}/bin:${pkgs.jq}/bin
-          CACHE="/var/cache/greeter"
-          OPTS="$CACHE/options.json"
-      
-          cp /home/${username}/.cache/ags/options.json $OPTS
-          chown greeter:greeter $OPTS
-      
-          BG=$(cat $OPTS | jq -r '.wallpaper // "/home/${username}/.config/background"')
-      
-          cp $BG $CACHE/background
-          chown greeter:greeter $CACHE/background
-        '';
+      # system.activationScripts.wallpaper = ''
+      #     PATH=$PATH:${pkgs.coreutils}/bin:${pkgs.gawk}/bin:${pkgs.jq}/bin
+      #     CACHE="/var/cache/greeter"
+      #     OPTS="$CACHE/options.json"
+      # 
+      #     cp /home/${username}/.cache/ags/options.json $OPTS
+      #     chown greeter:greeter $OPTS
+      # 
+      #     BG=$(cat $OPTS | jq -r '.wallpaper // "/home/${username}/.config/background"')
+      # 
+      #     cp $BG $CACHE/background
+      #     chown greeter:greeter $CACHE/background
+      #   '';
 
 }

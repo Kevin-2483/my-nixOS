@@ -28,15 +28,19 @@ in
     systemd.enable = true;
     xwayland.enable = true;
     # plugins = with plugins; [ hyprbars borderspp ];
-
+	extraConfig = ''
+		env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
+	'';
     settings = {
       exec-once = [
         "ags -b hypr"
         "hyprctl setcursor Qogir 24"
-        "transmission-gtk"
-        "clash-verge"
+        #"transmission-gtk"
+        #"clash-verge"
         "fcitx5"
-        "swww kill; swww init"
+        "systemctl --user start cliphist"
+        "systemctl start --user polkit-gnome-authentication-agent-1"
+        #"swww kill; swww init"
         "gnome-keyring-daemon --start --components=secrets"
         "dbus-update-activation-environment --all"
         "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP   "
@@ -45,8 +49,9 @@ in
       ];
 
       monitor = [
-        # "eDP-1, 1920x1080, 0x0, 1"
-        # "HDMI-A-1, 2560x1440, 1920x0, 1"
+        "eDP-1, 2560x1600@60, 0x0, 1"
+        "DP-4, 2560x1440@170, 2560x0, 1"
+        "HDMI-A-1, 1920x1080@60, -2560x0, 1"
         ",preferred,auto,1"
       ];
 
@@ -88,23 +93,36 @@ in
         workspace_swipe = true;
         workspace_swipe_forever = true;
         workspace_swipe_numbered = true;
+        workspace_swipe_direction_lock = true;
+        workspace_swipe_direction_lock_threshold = 10;
+        workspace_swipe_create_new = true;
       };
 
       windowrule = let
         f = regex: "float, ^(${regex})$";
+        s = regex: "size 50% 50%, ^(${regex})$";
+        c = regex: "center, ^(${regex})$";
       in [
         (f "org.gnome.Calculator")
-        (f "org.gnome.Nautilus")
+        #(f "org.gnome.Nautilus")
         (f "pavucontrol")
         (f "nm-connection-editor")
         (f "blueberry.py")
         (f "org.gnome.Settings")
+        (s "org.gnome.Settings")
+        (c "org.gnome.Settings")
+        (f "footclient")
+        (s "footclient")
+        (c "footclient")
         (f "org.gnome.design.Palette")
         (f "Color Picker")
         (f "xdg-desktop-portal")
         (f "xdg-desktop-portal-gnome")
         (f "transmission-gtk")
         (f "com.github.Aylur.ags")
+        # "float, size 50% 50%, center, title:btop++"
+        # "size 50% 50%, title:btop++"
+        # "center, title:btop++"
         "workspace 7, title:Spotify"
       ];
 
@@ -118,17 +136,18 @@ in
         e = "exec, ags -b hypr";
         arr = [1 2 3 4 5 6 7 8 9];
       in [
-        "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
+        "CTRL SHIFT, A,  ${e} quit; ags -b hypr"
         "SUPER, R,       ${e} -t launcher"
         "SUPER, Tab,     ${e} -t overview"
         ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
         ",XF86Launch4,   ${e} -r 'recorder.start()'"
         ",Print,         ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
-        "SUPER, Return, exec, xterm" # xterm is a symlink, not actually xterm
+        "SUPER, Return, exec, footclient" # xterm is a symlink, not actually xterm
         "SUPER, W, exec, microsoft-edge"
         "SUPER, T, exec, foot"
-        "CTRL SHIFT, Escape, exec, btop"
+        "SUPER, X, exec, footclient yazi"
+        "CTRL SHIFT, Escape, exec, footclient -T btop++ btop"
         
 
         # youtube
@@ -137,23 +156,36 @@ in
         "ALT, Tab, focuscurrentorlast"
         "CTRL ALT, Delete, exit"
         "SUPER, Q, killactive"
-        "SUPER, V, togglefloating"
+        "SUPER ALT, Space, togglefloating"
         "SUPER, F, fullscreen"
         "SUPER ALT, F, fakefullscreen"
         "SUPER, P, togglesplit"
+        "SUPER, V, exec, pkill fuzzel || cliphist list | fuzzel --no-fuzzy --dmenu | cliphist decode | wl-copy"
+  		"SUPER, I, exec, XDG_CURRENT_DESKTOP=gnome gnome-control-center"
 
-
-        "SUPER, mouse:275, workspace, -1"
-        "SUPER, mouse:276, workspace, +1"
-
+        # "SUPER, mouse:275, workspace, -1"
+        # "SUPER, mouse:276, workspace, +1"
+        "SUPER ALT, R, exec, ~/.config/ags/scripts/record-script.sh"
+        "SUPER ALT SHIFT, R, exec, ~/.config/ags/scripts/record-script.sh --sound"
+		"SUPER CTRL, R, exec, ~/.config/ags/scripts/record-script.sh --fullscreen"
+		"SUPER CLRL SHIFT, R, exec, ~/.config/ags/scripts/record-script.sh --fullscreen-sound"
+		
         (mvfocus "k" "u")
         (mvfocus "j" "d")
         (mvfocus "l" "r")
         (mvfocus "h" "l")
         (ws "left" "e-1")
         (ws "right" "e+1")
+        (ws "mouse:275" "e-1")
+        (ws "mouse:276" "e+1")
+        (ws "mouse_up" "e+1")
+        (ws "mouse_down" "e-1")
         (mvtows "left" "e-1")
         (mvtows "right" "e+1")
+        (mvtows "mouse:275" "e-1")
+        (mvtows "mouse:276" "e+1")
+        (mvtows "mouse_up" "e+1")
+        (mvtows "mouse_down" "e-1")
         (resizeactive "k" "0 -20")
         (resizeactive "j" "0 20")
         (resizeactive "l" "20 0")

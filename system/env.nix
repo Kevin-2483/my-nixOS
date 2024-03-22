@@ -6,6 +6,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.shells = with pkgs; [ zsh ];
+  environment.variables = rec { EDITOR = "micro"; };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;  with gnome; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -13,9 +14,10 @@
     curl
     git
 	appimage-run
-	gnome.gnome-remote-desktop
+	blueberry
 	frp
-	
+	#proxychains
+	v2raya
 
 	wl-clipboard #Wayland 的命令行复制/粘贴实用程序
 	wf-recorder # 用于基于 wlroots 的合成器的屏幕录制的实用程序
@@ -26,6 +28,7 @@
 	    loupe
 	    adwaita-icon-theme
 	    nautilus
+	    nautilus-open-any-terminal
 	    baobab
 	    gnome-text-editor
 	    gnome-calendar
@@ -36,11 +39,15 @@
 	    gnome-calculator
 	    gnome-clocks
 	    gnome-software # for flatpak
+	    polkit_gnome
 	    wl-gammactl
 	    pavucontrol
 	    brightnessctl
 	    swww
 	    wlroots
+	    xdg-desktop-portal-wlr
+	    pulseaudio
+	    #pulseaudioFull
 	
   ];
   

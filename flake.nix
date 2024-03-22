@@ -76,6 +76,7 @@
             # 这样就能直接在子模块中使用 inputs 中的所有依赖项了
              _module.args = { inherit inputs hostname outputs asztal username; };
         }
+        #(import ./overlays/steam.nix)
                   
       ];
     };

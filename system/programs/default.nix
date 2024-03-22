@@ -14,6 +14,7 @@
     ./zsh
     ./hyprland
     ./proxychains-ng
-    
+    #./clash
+    ./noat
     ];
 }

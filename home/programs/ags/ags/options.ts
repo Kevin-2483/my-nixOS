@@ -154,7 +154,7 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
-                    "firefox",
+                    "microsoft-edge",
                     "org.gnome.Nautilus",
                     "org.gnome.Calendar",
                     "obsidian",
@@ -187,7 +187,7 @@ const options = mkOptions(OPTIONS, {
         },
         width: opt(380),
         position: opt<"left" | "center" | "right">("right"),
-        networkSettings: opt("gtk-launch gnome-control-center"),
+        networkSettings: opt("env XDG_CURRENT_DESKTOP=gnome gnome-control-center"),
         media: {
             monochromeIcon: opt(true),
             coverSize: opt(100),

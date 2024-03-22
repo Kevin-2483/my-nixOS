@@ -7,12 +7,13 @@
 	./git
 	./yazi
 	./zsh
-	#./hyprland
+	./hyprland
 	#./pywal
 	./neofetch
 	./helix
 	./tmux
-	./wezterm
+	#./wezterm
+	./foot
 	
 
     ];

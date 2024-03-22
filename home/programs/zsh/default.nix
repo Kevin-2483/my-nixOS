@@ -27,6 +27,15 @@
 
   		initExtra = ''
   		eval "$(starship init zsh)"
+  		function yy() {
+  			local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  			yazi "$@" --cwd-file="$tmp"
+  			if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+  				cd -- "$cwd"
+  			fi
+  			rm -f -- "$tmp"
+  		}
+  		
   		'';
   		
   		# TODO 设置一些别名方便使用，你可以根据自己的需要进行增删

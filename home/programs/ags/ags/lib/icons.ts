@@ -10,6 +10,11 @@ export const substitutes = {
     "preferences-system": "emblem-system-symbolic",
     "com.github.Aylur.ags-symbolic": "controls-symbolic",
     "com.github.Aylur.ags": "controls-symbolic",
+    "foot-symbolic":"terminal-symbolic",
+    "msedge-igjlkppeiblpajggoemlefobffhaimnm-Default-symbolic":"com.microsoft.Edge-symbolic",
+    
+    
+    
 }
 
 export default {

@@ -30,7 +30,8 @@
     # nmap # A utility for network discovery and security auditing
     # ipcalc  # it is a calculator for the IPv4/v6 addresses
 
-    clash-verge
+    #clash-verge
+    #clash-verge-rev
     # clash-geoip
     
     
@@ -109,22 +110,27 @@
     #inputs.matugen.packages."x86_64-linux".default
     #hyprpicker
     #pavucontrol
-    #obsidian
+    obsidian
     (mpv.override { scripts = [mpvScripts.mpris]; })
     spotify
     github-desktop
     icon-library
 
     steam-run
+    steam
     libnotify
     slides
     #helix
+    feh
+    nsxiv
+    obs-studio
   ];
 
   nixpkgs = {
         overlays = [
           # Add overlays your own flake exports (from overlays and pkgs dir):
           outputs.overlays.unstable-packages
+          #outputs.overlays.steam-env
         ];
         config = {
               allowUnfree = true;
