@@ -21,7 +21,14 @@ export const WifiSelection = () => Menu({
     icon: wifi.bind("icon_name"),
     title: "Wifi Selection",
     content: [
-        Widget.Box({
+    Widget.Scrollable({
+        hscroll: 'never',
+        vscroll: 'automatic',
+        css: `
+                    min-height: 300px;
+                `,
+        child: 
+    	Widget.Box({
             vertical: true,
             setup: self => self.hook(wifi, () => self.children =
                 wifi.access_points.map(ap => Widget.Button({
@@ -29,7 +36,8 @@ export const WifiSelection = () => Menu({
                         if (dependencies("nmcli"))
                             Utils.execAsync(`nmcli device wifi connect ${ap.bssid}`)
                     },
-                    child: Widget.Box({
+                    
+                        child: Widget.Box({
                         children: [
                             Widget.Icon(ap.iconName),
                             Widget.Label(ap.ssid || ""),
@@ -46,6 +54,7 @@ export const WifiSelection = () => Menu({
                     }),
                 })),
             ),
+        }),
         }),
         Widget.Separator(),
         Widget.Button({

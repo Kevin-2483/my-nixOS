@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, lib, ... }:
 let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
@@ -21,16 +21,27 @@ in
     categories = [ "X-Preferences" ];
     terminal = false;
   };
-
+  
+  # config = lib.mkIf (config.specialisation != {}) {
+  #         # Config that should only apply to the default system, not the specialised ones
+  # 	wayland.windowManager.hyprland.extraConfig = ''
+  # 		env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
+  # 	'';
+  #   };
+        
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
     # plugins = with plugins; [ hyprbars borderspp ];
-	extraConfig = ''
-		env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0;
-	'';
+    extraConfig = ''
+     env = LIBVA_DRIVER_NAME,nvidia
+     env = XDG_SESSION_TYPE,wayland
+     env = GBM_BACKEND,nvidia-drm
+     env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+     env = WLR_NO_HARDWARE_CURSORS,1
+     '';
     settings = {
       exec-once = [
         "ags -b hypr"
@@ -51,7 +62,7 @@ in
       monitor = [
         "eDP-1, 2560x1600@60, 0x0, 1"
         "DP-4, 2560x1440@170, 2560x0, 1"
-        "HDMI-A-1, 1920x1080@60, -2560x0, 1"
+        # "HDMI-A-1, 2560x1440@170, 2560x0, 1"
         ",preferred,auto,1"
       ];
 
@@ -100,7 +111,7 @@ in
 
       windowrule = let
         f = regex: "float, ^(${regex})$";
-        s = regex: "size 50% 50%, ^(${regex})$";
+        s = regex: "size 50% 60%, ^(${regex})$";
         c = regex: "center, ^(${regex})$";
       in [
         (f "org.gnome.Calculator")

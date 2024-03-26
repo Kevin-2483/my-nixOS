@@ -16,5 +16,6 @@
     ./proxychains-ng
     #./clash
     ./noat
+    #./regreet
     ];
 }

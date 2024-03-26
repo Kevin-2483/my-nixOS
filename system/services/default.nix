@@ -26,7 +26,7 @@
 
   # Enable the GNOME Desktop Environment.
   # 23.11
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
   # the option has out use below
   # services.displayManager.gdm.enable = true;
@@ -63,11 +63,17 @@
 
  services.greetd = {
     enable = true;
-    settings.default_session.command = pkgs.writeShellScript "greeter" ''
+    vt = 1;
+    # settings.default_session.command = "ly";
+    settings.default_session = {
+    command = pkgs.writeShellScript "greeter" ''
+      export XDG_RUNTIME_DIR=/run/user/1000
       export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
       export XCURSOR_THEME=Qogir
       ${asztal}/bin/greeter
     '';
+    user = "kevin";
+    };
   };
 
   services = {
