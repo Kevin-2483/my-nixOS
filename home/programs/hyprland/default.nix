@@ -36,6 +36,26 @@ in
     xwayland.enable = true;
     # plugins = with plugins; [ hyprbars borderspp ];
     extraConfig = ''
+     # ######### Input method ########## 
+     # See https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
+     env = QT_IM_MODULE, fcitx
+     env = XMODIFIERS, @im=fcitx
+     # env = GTK_IM_MODULE, wayland   # Crashes electron apps in xwayland
+     # env = GTK_IM_MODULE, fcitx     # My Gtk apps no longer require this to work with fcitx5 hmm  
+     env = SDL_IM_MODULE, fcitx
+     env = GLFW_IM_MODULE, ibus
+     env = INPUT_METHOD, fcitx
+     
+     # ############ Themes #############
+     env = QT_QPA_PLATFORM, wayland
+     env = QT_QPA_PLATFORMTHEME, qt5ct
+     # env = QT_STYLE_OVERRIDE,kvantum
+     env = WLR_NO_HARDWARE_CURSORS, 1
+     
+     # ######## Screen tearing #########
+     # env = WLR_DRM_NO_ATOMIC, 1
+     
+     # ############ Others #############    
      env = LIBVA_DRIVER_NAME,nvidia
      env = XDG_SESSION_TYPE,wayland
      env = GBM_BACKEND,nvidia-drm
@@ -121,10 +141,13 @@ in
         (f "blueberry.py")
         (f "org.gnome.Settings")
         (s "org.gnome.Settings")
-        (c "org.gnome.Settings")
+        (c "org.gnome.Settings")        
         (f "footclient")
         (s "footclient")
         (c "footclient")
+        (f "org.kde.kdeconnect-indicator")
+		(s "org.kde.kdeconnect-indicator")
+        (c "org.kde.kdeconnect-indicator")
         (f "org.gnome.design.Palette")
         (f "Color Picker")
         (f "xdg-desktop-portal")
@@ -147,13 +170,14 @@ in
         e = "exec, ags -b hypr";
         arr = [1 2 3 4 5 6 7 8 9];
       in [
-        "CTRL SHIFT, A,  ${e} quit; ags -b hypr"
-        "SUPER, R,       ${e} -t launcher"
-        "SUPER, Tab,     ${e} -t overview"
-        ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
-        ",XF86Launch4,   ${e} -r 'recorder.start()'"
-        ",Print,         ${e} -r 'recorder.screenshot()'"
-        "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
+        "CTRL SHIFT, A,   ${e} quit; ags -b hypr"
+        "SUPER, R,        ${e} -t launcher"
+        "SUPER, Tab,      ${e} -t overview"
+        ",XF86PowerOff,   ${e} -r 'powermenu.shutdown()'"
+        ",XF86AudioMute,  ${e} -r 'audiomute.speaker()'"
+        ",XF86Launch4,    ${e} -r 'recorder.start()'"
+        ",Print,          ${e} -r 'recorder.screenshot()'"
+        "SHIFT,Print,     ${e} -r 'recorder.screenshot(true)'"
         "SUPER, Return, exec, footclient" # xterm is a symlink, not actually xterm
         "SUPER, W, exec, microsoft-edge"
         "SUPER, T, exec, foot"
@@ -216,6 +240,7 @@ in
         ",XF86KbdBrightnessDown, exec, ${brightnessctl} -d asus::kbd_backlight set  1-"
         ",XF86AudioRaiseVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
         ",XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
+        ",XF86Calculator,        exec, gnome-calculator"
       ];
 
       bindl =  [

@@ -44,6 +44,7 @@ type ArrowToggleButtonProps = {
     deactivate: () => void
     activateOnArrow?: boolean
     connection: [GObject.Object, () => boolean]
+    onRightClick?: () => void
 }
 export const ArrowToggleButton = ({
     name,
@@ -53,6 +54,7 @@ export const ArrowToggleButton = ({
     deactivate,
     activateOnArrow = true,
     connection: [service, condition],
+    onRightClick,
 }: ArrowToggleButtonProps) => Widget.Box({
     class_name: "toggle-button",
     setup: self => self.hook(service, () => {
@@ -84,6 +86,11 @@ export const ArrowToggleButton = ({
                     activate()
                 }
             },
+            on_secondary_click: () => {
+                        	if (onRightClick) {
+                        	    onRightClick(); // 調用右鍵點擊事件處理函式
+                       		 }
+                        },
         }),
         Arrow(name, activateOnArrow && activate),
     ],

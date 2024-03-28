@@ -66,7 +66,7 @@ export default (notification: Notification) => {
                                 max_width_chars: 24,
                                 truncate: "end",
                                 wrap: true,
-                                label: notification.summary.trim(),
+                                label: typeof notification.summary === 'string' ? notification.summary.trim() : String(notification.summary),
                                 use_markup: true,
                             }),
                             Widget.Label({
@@ -88,7 +88,7 @@ export default (notification: Notification) => {
                         use_markup: true,
                         xalign: 0,
                         justification: "left",
-                        label: notification.body.trim(),
+                        label: typeof notification.body === 'string' ? notification.body.trim() : String(notification.body),
                         max_width_chars: 24,
                         wrap: true,
                     }),

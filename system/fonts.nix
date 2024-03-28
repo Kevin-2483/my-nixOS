@@ -4,7 +4,7 @@
 {
 # 字体配置
 fonts = {
-  fontconfig.enable = true;
+  fontconfig.enable = false;
   fontDir.enable = true;
   enableGhostscriptFonts = true;
   packages = with pkgs; [

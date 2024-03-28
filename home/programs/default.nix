@@ -14,8 +14,8 @@
 	./tmux
 	#./wezterm
 	./foot
-	
-
+	./fuzzel
+	./btop
     ];
 
 }

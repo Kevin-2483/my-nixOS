@@ -62,7 +62,7 @@ in
     };
   };
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = false;
 
   gtk = {
     inherit font cursorTheme iconTheme;

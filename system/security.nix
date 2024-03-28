@@ -12,10 +12,10 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   # kde connect
-    # networking.firewall = rec {
-    #   allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-    #   allowedUDPPortRanges = allowedTCPPortRanges;
-    # };
+    networking.firewall = rec {
+      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+      allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+    };
   
 
   security.rtkit.enable = true;

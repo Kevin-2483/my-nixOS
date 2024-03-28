@@ -5,6 +5,9 @@
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
+  virtualisation.waydroid.enable = true;
+  
   environment.shells = with pkgs; [ zsh ];
   environment.variables = rec { EDITOR = "micro"; };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -48,7 +51,7 @@
 	    xdg-desktop-portal-wlr
 	    pulseaudio
 	    #pulseaudioFull
-	
+		flatpak
   ];
   
 }

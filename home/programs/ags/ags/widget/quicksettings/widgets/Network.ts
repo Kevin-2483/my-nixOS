@@ -14,6 +14,7 @@ export const NetworkToggle = () => ArrowToggleButton({
         wifi.enabled = true
         wifi.scan()
     },
+    onRightClick: () => sh(options.quicksettings.networkSettings.value),
 })
 
 export const WifiSelection = () => Menu({
@@ -22,13 +23,13 @@ export const WifiSelection = () => Menu({
     title: "Wifi Selection",
     content: [
     Widget.Scrollable({
-        hscroll: 'never',
-        vscroll: 'automatic',
-        css: `
-                    min-height: 300px;
-                `,
-        child: 
-    	Widget.Box({
+            hscroll: 'never',
+            vscroll: 'automatic',
+            css: `
+                        min-height: 300px;
+                    `,
+            child: 
+        Widget.Box({
             vertical: true,
             setup: self => self.hook(wifi, () => self.children =
                 wifi.access_points.map(ap => Widget.Button({
@@ -36,8 +37,8 @@ export const WifiSelection = () => Menu({
                         if (dependencies("nmcli"))
                             Utils.execAsync(`nmcli device wifi connect ${ap.bssid}`)
                     },
-                    
-                        child: Widget.Box({
+                    on_secondary_click: () => sh(options.quicksettings.networkSettings.value),
+                    child: Widget.Box({
                         children: [
                             Widget.Icon(ap.iconName),
                             Widget.Label(ap.ssid || ""),

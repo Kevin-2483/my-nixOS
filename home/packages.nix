@@ -124,6 +124,7 @@
     feh
     nsxiv
     obs-studio
+    googler
   ];
 
   nixpkgs = {

@@ -17,6 +17,15 @@ const VolumeIndicator = (type: Type = "speaker") => Widget.Button({
     }),
 })
 
+class AudioMute {
+	speaker(){
+		audio["speaker"].is_muted = !audio["speaker"].is_muted
+	}
+}
+const audiomute = new AudioMute
+Object.assign(globalThis, { audiomute })
+export default audiomute
+
 const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
     hexpand: true,
     draw_value: false,
