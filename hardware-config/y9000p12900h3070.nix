@@ -1,14 +1,13 @@
-{ config, lib, pkgs, modulesPath, inputs, ... }:
+{ username, config, lib, pkgs, modulesPath, inputs, ... }:
 let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
-  '';
-in
-{
+   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+   export __NV_PRIME_RENDER_OFFLOAD=1
+   export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+   export __GLX_VENDOR_LIBRARY_NAME=nvidia
+   export __VK_LAYER_NV_optimus=NVIDIA_only
+   exec "$@"
+	'';
+in {
 
   imports =
   [
@@ -17,15 +16,14 @@ in
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
-    package = pkgs.mesa.drivers;
     driSupport = true;
     driSupport32Bit = true;
-    extraPackages = with pkgs; [
-            intel-media-driver # LIBVA_DRIVER_NAME=iHD
-            intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-            vaapiVdpau
-            libvdpau-va-gl
-          ];
+    # extraPackages = with pkgs; [
+    #         intel-media-driver # LIBVA_DRIVER_NAME=iHD
+    #         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+    #         vaapiVdpau
+    #         libvdpau-va-gl
+    #       ];
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -60,7 +58,7 @@ in
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
     prime = {
     		#混合模式,使用offload来使程序运行在nvidia dGPU上
@@ -99,8 +97,31 @@ in
       boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
       boot.initrd.kernelModules = lib.mkForce [ ];
       boot.extraModulePackages = lib.mkForce [ ];
+	  environment.variables = lib.mkAfter rec {
+ 	 	WLR_DRM_DEVICES = lib.mkForce ../home/programs/hyprland/icard;
+  		};
+  	  # hardware.opengl.package =  lib.mkForce pkgs.mesa.drivers;
+  		
+    };
+    HyprNv.configuration = {
+    	system.nixos.tags = [ "HyprNv" ];
+	  environment.variables = lib.mkAfter rec {
+ 	 	WLR_DRM_DEVICES = lib.mkForce ../home/programs/hyprland/ncard;
+ 	 	LIBVA_DRIVER_NAME = lib.mkForce "nvidia";
+ 	 	XDG_SESSION_TYPE = "wayland";
+ 	 	GBM_BACKEND = "GBM_BACKEND";
+ 	 	__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+ 	 	WLR_NO_HARDWARE_CURSORS = "1";
+ 	 	
+  		};
     };
   };
+
+  	 environment.variables = lib.mkBefore rec {
+     WLR_DRM_DEVICES = ../home/programs/hyprland/icard;
+     };
+
+
   # hardware.nvidia.forceFullCompositionPipeline = true;
   # nixpkgs.config.packageOverrides = pkgs: {
   #     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };

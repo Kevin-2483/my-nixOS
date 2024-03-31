@@ -1,5 +1,5 @@
 
-{ config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 {
   
@@ -9,7 +9,11 @@
   virtualisation.waydroid.enable = true;
   
   environment.shells = with pkgs; [ zsh ];
-  environment.variables = rec { EDITOR = "micro"; };
+  environment.variables = lib.mkDefault rec { 
+  	EDITOR = "micro";
+  	JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk21.0.2-linux_x64";
+  	PATH = "$JAVA_HOME/bin:$PATH";
+  	};
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;  with gnome; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -52,6 +56,8 @@
 	    pulseaudio
 	    #pulseaudioFull
 		flatpak
+		# zulu17
+		
   ];
   
 }

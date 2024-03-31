@@ -7,7 +7,7 @@
      ./frp
      ./openssh
      ./xrdp
-     
+     ./mysql
     ];
 
   # Enable networking

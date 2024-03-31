@@ -60,7 +60,7 @@
     btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
-    #nvtop
+    nvitop
 
     # system call monitoring
     strace # system call monitoring
@@ -125,6 +125,7 @@
     nsxiv
     obs-studio
     googler
+    hmcl
   ];
 
   nixpkgs = {
