@@ -4,8 +4,8 @@
 	      after = [ "network.target" "mysqld.service" ];
 	      wants = [ "network.target" ];
 	      serviceConfig = {
-	      WorkingDirectory=/home/kevin/cloudreve;
-	      ExecStart = /home/kevin/cloudreve/cloudreve;
+	      WorkingDirectory=/home/kevin/services/cloudreve;
+	      ExecStart = /home/kevin/services/cloudreve/cloudreve;
 	      Restart="on-abnormal";
 	      RestartSec = "5s";
 	      KillMode="mixed";

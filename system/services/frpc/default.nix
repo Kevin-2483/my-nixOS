@@ -5,7 +5,7 @@
 	      wants = [ "network.target" ];
 	      serviceConfig = {
 	      type = "simple";
-	      ExecStart = "/etc/nixos/system/services/frpc/frp/frpc -c /etc/nixos/system/services/frpc/frp/frpc.toml";
+	      ExecStart = "/home/kevin/services/frp/frpc -c /home/kevin/services/frp/frpc.toml";
 	      };
 	      wantedBy = [ "multi-user.target" ];
 	    };	
