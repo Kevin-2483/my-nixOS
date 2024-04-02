@@ -2,5 +2,6 @@
 	imports = [
 		./cliphist
 		./kdeconnect
+		
 	];
 }

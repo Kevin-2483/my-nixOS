@@ -12,10 +12,7 @@
     ./fzf
     ./nix-ld
     ./zsh
-    ./hyprland
     ./proxychains-ng
-    #./clash
-    ./noat
-    #./regreet
+    #./noat
     ];
 }

@@ -5,6 +5,7 @@
   
 programs.zsh = {
   		enable = true;
+  		autosuggestions.enable =true;
   		ohMyZsh={
   			package = pkgs.oh-my-zsh;
   			enable = true;

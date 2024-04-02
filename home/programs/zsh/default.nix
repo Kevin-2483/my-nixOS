@@ -6,7 +6,6 @@
   		enable = true;
   		autocd = true;
   		enableCompletion = true;
-  	    autosuggestion.enable = true;
   	    syntaxHighlighting.enable = true;
   		oh-my-zsh={
   			theme = "frisk";
@@ -26,7 +25,6 @@
   		};
 
   		initExtra = ''
-  		eval "$(starship init zsh)"
   		function yy() {
   			local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
   			yazi "$@" --cwd-file="$tmp"

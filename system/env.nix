@@ -1,19 +1,17 @@
 
-{ lib, config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.enable = false;
+
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   
   environment.shells = with pkgs; [ zsh ];
-  environment.variables = lib.mkDefault rec { 
-  	EDITOR = "micro";
-  	JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk21.0.2-linux_x64";
-  	PATH = "$JAVA_HOME/bin:$PATH";
-  	};
+  environment.variables = rec { EDITOR = "micro"; };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;  with gnome; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -24,40 +22,11 @@
 	blueberry
 	frp
 	#proxychains
-	v2raya
-
-	wl-clipboard #Wayland 的命令行复制/粘贴实用程序
-	wf-recorder # 用于基于 wlroots 的合成器的屏幕录制的实用程序
-	wayshot #一个原生的、极快的屏幕截图工具，适用于基于 wlroots 的合成器（例如 sway 和 River)
-	
-	#gnome
-		gnome.adwaita-icon-theme
-	    loupe
-	    adwaita-icon-theme
-	    nautilus
-	    nautilus-open-any-terminal
-	    baobab
-	    gnome-text-editor
-	    gnome-calendar
-	    gnome-boxes
-	    gnome-system-monitor
-	    gnome-control-center
-	    gnome-weather
-	    gnome-calculator
-	    gnome-clocks
-	    gnome-software # for flatpak
-	    polkit_gnome
-	    wl-gammactl
-	    pavucontrol
-	    brightnessctl
-	    swww
-	    wlroots
-	    xdg-desktop-portal-wlr
-	    pulseaudio
-	    #pulseaudioFull
-		flatpak
-		# zulu17
-		
+	unstable.v2raya
+	nautilus-open-any-terminal
+	gnome-boxes
+	gnome-software # for flatpak
+	flatpak
   ];
   
 }

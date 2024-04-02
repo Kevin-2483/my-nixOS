@@ -7,15 +7,15 @@
 {
   
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 3389 3306 ];
-  networking.firewall.allowedUDPPorts = [ 3389 ];
+  # networking.firewall.allowedTCPPorts = [ 22 3389 ];
+  # networking.firewall.allowedUDPPorts = [ 3389 ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
   # kde connect
-    networking.firewall = rec {
-      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-      allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
-    };
+    # networking.firewall = rec {
+    #   allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    #   allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+    # };
   
 
   security.rtkit.enable = true;

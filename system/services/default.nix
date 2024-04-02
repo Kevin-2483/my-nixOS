@@ -1,13 +1,17 @@
 
-{ config, pkgs, inputs, username, hostname, asztal, ... }:
+{ config, pkgs, inputs, username, hostname, ... }:
 
 {
   imports =
     [
-     ./frp
+     # ./frp
      ./openssh
      ./xrdp
-     ./mysql
+     ./docker
+     #./hotspot
+     ./ts
+     ./frpc
+     ./cloudreve
     ];
 
   # Enable networking
@@ -26,7 +30,7 @@
 
   # Enable the GNOME Desktop Environment.
   # 23.11
-  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # the option has out use below
   # services.displayManager.gdm.enable = true;
@@ -39,11 +43,6 @@
     xkb.variant = "";
   };
 
-  services.udev.extraRules = ''
-      KERNEL=="rtc0", GROUP="audio"
-      KERNEL=="hpet", GROUP="audio"
-    '';
-  
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -61,21 +60,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
- services.greetd = {
-    enable = true;
-    vt = 1;
-    # settings.default_session.command = "ly";
-    settings.default_session = {
-    command = pkgs.writeShellScript "greeter" ''
-      export XDG_RUNTIME_DIR=/run/user/1000
-      export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
-      export XCURSOR_THEME=Qogir
-      ${asztal}/bin/greeter
-    '';
-    user = "kevin";
-    };
-  };
-
   services = {
 
   	  v2raya.enable = true;
@@ -84,48 +68,7 @@
       udisks2.enable = true;
       upower.enable = true;
       power-profiles-daemon.enable = true;
-      accounts-daemon.enable = true;
-      #blueman.enable = true;
-      gnome = {
-        evolution-data-server.enable = true;
-        glib-networking.enable = true;
-        gnome-keyring.enable = true;
-        gnome-online-accounts.enable = true;
-      };
     };
-
-    systemd.tmpfiles.rules = [
-        "d '/var/cache/greeter' - greeter greeter - -"
-      ];
-
-      systemd = {
-        	      user.services.polkit-gnome-authentication-agent-1 = {
-        	        description = "polkit-gnome-authentication-agent-1";
-        	        wantedBy = [ "graphical-session.target" ];
-        	        wants = [ "graphical-session.target" ];
-        	        after = [ "graphical-session.target" ];
-        	        serviceConfig = {
-        	          Type = "simple";
-        	          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        	          Restart = "on-failure";
-        	          RestartSec = 1;
-        	          TimeoutStopSec = 10;
-        	        };
-        	      };
-        	    };
-
-      # system.activationScripts.wallpaper = ''
-      #     PATH=$PATH:${pkgs.coreutils}/bin:${pkgs.gawk}/bin:${pkgs.jq}/bin
-      #     CACHE="/var/cache/greeter"
-      #     OPTS="$CACHE/options.json"
-      # 
-      #     cp /home/${username}/.cache/ags/options.json $OPTS
-      #     chown greeter:greeter $OPTS
-      # 
-      #     BG=$(cat $OPTS | jq -r '.wallpaper // "/home/${username}/.config/background"')
-      # 
-      #     cp $BG $CACHE/background
-      #     chown greeter:greeter $CACHE/background
-      #   '';
+    services.udev.packages = with pkgs; [gnome.gnome-settings-daemon ];
 
 }
