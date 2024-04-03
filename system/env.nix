@@ -29,6 +29,7 @@
 	flatpak
 	# gnomeExtensions.appindicator
 	gnome.gnome-settings-daemon
+	static-web-server
   ];
   
 }

@@ -12,6 +12,8 @@
      ./frpc
      ./cloudreve
      #./meshcentral
+     ./sws
+     ./samba
     ];
 
   # Enable networking
