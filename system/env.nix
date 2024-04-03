@@ -23,10 +23,12 @@
 	frp
 	#proxychains
 	unstable.v2raya
-	nautilus-open-any-terminal
+	#unstable.nautilus-open-any-terminal
 	gnome-boxes
 	gnome-software # for flatpak
 	flatpak
+	# gnomeExtensions.appindicator
+	gnome.gnome-settings-daemon
   ];
   
 }

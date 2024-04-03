@@ -6,12 +6,12 @@
     [
      # ./frp
      ./openssh
-     ./xrdp
      ./docker
      #./hotspot
      ./ts
      ./frpc
      ./cloudreve
+     #./meshcentral
     ];
 
   # Enable networking
@@ -22,7 +22,7 @@
   services = {
         xserver = {
           enable = true;
-          excludePackages = [ pkgs.xterm ];
+          # excludePackages = [ pkgs.xterm ];
         };
         printing.enable = true;
         flatpak.enable = true;
@@ -35,8 +35,7 @@
   # the option has out use below
   # services.displayManager.gdm.enable = true;
   # services.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-
+  # services.xserver.displayManager.startx.enable = true;
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";
@@ -69,6 +68,7 @@
       upower.enable = true;
       power-profiles-daemon.enable = true;
     };
+    services.gnome.gnome-settings-daemon.enable = true;
     services.udev.packages = with pkgs; [gnome.gnome-settings-daemon ];
 
 }
