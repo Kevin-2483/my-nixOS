@@ -6,9 +6,10 @@
   		package = pkgs.foot;
   		enable = true;
   		server.enable = true;
+      catppuccin.enable = true;
   		settings = {
   			main = {
-  				shell="zsh";
+  				shell="nu -e neofetch";
   				term="xterm-256color";
   				
   				title="terminal";
@@ -51,9 +52,9 @@
   				beam-thickness=1.5;
   				# underline-thickness=<font underline thickness>
   			};
-  			colors = {
-  				alpha = 0.7;
-  			};
+  			# colors = {
+  			# 	alpha = 0.7;
+  			# };
   			# [csd]
   			# preferred=server
   			# size=26

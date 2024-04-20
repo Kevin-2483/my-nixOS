@@ -32,7 +32,8 @@
 
     #clash-verge
     #clash-verge-rev
-    # clash-geoip
+    #clash-geoip
+    #clash-meta
     
     
 
@@ -73,17 +74,18 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+	findutils
+	ripgrep
 
     autojump
     foot
-    microsoft-edge
 
     vscode-fhs
     proxychains-ng
     micro
     go-musicfox
     qq
-    unstable.teamspeak5_client
+    teamspeak5_client
 
 
     
@@ -126,12 +128,19 @@
     obs-studio
     googler
     hmcl
+    localsend
+    dotnet-sdk_8
+    lenovo-legion
+    rustup
+    firefox
+    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+    
   ];
 
   nixpkgs = {
         overlays = [
           # Add overlays your own flake exports (from overlays and pkgs dir):
-          outputs.overlays.unstable-packages
+          outputs.overlays.stable-packages
           #outputs.overlays.steam-env
         ];
         config = {

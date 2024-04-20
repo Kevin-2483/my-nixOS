@@ -6,10 +6,12 @@ in {
     enable = true;
     extraConfig = {
       color.ui = true;
-      core.editor = "nvim";
+      core.editor = "micro";
       credential.helper = "store";
       github.user = name;
       push.autoSetupRemote = true;
+      # http.proxy = socks5://127.0.0.1:1080;
+      # https.proxy = socks5://127.0.0.1:1080;
     };
     userEmail = email;
     userName = name;

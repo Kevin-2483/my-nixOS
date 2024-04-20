@@ -1,7 +1,7 @@
 {
 
   imports = [
-   ./starship
+   	./starship
 	./fzf
 	./ags/ags.nix
 	./git
@@ -16,6 +16,8 @@
 	./foot
 	./fuzzel
 	./btop
+	./neovim
+	./nushell
     ];
 
 }

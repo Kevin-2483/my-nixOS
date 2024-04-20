@@ -63,7 +63,6 @@ in
   };
 
   fonts.fontconfig.enable = false;
-
   gtk = {
     inherit font cursorTheme iconTheme;
     theme.name = theme.name;
@@ -75,7 +74,7 @@ in
       }
     '';
   };
-
+  catppuccin.flavour = "mocha";
   qt = {
     enable = true;
     platformTheme = "kde";

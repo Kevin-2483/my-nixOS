@@ -11,7 +11,11 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ 
+  	nvidia_x11
+#  	nvidiabl
+  	lenovo-legion-module
+  	];
   boot.supportedFilesystems = [ "ntfs" ];
   boot.plymouth = rec {
         enable = true;

@@ -98,7 +98,7 @@ in
       vim-tmux-navigator
       yank
     ];
-    prefix = "C-Space";
+    prefix = "M-Space";
     baseIndex = 1;
     escapeTime = 0;
     keyMode = "vi";
@@ -125,6 +125,9 @@ in
       set-option -g window-status-current-format "${current_window}"
       set-option -g window-status-format "${window_status}"
       set-option -g window-status-separator ""
+      set-option -g default-terminal 'tmux-256color'
+      set-option -g renumber-windows on
+      set-option -g status-position top      
       '';
   };
 }

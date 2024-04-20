@@ -7,8 +7,8 @@
 {
   
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 3389 3306 ];
-  networking.firewall.allowedUDPPorts = [ 3389 ];
+  networking.firewall.allowedTCPPorts = [ 22 3389 3306 53317 ];
+  networking.firewall.allowedUDPPorts = [ 3389 53317 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   # kde connect

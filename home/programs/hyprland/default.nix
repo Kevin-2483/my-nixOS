@@ -21,7 +21,6 @@ in
     categories = [ "X-Preferences" ];
     terminal = false;
   };
-  
   # config = lib.mkIf (config.specialisation != {}) {
   #         # Config that should only apply to the default system, not the specialised ones
   # 	wayland.windowManager.hyprland.extraConfig = ''
@@ -71,8 +70,11 @@ in
         "gnome-keyring-daemon --start --components=secrets"
         "dbus-update-activation-environment --all"
         "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP   "
+        "swww kill; swww init"
+        # "legion_gui --use_legion_cli_to_write"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "tmux new -s default"
       ];
 
       monitor = [
@@ -119,7 +121,7 @@ in
       gestures = {
         workspace_swipe = true;
         workspace_swipe_forever = true;
-        workspace_swipe_numbered = true;
+        # workspace_swipe_numbered = true;
         workspace_swipe_direction_lock = true;
         workspace_swipe_direction_lock_threshold = 10;
         workspace_swipe_create_new = true;
@@ -129,6 +131,7 @@ in
         f = regex: "float, ^(${regex})$";
         s = regex: "size 50% 60%, ^(${regex})$";
         c = regex: "center, ^(${regex})$";
+        o = regex: "opacity 0.9 override 0.75 override 1.0 override, ^(${regex})$";
       in [
         (f "org.gnome.Calculator")
         #(f "org.gnome.Nautilus")
@@ -150,6 +153,9 @@ in
         (f "xdg-desktop-portal-gnome")
         (f "transmission-gtk")
         (f "com.github.Aylur.ags")
+        (o "firefox")
+        (o "obsidian")
+        (o "foot")
         # "float, size 50% 50%, center, title:btop++"
         # "size 50% 50%, title:btop++"
         # "center, title:btop++"
@@ -175,8 +181,8 @@ in
         ",Print,          ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,     ${e} -r 'recorder.screenshot(true)'"
         "SUPER, Return, exec, footclient" # xterm is a symlink, not actually xterm
-        "SUPER, W, exec, microsoft-edge"
-        "SUPER, T, exec, foot"
+        "SUPER, W, exec, firefox"
+        "SUPER, T, exec, foot tmux attach -t default"
         "SUPER, X, exec, footclient yazi"
         "CTRL SHIFT, Escape, exec, footclient -T btop++ btop"
         

@@ -3,12 +3,12 @@
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-23.11 分支
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # home-manager, used for managing user configuration
     home-manager = {
           url = "github:nix-community/home-manager";
-          #url = "github:nix-community/home-manager/release-23.11";
+          # url = "github:nix-community/home-manager/release-23.11";
           # The `follows` keyword in inputs is used for inheritance.
           # Here, `inputs.nixpkgs` of home-manager is kept consistent with
           # the `inputs.nixpkgs` of the current flake,
@@ -23,13 +23,13 @@
       hyprland.url = "github:hyprwm/Hyprland";
       hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
       astal.url = "github:Aylur/astal";
-      
-
+      firefox.url = "github:nix-community/flake-firefox-nightly";
+      catppuccin.url = "github:catppuccin/nix";
     # add ags
     ags.url = "github:Aylur/ags";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, catppuccin, nixpkgs-stable, ... }@inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     hostname = "nixos";
@@ -41,7 +41,7 @@
     asztal = pkgs.callPackage ./home/programs/ags/ags { inherit inputs; };
 	in {
        # inherit nixpkgs;
-       # inherit nixpkgs-unstable;
+       # inherit nixpkgs-stable;
        
     # 因此请将下面的 my-nixos 替换成你的主机名称
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -54,7 +54,7 @@
         ./system
         ./hardware-config
         ./dotfile
-
+        catppuccin.nixosModules.catppuccin
         # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
         home-manager.nixosModules.home-manager
@@ -64,11 +64,13 @@
         
             # 这里的 ryan 也得替换成你的用户名
             # 这里的 import 函数在前面 Nix 语法中介绍过了，不再赘述
-            home-manager.users.${username} = import ./home;
-        
+            home-manager.users.${username}.imports = [
+              ./home
+              catppuccin.homeManagerModules.catppuccin
+            ];
             # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
             # 取消注释下面这一行，就可以在 home 中使用 flake 的所有 inputs 参数了
-            home-manager.extraSpecialArgs = {inherit inputs hostname outputs asztal username;};
+            home-manager.extraSpecialArgs = {inherit catppuccin inputs hostname outputs asztal username;};
             
         }
 

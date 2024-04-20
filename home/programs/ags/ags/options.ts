@@ -154,12 +154,13 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
+                	"firefox",
                     "microsoft-edge",
                     "org.gnome.Nautilus",
                     "org.gnome.Calendar",
                     "obsidian",
-                    "discord",
                     "spotify",
+                    "localsend"
                 ],
             ]),
         },

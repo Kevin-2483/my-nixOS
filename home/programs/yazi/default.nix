@@ -3,7 +3,8 @@
 {
 
   programs.yazi = {
-  		package = pkgs.unstable.yazi;
+  		package = pkgs.yazi;
   		enable = true;
+      catppuccin.enable = true;
   	};
 }

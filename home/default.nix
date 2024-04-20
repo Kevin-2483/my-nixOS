@@ -7,7 +7,7 @@
   	homeDirectory = "/home/kevin";
   	stateVersion = "23.11";
   };
- 
+  xdg.enable = true; 
    imports = [ 
    	# inputs.ags.homeManagerModules.default # ags bar
    	./packages.nix #programs list

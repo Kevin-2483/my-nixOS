@@ -8,10 +8,10 @@
 
   virtualisation.waydroid.enable = true;
   
-  environment.shells = with pkgs; [ zsh ];
-  environment.variables = lib.mkDefault rec { 
+  environment.shells = with pkgs; [ zsh nushell ];
+  environment.variables = rec {
   	EDITOR = "micro";
-  	JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk21.0.2-linux_x64";
+  	JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk17.0.10-linux_x64";
   	PATH = "$JAVA_HOME/bin:$PATH";
   	};
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -31,33 +31,39 @@
 	wayshot #一个原生的、极快的屏幕截图工具，适用于基于 wlroots 的合成器（例如 sway 和 River)
 	
 	#gnome
-		gnome.adwaita-icon-theme
-	    loupe
-	    adwaita-icon-theme
-	    nautilus
-	    nautilus-open-any-terminal
-	    baobab
-	    gnome-text-editor
-	    gnome-calendar
-	    gnome-boxes
-	    gnome-system-monitor
-	    gnome-control-center
-	    gnome-weather
-	    gnome-calculator
-	    gnome-clocks
-	    gnome-software # for flatpak
-	    polkit_gnome
-	    wl-gammactl
-	    pavucontrol
-	    brightnessctl
-	    swww
-	    wlroots
-	    xdg-desktop-portal-wlr
-	    pulseaudio
-	    #pulseaudioFull
-		flatpak
-		# zulu17
-		
+	gnome.adwaita-icon-theme
+	loupe
+    adwaita-icon-theme
+    nautilus
+    nautilus-open-any-terminal
+    baobab
+    gnome-text-editor
+    gnome-calendar
+    gnome-boxes
+    gnome-system-monitor
+    gnome-control-center
+    gnome-weather
+    gnome-calculator
+    gnome-clocks
+    gnome-software # for flatpak
+    polkit_gnome
+    wl-gammactl
+    pavucontrol
+    brightnessctl
+    swww
+    wlroots
+    xdg-desktop-portal-wlr
+    pulseaudio
+    #pulseaudioFull
+	flatpak
+	# zulu17
+	xz
+	connect
+	virt-manager
+	virt-viewer
+	glfw-wayland-minecraft
+	qt6.qtwayland
+	libsForQt5.qt5.qtwayland
+	nodejs_21
   ];
-  
 }

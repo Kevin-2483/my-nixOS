@@ -96,8 +96,10 @@ in {
       '';
       boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
       boot.initrd.kernelModules = lib.mkForce [ ];
-      boot.extraModulePackages = lib.mkForce [ ];
-	  environment.variables = lib.mkAfter rec {
+      boot.extraModulePackages = lib.mkForce [
+        	config.boot.kernelPackages.lenovo-legion-module
+        	];
+	  environment.variables = rec {
  	 	WLR_DRM_DEVICES = lib.mkForce ../home/programs/hyprland/icard;
   		};
   	  # hardware.opengl.package =  lib.mkForce pkgs.mesa.drivers;
@@ -105,7 +107,7 @@ in {
     };
     HyprNv.configuration = {
     	system.nixos.tags = [ "HyprNv" ];
-	  environment.variables = lib.mkAfter rec {
+	  environment.variables = rec {
  	 	WLR_DRM_DEVICES = lib.mkForce ../home/programs/hyprland/ncard;
  	 	LIBVA_DRIVER_NAME = lib.mkForce "nvidia";
  	 	XDG_SESSION_TYPE = "wayland";
@@ -117,7 +119,7 @@ in {
     };
   };
 
-  	 environment.variables = lib.mkBefore rec {
+  	 environment.variables = rec {
      WLR_DRM_DEVICES = ../home/programs/hyprland/icard;
      };
 
@@ -129,6 +131,6 @@ in {
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   environment.systemPackages = [
-      pkgs.unstable.mesa-demos
+      pkgs.mesa-demos
     ];
 }

@@ -43,7 +43,7 @@
       KERNEL=="rtc0", GROUP="audio"
       KERNEL=="hpet", GROUP="audio"
     '';
-  
+  # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -91,6 +91,7 @@
         glib-networking.enable = true;
         gnome-keyring.enable = true;
         gnome-online-accounts.enable = true;
+        #gnome-settings-daemon.enable = true;
       };
     };
 
