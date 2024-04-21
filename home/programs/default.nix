@@ -21,6 +21,7 @@
 	./neovim
 	./nushell
   ./rio
+  ./cava
     ];
 
 }
