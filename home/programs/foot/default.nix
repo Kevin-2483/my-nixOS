@@ -5,7 +5,7 @@
   programs.foot = {
   		package = pkgs.foot;
   		enable = true;
-  		server.enable = true;
+  		server.enable = false;
       catppuccin.enable = true;
   		settings = {
   			main = {
@@ -52,9 +52,9 @@
   				beam-thickness=1.5;
   				# underline-thickness=<font underline thickness>
   			};
-  			# colors = {
-  			# 	alpha = 0.7;
-  			# };
+  			colors = {
+  				alpha = 0.8;
+  			};
   			# [csd]
   			# preferred=server
   			# size=26

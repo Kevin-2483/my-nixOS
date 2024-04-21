@@ -62,11 +62,18 @@ in
     };
   };
 
-  fonts.fontconfig.enable = false;
+  fonts.fontconfig.enable = true;
   gtk = {
     inherit font cursorTheme iconTheme;
-    theme.name = theme.name;
+    # theme.name = theme.name;
+    catppuccin.enable = true;
     enable = true;
+    gtk3.extraConfig = {
+    gtk-application-prefer-dark-theme=1;
+    };
+    gtk4.extraConfig = {
+    gtk-application-prefer-dark-theme=1;
+    };
     gtk3.extraCss = ''
       headerbar, .titlebar,
       .csd:not(.popup):not(tooltip):not(messagedialog) decoration{

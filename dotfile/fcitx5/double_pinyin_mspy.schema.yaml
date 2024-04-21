@@ -1,10 +1,10 @@
 __build_info:
-  rime_version: 1.10.0
+  rime_version: 1.11.0
   timestamps:
     default: 0
-    default.custom: 1710920059
+    default.custom: 1713641585
     double_pinyin_mspy.custom: 0
-    double_pinyin_mspy.schema: 1710919775
+    double_pinyin_mspy.schema: 0
     key_bindings: 0
     key_bindings.custom: 0
     punctuation: 0

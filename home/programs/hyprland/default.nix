@@ -60,6 +60,8 @@ in
     settings = {
       exec-once = [
         "ags -b hypr"
+        # "swww kill; swww init"
+        "tmux new -s default"
         "hyprctl setcursor Qogir 24"
         #"transmission-gtk"
         #"clash-verge"
@@ -68,14 +70,12 @@ in
         "systemctl start --user polkit-gnome-authentication-agent-1"
         #"swww kill; swww init"
         "gnome-keyring-daemon --start --components=secrets"
-        "dbus-update-activation-environment --all"
-        "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP   "
-        "swww kill; swww init"
+        # "dbus-update-activation-environment --all"
+        # "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         # "legion_gui --use_legion_cli_to_write"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "tmux new -s default"
-      ];
+        ];
 
       monitor = [
         "eDP-1, 2560x1600@60, 0x0, 1"
@@ -145,7 +145,7 @@ in
         (s "footclient")
         (c "footclient")
         (f "org.kde.kdeconnect-indicator")
-		(s "org.kde.kdeconnect-indicator")
+		    (s "org.kde.kdeconnect-indicator")
         (c "org.kde.kdeconnect-indicator")
         (f "org.gnome.design.Palette")
         (f "Color Picker")
@@ -180,11 +180,12 @@ in
         ",XF86Launch4,    ${e} -r 'recorder.start()'"
         ",Print,          ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,     ${e} -r 'recorder.screenshot(true)'"
-        "SUPER, Return, exec, footclient" # xterm is a symlink, not actually xterm
+        "SUPER, Return, exec, foot" # xterm is a symlink, not actually xterm
         "SUPER, W, exec, firefox"
-        "SUPER, T, exec, foot tmux attach -t default"
-        "SUPER, X, exec, footclient yazi"
-        "CTRL SHIFT, Escape, exec, footclient -T btop++ btop"
+        "CTRL SHIFT, S, exec, swww kill; swww init"
+        "SUPER, T, exec, tmux new-session -d -s default; foot tmux attach -t default"
+        "SUPER, X, exec, foot -H nu -e yy"
+        "CTRL SHIFT, Escape, exec, foot -T btop++ btop"
         
 
         # youtube

@@ -65,5 +65,8 @@
 	qt6.qtwayland
 	libsForQt5.qt5.qtwayland
 	nodejs_21
+  hyprlock
+  # xdg-desktop-portal-gnome
+  # xdg-desktop-portal
   ];
 }

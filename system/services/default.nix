@@ -26,7 +26,7 @@
 
   # Enable the GNOME Desktop Environment.
   # 23.11
-  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # the option has out use below
   # services.displayManager.gdm.enable = true;
@@ -62,7 +62,7 @@
   # services.xserver.libinput.enable = true;
 
  services.greetd = {
-    enable = true;
+    enable = false;
     vt = 1;
     # settings.default_session.command = "ly";
     settings.default_session = {

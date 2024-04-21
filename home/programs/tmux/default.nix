@@ -9,19 +9,19 @@ let
   indicator = let
     accent = color "indicator_color";
     content = "  ";
-  in "#[reverse,fg=${accent}]#{?client_prefix,${content},}";
+  in "#[fg=${accent}]#{?client_prefix,,}#[fg=${bg2},bg=${accent}]#{?client_prefix,${content},}#[fg=${accent},bg=${fg}]#{?client_prefix, ,}";
 
   current_window = let
     accent = color "main_accent";
-    index = "#[reverse,fg=${accent},bg=${fg}] #I ";
-    name = "#[fg=${bg2},bg=${fg2}] #W ";
+    index = "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
+    name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
     # flags = "#{?window_flags,#{window_flags}, }";
   in "${index}${name}";
 
   window_status = let
     accent = color "window_color";
-    index = "#[reverse,fg=${accent},bg=${fg}] #I ";
-    name = "#[fg=${bg2},bg=${fg2}] #W ";
+    index = "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
+    name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
     # flags = "#{?window_flags,#{window_flags}, }";
   in "${index}${name}";
 
@@ -46,7 +46,7 @@ let
       fi
     '';
 
-	in "#[reverse,fg=${accent}] ${format} #(${icon}) ";
+	in "#[fg=${accent}]#[fg=${bg2},bg=${accent}] ${format} #(${icon}) #[fg=${accent},bg=${fg}]";
 
   battery = let
     percentage = pkgs.writeShellScript "percentage" ''

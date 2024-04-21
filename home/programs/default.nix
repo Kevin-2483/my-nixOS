@@ -5,6 +5,8 @@
 	./fzf
 	./ags/ags.nix
 	./git
+  ./gitui
+  ./bat
 	./yazi
 	./zsh
 	./hyprland
@@ -18,6 +20,7 @@
 	./btop
 	./neovim
 	./nushell
+  ./rio
     ];
 
 }
