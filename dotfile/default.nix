@@ -35,6 +35,11 @@
         rm -rf /home/${username}/.config/nvim/lua
     		ln -sf /etc/nixos/dotfile/nvim/lua /home/${username}/.config/nvim/lua
     		ln -sf /etc/nixos/dotfile/nvim/init.lua /home/${username}/.config/nvim/init.lua
+
+        ln -sf /etc/nixos/dotfile/mocha.conf /home/${username}/.config/hypr/mocha.conf
+
+        rm -rf /home/${username}/.config/runcat
+        ln -sf /etc/nixos/dotfile/runcat /home/${username}/.config/runcat
     		'';
     	};
 }

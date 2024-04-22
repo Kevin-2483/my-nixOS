@@ -74,8 +74,8 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
-	findutils
-	ripgrep
+	  findutils
+	  ripgrep
 
     autojump
     foot
@@ -134,6 +134,7 @@
     rustup
     firefox
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+    hyprlang
     ];
 
   nixpkgs = {

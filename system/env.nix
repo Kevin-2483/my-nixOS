@@ -20,19 +20,19 @@
     wget
     curl
     git
-	appimage-run
-	blueberry
-	frp
-	#proxychains
-	v2raya
+	  appimage-run
+	  blueberry
+	  frp
+	  #proxychains
+	  v2raya
 
-	wl-clipboard #Wayland 的命令行复制/粘贴实用程序
-	wf-recorder # 用于基于 wlroots 的合成器的屏幕录制的实用程序
-	wayshot #一个原生的、极快的屏幕截图工具，适用于基于 wlroots 的合成器（例如 sway 和 River)
+	  wl-clipboard #Wayland 的命令行复制/粘贴实用程序
+	  wf-recorder # 用于基于 wlroots 的合成器的屏幕录制的实用程序
+	  wayshot #一个原生的、极快的屏幕截图工具，适用于基于 wlroots 的合成器（例如 sway 和 River)
 	
-	#gnome
-	gnome.adwaita-icon-theme
-	loupe
+	  #gnome
+	  gnome.adwaita-icon-theme
+	  loupe
     adwaita-icon-theme
     nautilus
     nautilus-open-any-terminal
@@ -55,21 +55,24 @@
     xdg-desktop-portal-wlr
     pulseaudio
     #pulseaudioFull
-	flatpak
-	# zulu17
-	xz
-	connect
-	virt-manager
-	virt-viewer
-	glfw-wayland-minecraft
-	qt6.qtwayland
-	libsForQt5.qt5.qtwayland
-	nodejs_21
-  libsForQt5.qt5.qtgraphicaleffects
-  libsForQt5.qt5.qtsvg
-  libsForQt5.qt5.qtquickcontrols2
-  inputs.sddm-catppuccin.packages.${pkgs.hostPlatform.system}.sddm-catppuccin
-  # xdg-desktop-portal-gnome
-  # xdg-desktop-portal
+	  flatpak
+	  # zulu17
+	  xz
+	  connect
+	  virt-manager
+	  virt-viewer
+	  glfw-wayland-minecraft
+	  qt6.qtwayland
+	  libsForQt5.qt5.qtwayland
+	  nodejs_21
+    libsForQt5.qt5.qtgraphicaleffects #for sddm
+    libsForQt5.qt5.qtsvg # for sddm
+    libsForQt5.qt5.qtquickcontrols2 # for sddm
+    inputs.sddm-catppuccin.packages.${pkgs.hostPlatform.system}.sddm-catppuccin
+    libappindicator-gtk3 # for runcat
+    # xdg-desktop-portal-gnome
+    # xdg-desktop-portal
+    sdbus-cpp # for hypridle
+    wayland-protocols # for hypridle
   ];
 }

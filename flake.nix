@@ -1,12 +1,12 @@
 {
   description = "A simple NixOS flake";
   inputs = {
-    # NixOS 官方软件源，这里使用 nixos-23.11 分支
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+      # NixOS 官方软件源，这里使用 nixos-23.11 分支
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    # home-manager, used for managing user configuration
-    home-manager = {
+      # home-manager, used for managing user configuration
+      home-manager = {
           url = "github:nix-community/home-manager";
           # url = "github:nix-community/home-manager/release-23.11";
           # The `follows` keyword in inputs is used for inheritance.
@@ -15,7 +15,7 @@
           # to avoid problems caused by different versions of nixpkgs.
           inputs.nixpkgs.follows = "nixpkgs";
         };
-    matugen = {
+      matugen = {
         url = "github:/InioX/Matugen";
         # If you need a specific version:
         # ref = "refs/tags/matugen-v0.10.0";
@@ -28,11 +28,12 @@
       sddm-catppuccin.url = "github:Kevin-2483/catppuccin-sddm-corners-custom";
       sddm-catppuccin.inputs.nixpkgs.follows = "nixpkgs";
       hyprlock.url = "github:hyprwm/Hyprlock";
+      hypridle.url = "github:hyprwm/hypridle";
       # add ags
-    ags.url = "github:Aylur/ags";
+      ags.url = "github:Aylur/ags";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprlock, catppuccin, nixpkgs-stable, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, hyprlock, hypridle, catppuccin, nixpkgs-stable, ... }@inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     hostname = "nixos";
@@ -71,6 +72,8 @@
               ./home
               catppuccin.homeManagerModules.catppuccin
               hyprlock.homeManagerModules.hyprlock
+              hypridle.homeManagerModules.hypridle
+
             ];
             # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
             # 取消注释下面这一行，就可以在 home 中使用 flake 的所有 inputs 参数了
