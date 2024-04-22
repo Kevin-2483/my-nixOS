@@ -65,7 +65,10 @@
 	qt6.qtwayland
 	libsForQt5.qt5.qtwayland
 	nodejs_21
-  hyprlock
+  libsForQt5.qt5.qtgraphicaleffects
+  libsForQt5.qt5.qtsvg
+  libsForQt5.qt5.qtquickcontrols2
+  inputs.sddm-catppuccin.packages.${pkgs.hostPlatform.system}.sddm-catppuccin
   # xdg-desktop-portal-gnome
   # xdg-desktop-portal
   ];

@@ -18,6 +18,7 @@
   services = {
         xserver = {
           enable = true;
+          libinput.enable = true;
           excludePackages = [ pkgs.xterm ];
         };
         printing.enable = true;
@@ -26,7 +27,9 @@
 
   # Enable the GNOME Desktop Environment.
   # 23.11
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "catppuccin";
   services.xserver.desktopManager.gnome.enable = true;
   # the option has out use below
   # services.displayManager.gdm.enable = true;

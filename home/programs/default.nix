@@ -22,6 +22,7 @@
 	./nushell
   ./rio
   ./cava
+  ./hyprlock
     ];
 
 }

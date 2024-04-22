@@ -20,9 +20,9 @@ let
     package = nerdfonts;
   };
   cursorTheme = {
-    name = "Qogir";
+    name = "Catppuccin-Mocha-Pink-Cursors";
     size = 24;
-    package = pkgs.qogir-icon-theme;
+    package = pkgs.catppuccin-cursors.mochaPink;
   };
   iconTheme = {
     name = "MoreWaita";
@@ -84,6 +84,6 @@ in
   catppuccin.flavour = "mocha";
   qt = {
     enable = true;
-    platformTheme = "kde";
+    platformTheme.name = "kde";
   };
 }

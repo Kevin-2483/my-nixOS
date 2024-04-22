@@ -134,8 +134,7 @@
     rustup
     firefox
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
-    
-  ];
+    ];
 
   nixpkgs = {
         overlays = [

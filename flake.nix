@@ -25,11 +25,14 @@
       astal.url = "github:Aylur/astal";
       firefox.url = "github:nix-community/flake-firefox-nightly";
       catppuccin.url = "github:catppuccin/nix";
-    # add ags
+      sddm-catppuccin.url = "github:Kevin-2483/catppuccin-sddm-corners-custom";
+      sddm-catppuccin.inputs.nixpkgs.follows = "nixpkgs";
+      hyprlock.url = "github:hyprwm/Hyprlock";
+      # add ags
     ags.url = "github:Aylur/ags";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, nixpkgs-stable, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, hyprlock, catppuccin, nixpkgs-stable, ... }@inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     hostname = "nixos";
@@ -67,6 +70,7 @@
             home-manager.users.${username}.imports = [
               ./home
               catppuccin.homeManagerModules.catppuccin
+              hyprlock.homeManagerModules.hyprlock
             ];
             # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
             # 取消注释下面这一行，就可以在 home 中使用 flake 的所有 inputs 参数了
