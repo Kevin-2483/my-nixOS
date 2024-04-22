@@ -61,8 +61,9 @@ in
       exec-once = [
         "ags -b hypr"
         # "swww kill; swww init"
-        "tmux new -s default"
-        "hyprctl setcursor Qogir 24"
+        "tmux new-session -d -s default"
+        "hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24"
+        "./home/kevin/.config/runcat/runcat"
         #"transmission-gtk"
         #"clash-verge"
         "fcitx5"
