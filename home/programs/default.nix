@@ -23,7 +23,6 @@
   ./rio
   ./cava
   ./hyprlock
-  ./hypridle
     ];
 
 }

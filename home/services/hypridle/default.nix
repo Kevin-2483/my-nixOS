@@ -1,19 +1,31 @@
 {
-  programs.hypridle = {
+  services.hypridle = {
     enable = true;
-    extraConfig = ''
-      general {
-        lock_cmd = pidof hyprlock || hyprlock       # avoid starting multiple hyprlock instances.
-        before_sleep_cmd = loginctl lock-session    # lock before suspend.
-        after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
-      }
-
-      listener {
-          timeout = 150                                # 2.5min.
-          on-timeout = pidof hyprlock || hyprlock         # set monitor backlight to minimum, avoid 0 on OLED monitor.
-       }
-
-
+    listeners = [
+        {
+          timeout = 150;
+          onTimeout = "pidof hyprlock || hyprlock";
+          # onResume = "str";
+        }
+    ];
+    lockCmd = "pidof hyprlock || hyprlock";
+    # unlockCmd = "str";
+    afterSleepCmd = "hyprctl dispatch dpms on";
+    beforeSleepCmd = "loginctl lock-session";
+    ignoreDbusInhibit = false;
+    #
+    #   general {
+    #     lock_cmd = pidof hyprlock || hyprlock       # avoid starting multiple hyprlock instances.
+    #     before_sleep_cmd = loginctl lock-session    # lock before suspend.
+    #     after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
+    #   }
+    #
+    #   listener {
+    #       timeout = 150                                # 2.5min.
+    #       on-timeout = pidof hyprlock || hyprlock         # set monitor backlight to minimum, avoid 0 on OLED monitor.
+    #    }
+    #
+    #
     #   listener {
     #       timeout = 150                                # 2.5min.
     #       on-timeout = brightnessctl -s -d intel_backlight set 10         # set monitor backlight to minimum, avoid 0 on OLED monitor.
@@ -31,7 +43,7 @@
     #       timeout = 300                                 # 5min
     #       on-timeout = loginctl lock-session            # lock screen when timeout has passed
     #     }
-    # 
+    #
     #   listener {
     #       timeout = 33n
     #       # 5.5min
@@ -43,6 +55,6 @@
     #       timeout = 1200                                # 30min
     #       on-timeout = systemctl suspend                # suspend pc
     #   }
-    '';
+    # 
   };
 }
