@@ -63,7 +63,7 @@ in
         # "swww kill; swww init"
         "tmux new-session -d -s default"
         "hyprctl setcursor Catppuccin-Mocha-Pink-Cursors 24"
-        "./home/kevin/.config/runcat/runcat"
+        "/home/kevin/.config/runcat/runcat &"
         #"transmission-gtk"
         #"clash-verge"
         "fcitx5"
