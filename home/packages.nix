@@ -135,6 +135,8 @@
     firefox
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     hyprlang
+    dwarf-fortress
+    spicetify-cli
     ];
 
   nixpkgs = {

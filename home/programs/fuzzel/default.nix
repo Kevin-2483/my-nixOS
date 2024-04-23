@@ -11,13 +11,13 @@
   				layer = "overlay";
   			};
   			colors = {
-  				background = "111012ee";
-  				text = "e7e0e5ff";
-  				selection = "4b454dff";
-  				selection-text="E5B0E7ff";
-  				border = "E5B0E7ff";
-  				match = "e4b5ffff";
-  				selection-match = "e4b5ffff";
+  				background = "1e1e2edd";
+  				text = "cdd6f4ff";
+  				selection = "585b70ff";
+  				selection-text="cdd6f4ff";
+  				border = "b4befeff";
+  				match = "f38ba8ff";
+  				selection-match = "f38ba8ff";
   				
   			};
   			border = {

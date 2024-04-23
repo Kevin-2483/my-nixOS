@@ -108,6 +108,7 @@ export default {
         logout: "system-log-out-symbolic",
         shutdown: "system-shutdown-symbolic",
         lock: "system-lock-screen-symbolic",
+        hibernate: "preferences-system-time-symbolic",
     },
     recorder: {
         recording: "media-record-symbolic",
