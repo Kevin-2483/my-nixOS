@@ -95,10 +95,10 @@ in {
         ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
       '';
       boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
-      boot.initrd.kernelModules = lib.mkForce [ ];
-      boot.extraModulePackages = lib.mkForce [
-        	config.boot.kernelPackages.lenovo-legion-module
-        	];
+      # boot.initrd.kernelModules = lib.mkForce [ ];
+      # boot.extraModulePackages = lib.mkForce [
+      #   	config.boot.kernelPackages.lenovo-legion-module
+      #   	];
 	  environment.variables = rec {
  	 	WLR_DRM_DEVICES = lib.mkForce ../home/programs/hyprland/icard;
   		};

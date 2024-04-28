@@ -16,9 +16,9 @@
   # Enable the X11 windowing system.
   # Enable CUPS to print documents.
   services = {
+        libinput.enable = true;
         xserver = {
           enable = true;
-          libinput.enable = true;
           excludePackages = [ pkgs.xterm ];
         };
         printing.enable = true;
@@ -101,9 +101,13 @@
     systemd.tmpfiles.rules = [
         "d '/var/cache/greeter' - greeter greeter - -"
       ];
-
+    
       systemd = {
-        	      user.services.polkit-gnome-authentication-agent-1 = {
+        	      user = {
+                  extraConfig = ''
+                    DefaultEnvironment="PATH=/run/current-system/sw/bin"
+                    '';
+                  services.polkit-gnome-authentication-agent-1 = {
         	        description = "polkit-gnome-authentication-agent-1";
         	        wantedBy = [ "graphical-session.target" ];
         	        wants = [ "graphical-session.target" ];
@@ -116,6 +120,7 @@
         	          TimeoutStopSec = 10;
         	        };
         	      };
+                };
         	    };
 
       # system.activationScripts.wallpaper = ''

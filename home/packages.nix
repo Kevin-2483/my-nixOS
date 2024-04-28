@@ -132,11 +132,17 @@
     dotnet-sdk_8
     lenovo-legion
     rustup
+    nodejs
     firefox
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     hyprlang
     dwarf-fortress
     spicetify-cli
+    (texlive.combine { inherit (texlive) scheme-medium ctex xecjk; })
+    imagemagick
+    (gimp-with-plugins.override { plugins = with gimpPlugins; [ gap gmic ];})
+    freecad
+    librecad
     ];
 
   nixpkgs = {

@@ -10,14 +10,6 @@
 
     extraConfig = ''
     $font = SpaceMono Nerd Font
-    # BACKGROUND
-    background {
-        monitor =
-        path = ~/.config/background
-        blur_passes = 1
-        color = $base
-    }
-
     # TIME
     label {
         monitor =
@@ -55,6 +47,13 @@
         valign = center
     }
     '';
+    # BACKGROUND
+    background = {
+        path = ~/.config/background;
+        blur_passes = 1;
+        color = "$base";
+    };
+
 
     input-fields = [
       {

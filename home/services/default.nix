@@ -3,5 +3,6 @@
 		./cliphist
 		./kdeconnect
     ./hypridle
+    # ./flameshot
 	];
 }

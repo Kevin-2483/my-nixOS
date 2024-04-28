@@ -64,7 +64,7 @@
 	  glfw-wayland-minecraft
 	  qt6.qtwayland
 	  libsForQt5.qt5.qtwayland
-	  nodejs_21
+	  # nodejs_21
     libsForQt5.qt5.qtgraphicaleffects #for sddm
     libsForQt5.qt5.qtsvg # for sddm
     libsForQt5.qt5.qtquickcontrols2 # for sddm
