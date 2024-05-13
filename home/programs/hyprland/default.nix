@@ -142,9 +142,9 @@ in
         (f "org.gnome.Settings")
         (s "org.gnome.Settings")
         (c "org.gnome.Settings")        
-        (f "footclient")
-        (s "footclient")
-        (c "footclient")
+        (f "foot")
+        (s "foot")
+        (c "foot")
         (f "org.kde.kdeconnect-indicator")
 		    (s "org.kde.kdeconnect-indicator")
         (c "org.kde.kdeconnect-indicator")
@@ -157,6 +157,7 @@ in
         (o "firefox")
         (o "obsidian")
         (o "foot")
+        (o "kitty")
         # "float, size 50% 50%, center, title:btop++"
         # "size 50% 50%, title:btop++"
         # "center, title:btop++"
@@ -173,7 +174,7 @@ in
         e = "exec, ags -b hypr";
         arr = [1 2 3 4 5 6 7 8 9];
       in [
-        "CTRL SHIFT, A,   ${e} quit; ags -b hypr"
+        "CTRL SHIFT SUPER, A,   ${e} quit; ags -b hypr"
         "SUPER, R,        ${e} -t launcher"
         "SUPER, Tab,      ${e} -t overview"
         ",XF86PowerOff,   ${e} -r 'powermenu.shutdown()'"
@@ -183,9 +184,9 @@ in
         "SHIFT,Print,     ${e} -r 'recorder.screenshot(true)'"
         "SUPER, Return, exec, foot" # xterm is a symlink, not actually xterm
         "SUPER, W, exec, firefox"
-        "CTRL SHIFT, S, exec, swww kill; swww init"
-        "SUPER, T, exec, tmux new-session -d -s default; foot tmux attach -t default"
-        "SUPER, X, exec, foot -H nu -e yy"
+        "CTRL SHIFT SUPER, S, exec, swww kill; swww init"
+        "SUPER, T, exec, tmux new-session -d -s default; kitty tmux attach -t default"
+        "SUPER, X, exec, kitty --hold nu -e yy"
         "CTRL SHIFT, Escape, exec, foot -T btop++ btop"
         
 

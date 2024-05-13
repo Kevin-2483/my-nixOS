@@ -1,8 +1,10 @@
+// @ts-ignore
+import wallpaper from "service/wallpaper"
 import options from "options"
 import { sh, dependencies } from "./utils"
 
 export default function init() {
-    options.wallpaper.connect("changed", () => matugen())
+    wallpaper.connect("changed", () => matugen())
     options.autotheme.connect("changed", () => matugen())
 }
 
@@ -13,7 +15,7 @@ function animate(...setters: Array<() => void>) {
 
 export async function matugen(
     type: "image" | "color" = "image",
-    arg = options.wallpaper.value,
+    arg = wallpaper.wallpaper,
 ) {
     if (!options.autotheme.value || !dependencies("matugen"))
         return

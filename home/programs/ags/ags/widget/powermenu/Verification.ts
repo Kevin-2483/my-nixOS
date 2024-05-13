@@ -38,12 +38,7 @@ export default () => PopupWindow({
                     }),
                     Widget.Button({
                         child: Widget.Label("Yes"),
-                        on_clicked: () => {
-                          App.toggleWindow("verification");
-                          setTimeout(() => {
-                            Utils.exec(powermenu.cmd);
-                          }, 300);
-                        },
+                        on_clicked: () => Utils.exec(powermenu.cmd),
                     }),
                 ],
             }),

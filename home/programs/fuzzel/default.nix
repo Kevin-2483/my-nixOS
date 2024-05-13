@@ -5,7 +5,7 @@
   		enable = true;
   		settings = {
   			main = {
-  				font = "Fantasque Sans Mono";
+  				font = "UbuntuMono Nerd Font Regular";
   				terminal = "foot";
   				prompt = ">> ";
   				layer = "overlay";

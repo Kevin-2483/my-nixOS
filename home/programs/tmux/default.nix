@@ -128,6 +128,9 @@ in
       set-option -g default-terminal 'tmux-256color'
       set-option -g renumber-windows on
       set-option -g status-position top      
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
       '';
   };
 }

@@ -20,7 +20,7 @@
 	./btop
 	./neovim
 	./nushell
-  ./rio
+  ./kitty
   ./cava
   ./hyprlock
     ];

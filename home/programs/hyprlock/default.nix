@@ -38,7 +38,7 @@
 
     image {
         monitor = 
-        path = ~/.face
+        path = ~/.face.png
         size = 400
         border_color = $mauve
 
@@ -48,11 +48,14 @@
     }
     '';
     # BACKGROUND
-    background = {
-        path = ~/.config/background;
+    backgrounds = [
+      {
+        path = "~/.config/background.png";
         blur_passes = 1;
         color = "$base";
-    };
+      }
+    ]; 
+   
 
 
     input-fields = [

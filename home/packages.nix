@@ -138,7 +138,7 @@
     hyprlang
     dwarf-fortress
     spicetify-cli
-    (texlive.combine { inherit (texlive) scheme-medium ctex xecjk; })
+    (texlive.combine { inherit (texlive) scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol; })
     imagemagick
     (gimp-with-plugins.override { plugins = with gimpPlugins; [ gap gmic ];})
     freecad

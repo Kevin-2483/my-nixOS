@@ -53,7 +53,7 @@ nsxiv = [
 ]
 
 mpv = [
-{ run = 'foot mpv "$@" &', desc = "mpv", for = "linux" },
+{ run = 'kitty mpv "$@" &', desc = "mpv", for = "linux" },
 
 ]
 
@@ -63,7 +63,7 @@ openincode = [
 ]
 
 openinnvim = [
-{ run = 'foot nvim "$@" &', desc = "NeoVim", for = "linux" },
+{ run = 'kitty nvim "$@"', desc = "NeoVim", for = "linux" },
 
 ]
 
@@ -83,8 +83,8 @@ play = [
 ]
 
 nushell = [
-{ run = 'foot -H nu -e open "$@" &', desc = "Open with nu", block = true, for = "unix" },
-{ run = 'foot -H nu -e open "$@"', orphan = true, for = "windows" },
+{ run = 'kitty --hold nu -e open "$@" &', desc = "Open with nu", block = true, for = "unix" },
+{ run = 'kitty --hold nu -e open "$@"', orphan = true, for = "windows" },
 ]
 
 
