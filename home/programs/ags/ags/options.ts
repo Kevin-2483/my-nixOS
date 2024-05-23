@@ -1,4 +1,3 @@
-import { type BarWidget } from "widget/bar/Bar"
 import { opt, mkOptions } from "lib/option"
 import { distro } from "lib/variables"
 import { icon } from "lib/utils"
@@ -7,7 +6,11 @@ import icons from "lib/icons"
 const options = mkOptions(OPTIONS, {
     autotheme: opt(false),
 
-    wallpaper: opt(`/home/${USER}/.config/background`, { persistent: true }),
+    wallpaper: {
+        resolution: opt<import("service/wallpaper").Resolution>(1920),
+        market: opt<import("service/wallpaper").Market>("random"),
+    },
+
 
     theme: {
         dark: {
@@ -64,18 +67,19 @@ const options = mkOptions(OPTIONS, {
         flatButtons: opt(true),
         position: opt<"top" | "bottom">("top"),
         corners: opt(true),
+        transparent: opt(false),
         layout: {
-            start: opt<BarWidget[]>([
+            start: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "launcher",
                 "workspaces",
                 "taskbar",
                 "expander",
                 "messages",
             ]),
-            center: opt<BarWidget[]>([
+            center: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "date",
             ]),
-            end: opt<BarWidget[]>([
+            end: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "media",
                 "expander",
                 "systray",
@@ -89,7 +93,7 @@ const options = mkOptions(OPTIONS, {
         launcher: {
             icon: {
                 colored: opt(true),
-                icon: opt(icon(distro, icons.ui.search)),
+                icon: opt(icon(distro.logo, icons.ui.search)),
             },
             label: {
                 colored: opt(false),
@@ -154,11 +158,10 @@ const options = mkOptions(OPTIONS, {
             max: opt(6),
             favorites: opt([
                 [
-                	"firefox",
-                    "microsoft-edge",
+                    "firefox",
+                    "obsidian",
                     "org.gnome.Nautilus",
                     "org.gnome.Calendar",
-                    "obsidian",
                     "spotify",
                     "localsend"
                 ],
@@ -190,7 +193,7 @@ const options = mkOptions(OPTIONS, {
         },
         width: opt(380),
         position: opt<"left" | "center" | "right">("right"),
-        networkSettings: opt("env XDG_CURRENT_DESKTOP=gnome gnome-control-center"),
+        networkSettings: opt("gtk-launch gnome-control-center"),
         media: {
             monochromeIcon: opt(true),
             coverSize: opt(100),
@@ -199,6 +202,16 @@ const options = mkOptions(OPTIONS, {
 
     datemenu: {
         position: opt<"left" | "center" | "right">("center"),
+        weather: {
+            interval: opt(60_000),
+            unit: opt<"metric" | "imperial" | "standard">("metric"),
+            key: opt<string>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key || "",
+            ),
+            cities: opt<Array<number>>(
+                JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.cities || [],
+            ),
+        },
     },
 
     osd: {
@@ -225,7 +238,7 @@ const options = mkOptions(OPTIONS, {
 
     hyprland: {
         gaps: opt(2.4),
-        inactiveBorder: opt("333333ff"),
+        inactiveBorder: opt("#282828"),
         gapsWhenOnly: opt(false),
     },
 })

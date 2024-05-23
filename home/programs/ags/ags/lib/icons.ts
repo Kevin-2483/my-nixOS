@@ -11,20 +11,18 @@ export const substitutes = {
     "com.github.Aylur.ags-symbolic": "controls-symbolic",
     "com.github.Aylur.ags": "controls-symbolic",
     "foot-symbolic": "terminal-symbolic",
-    "msedge-igjlkppeiblpajggoemlefobffhaimnm-Default-symbolic": "com.microsoft.Edge-symbolic",
-    
 }
 
 export default {
     missing: "image-missing-symbolic",
     nix: {
-        nix: "nixos-symbolic",
+        nix: "nix-snowflake-symbolic",
     },
     app: {
         terminal: "terminal-symbolic",
     },
     fallback: {
-        executable: "application-x-executable-symbolic",
+        executable: "application-x-executable",
         notification: "dialog-information-symbolic",
         video: "video-x-generic-symbolic",
         audio: "audio-x-generic-symbolic",
@@ -79,10 +77,21 @@ export default {
         performance: "power-profile-performance-symbolic",
     },
     ppctl: {
+      profile: {
+        balanced: "power-profile-balanced-symbolic",
+        "power-saver": "power-profile-power-saver-symbolic",
+        performance: "power-profile-performance-symbolic",
+      },
+      mode: {
+            Integrated: "processor-symbolic",
+            Hybrid: "controller-symbolic",
+        },
+    },
+    asusctl: {
         profile: {
-            balanced: "power-profile-balanced-symbolic",
-            "power-saver": "power-profile-power-saver-symbolic",
-            performance: "power-profile-performance-symbolic",
+            Balanced: "power-profile-balanced-symbolic",
+            Quiet: "power-profile-power-saver-symbolic",
+            Performance: "power-profile-performance-symbolic",
         },
         mode: {
             Integrated: "processor-symbolic",

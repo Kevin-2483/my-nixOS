@@ -14,7 +14,6 @@ export const NetworkToggle = () => ArrowToggleButton({
         wifi.enabled = true
         wifi.scan()
     },
-    onRightClick: () => sh(options.quicksettings.networkSettings.value),
 })
 
 export const WifiSelection = () => Menu({
@@ -22,40 +21,34 @@ export const WifiSelection = () => Menu({
     icon: wifi.bind("icon_name"),
     title: "Wifi Selection",
     content: [
-    Widget.Scrollable({
-            hscroll: 'never',
-            vscroll: 'automatic',
-            css: `
-                        min-height: 300px;
-                    `,
-            child: 
         Widget.Box({
             vertical: true,
             setup: self => self.hook(wifi, () => self.children =
-                wifi.access_points.map(ap => Widget.Button({
-                    on_clicked: () => {
-                        if (dependencies("nmcli"))
-                            Utils.execAsync(`nmcli device wifi connect ${ap.bssid}`)
-                    },
-                    on_secondary_click: () => sh(options.quicksettings.networkSettings.value),
-                    child: Widget.Box({
-                        children: [
-                            Widget.Icon(ap.iconName),
-                            Widget.Label(ap.ssid || ""),
-                            Widget.Icon({
-                                icon: icons.ui.tick,
-                                hexpand: true,
-                                hpack: "end",
-                                setup: self => Utils.idle(() => {
-                                    if (!self.is_destroyed)
-                                        self.visible = ap.active
+                wifi.access_points
+                    .sort((a, b) => b.strength - a.strength)
+                    .slice(0, 10)
+                    .map(ap => Widget.Button({
+                        on_clicked: () => {
+                            if (dependencies("nmcli"))
+                                Utils.execAsync(`nmcli device wifi connect ${ap.bssid}`)
+                        },
+                        child: Widget.Box({
+                            children: [
+                                Widget.Icon(ap.iconName),
+                                Widget.Label(ap.ssid || ""),
+                                Widget.Icon({
+                                    icon: icons.ui.tick,
+                                    hexpand: true,
+                                    hpack: "end",
+                                    setup: self => Utils.idle(() => {
+                                        if (!self.is_destroyed)
+                                            self.visible = ap.active
+                                    }),
                                 }),
-                            }),
-                        ],
-                    }),
-                })),
+                            ],
+                        }),
+                    })),
             ),
-        }),
         }),
         Widget.Separator(),
         Widget.Button({

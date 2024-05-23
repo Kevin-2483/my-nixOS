@@ -1,7 +1,6 @@
 import { type BluetoothDevice } from "types/service/bluetooth"
 import { Menu, ArrowToggleButton } from "../ToggleButton"
 import icons from "lib/icons"
-import { sh } from "lib/utils"
 
 const bluetooth = await Service.import("bluetooth")
 
@@ -20,7 +19,6 @@ export const BluetoothToggle = () => ArrowToggleButton({
     connection: [bluetooth, () => bluetooth.enabled],
     deactivate: () => bluetooth.enabled = false,
     activate: () => bluetooth.enabled = true,
-    onRightClick: () => sh("blueberry"),
 })
 
 const DeviceItem = (device: BluetoothDevice) => Widget.Box({

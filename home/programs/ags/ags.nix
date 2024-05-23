@@ -1,11 +1,13 @@
-{ inputs, pkgs, asztal, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.ags.homeManagerModules.default
-    inputs.astal.homeManagerModules.default
   ];
 
   home.packages = with pkgs; [
-    asztal
     bun
     dart-sass
     fd
@@ -21,15 +23,7 @@
     pavucontrol
     networkmanager
     gtk3
-    adw-gtk3
   ];
-
-  programs.astal = {
-    enable = true;
-    extraPackages = with pkgs; [
-      libadwaita
-    ];
-  };
 
   programs.ags = {
     enable = true;

@@ -1,4 +1,3 @@
-// @ts-ignore
 import wallpaper from "service/wallpaper"
 import options from "options"
 import { sh, dependencies } from "./utils"
