@@ -3,7 +3,7 @@
 
 {
 
-  environment.shells = with pkgs; [ nushell ];
+  environment.shells = with pkgs; [ nushell bash zsh ];
   environment.variables = rec {
   	EDITOR = "micro";
   	# JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk17.0.10-linux_x64";
