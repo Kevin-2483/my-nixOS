@@ -9,6 +9,8 @@
       ./security.nix   
       ./user.nix
       ./setting.nix
+      ./programs
+      ./services
     ];
 
     nixpkgs = {
@@ -23,6 +25,5 @@
     	};
     };
     nixpkgs.config.allowBroken = true;
-    system.stateVersion = 4;
 
 }

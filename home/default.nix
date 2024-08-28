@@ -45,11 +45,11 @@
 
   };
 
-  home.file.".config/yabai" = {
-  	source = ./dotfile/yabai;
-  	recursive = true;
-  	executable = true;
-  };
+  # home.file.".config/yabai" = {
+  # 	source = ./dotfile/yabai;
+  # 	recursive = true;
+  # 	executable = true;
+  # };
   # 直接以 text 的方式，在 nix 配置文件中硬编码文件内容
   # home.file.".xxx".text = ''
   #     xxx
