@@ -7,7 +7,7 @@
   ./gitui
   ./bat
 	./yazi
-	# ./zsh
+	./zsh
 	#./pywal
 	./neofetch
 	./helix

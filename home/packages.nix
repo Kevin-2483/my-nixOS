@@ -53,6 +53,7 @@
     imagemagick
 
     jankyborders
+    
     ];
 
   nixpkgs = {

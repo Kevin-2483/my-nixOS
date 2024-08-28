@@ -12,9 +12,10 @@
       bold_italic_font = "auto";
       font_size = "14";
       disable_ligatures = "cursor";
-      shell = ''
-      /run/current-system/sw/bin/bash -c "source /etc/static/bashrc; nu -e neofetch"
-      '';
+      shell = "${pkgs.nushell}/bin/nu -e neofetch";
+      # shell = ''
+      # /run/current-system/sw/bin/bash -c "source /etc/static/bashrc; nu -e neofetch"
+      # '';
 
     };
     keybindings = {
@@ -30,6 +31,7 @@
       bold_font        auto
       italic_font      auto
       bold_italic_font auto
+      macos_option_as_alt yes
     '';
   };
 }

@@ -33,14 +33,14 @@
       appswitcher-all-displays = false;
       # 是在所有顯示器上還是僅在主顯示器上顯示應用程式切換器。預設為 false。
       orientation = "right"; #Dock 的位置。預設為 bottom。null or one of "left", "bottom", "right"
-      autoHide = true;
+      autohide = true;
       autohide-delay = 0.24; #設定自動隱藏延遲的速度。預設值0.24。
-      autohide-time-modifier = 1; #設定自動隱藏的速度。預設值1。
+      autohide-time-modifier = 1.0; #設定自動隱藏的速度。預設值1。
       dashboard-in-overlay = false; #是否將 Dashboard 顯示為覆蓋層。預設為 false。
       enable-spring-load-actions-on-all-items = true; #啟用所有項目上的彈簧加載操作。預設為 false。
       expose-animation-duration = 1.0; #設定任務控制動畫的速度。預設值1.0。
       expose-group-by-app = true; #是否按應用程式分組 Exposé。預設為 true。
-      largesize = 16; #懸停時放大的圖示大小。預設值為 16。
+      largesize = 64; #懸停時放大的圖示大小。預設值為 16。
       launchanim = true; #是否在啟動應用程式時顯示動畫。預設為 true。
       magnification = true; #是否啟用 Dock 放大鏡。預設為 true。
       mineffect = "scale"; #Dock 的最小化效果。預設為 genie。null or one of "genie", "suck", "scale"
@@ -58,7 +58,7 @@
         "/Users/kevin/Applications/Home Manager Apps/WezTerm.app"
       ]; #Dock 中的應用程式圖標。預設為空。
       persistent-others = [
-        "~/Downloads"
+        "/Users/kevin/Downloads"
       ];#Dock 中的持久資料夾。
       show-process-indicators = true; #是否在 Dock 中顯示應用程式的運行狀態。預設為 true。
       show-recents = false; #是否在 Dock 中顯示最近使用的應用程式。預設為 true。
@@ -102,14 +102,20 @@
   nix = {
     gc = {
       automatic = true; #是否自動執行垃圾回收。預設為 true。
-      interval = { Hour = 72; Minute = 0 ; }; #垃圾回收的頻率。
+      interval = { 
+        Day = 3; 
+        # Hour = 0; Minute = 0; 
+      }; #垃圾回收的頻率。
       options = "-d"; #垃圾回收的選項。
       user = "kevin"; #垃圾回收的用戶。
     };
     optimise = { 
       automatic = true; #是否自動優化 Nix 存儲庫。預設為 false
       user = "kevin"; #優化 Nix 存儲庫的用戶。
-      interval = { Hour = 72; Minute = 0 ; }; #優化 Nix 存儲庫的頻率。
+      interval = { 
+        Day = 3; 
+        # Hour = 0; Minute = 0 ; 
+      }; #優化 Nix 存儲庫的頻率。
     };
     settings={ 
       auto-optimise-store = true; #是否自動優化 Nix 存儲庫。預設為 false。

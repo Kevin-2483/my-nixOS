@@ -97,7 +97,7 @@ in
       vim-tmux-navigator
       yank
     ];
-    # prefix = "M-c";
+    prefix = "C-b";
     baseIndex = 1;
     escapeTime = 0;
     keyMode = "vi";

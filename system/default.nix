@@ -11,6 +11,7 @@
       ./setting.nix
       ./programs
       ./services
+      ./homebrew
     ];
 
     nixpkgs = {

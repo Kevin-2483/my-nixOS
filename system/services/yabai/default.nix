@@ -70,8 +70,8 @@
       yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機)$" manage=off
       yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off
 
-      #jankborders
-      borders active_color=0xffF8BBD0 inactive_color=0xff90CAF9 width=15.0 ax_focus=true hidpi=true &
+      
+      
     '';
   };
 }
