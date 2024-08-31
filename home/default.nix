@@ -51,6 +51,13 @@
     executable = true;  # 将其中所有文件添加「执行」权限
 
   };
+  home.file.".config/skhd" = {
+    # source = ~/.config/nix-darwin/home/dotfile/yazi;
+    source = ./dotfile/skhd;
+    recursive = true;   # 递归整个文件夹
+    executable = true;  # 将其中所有文件添加「执行」权限
+
+  };
 
   # home.file.".config/yabai" = {
   # 	source = ./dotfile/yabai;
@@ -70,5 +77,7 @@
   # 通过 home.packages 安装一些常用的软件
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
   # 建议将所有 GUI 软件，以及与 OS 关系不大的 CLI 软件，都通过 home.packages 安装
+
+
 
 }
