@@ -81,6 +81,19 @@
 			}
 			def nupen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
 			alias open = ^open
+
+			def "cargo search" [ query: string, --limit=10] { 
+					^cargo search $query --limit $limit
+					| lines 
+					| each { 
+							|line| if ($line | str contains "#") { 
+									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)" +# (?P<description>.+)' 
+							} else { 
+									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)"' 
+							} 
+					} 
+					| flatten
+			}
 			'';
 			};
 			shellAliases = {

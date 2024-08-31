@@ -1,1 +1,0 @@
-yabai -m window --focus west
