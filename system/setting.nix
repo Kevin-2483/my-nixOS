@@ -19,8 +19,8 @@
       Show24Hour = true; #是否顯示 24 小時時鐘。預設為 false。
       ShowAMPM = false; #是否顯示 AM/PM。預設為 false。
       ShowDate = 0; #是否顯示日期。0 = 當空間允許時 1 = 始終 2 = 從不。
-      ShowDayOfMonth = false; #是否顯示月份的日期。預設為 false。
-      ShowDayOfWeek = false; #是否顯示星期幾。預設為 false。
+      ShowDayOfMonth = true; #是否顯示月份的日期。預設為 false。
+      ShowDayOfWeek = true; #是否顯示星期幾。預設為 false。
       ShowSeconds = true; #是否顯示秒數。預設為 false。
     };
     screencapture={
@@ -52,7 +52,7 @@
         "/Applications/WeChat.app"
         "/Applications/Obsidian.app"
         "/Applications/ChatGPT.app"
-        "/Users/kevin/Applications/Home Manager Apps/Arc.app"
+        "/Applications/Arc.app"
         "/Users/kevin/Applications/Home Manager Apps/kitty.app"
         "/Users/kevin/Applications/Home Manager Apps/Spotify.app"
         "/Users/kevin/Applications/Home Manager Apps/WezTerm.app"
@@ -96,6 +96,20 @@
           # 14: Quick Note.
           # 14 ：快速說明。
     };
+    # CustomSystemPreferences = 
+    # {
+    #   globalDomain = {
+    #     NSStatusItemSpacing = 4; #設定菜單欄項目之間的間距。
+    #     NSStatusItemSelectionPadding = 2; #内边距
+    #   };
+    # };
+    # CustomUserPreferences = 
+    # {
+    #   globalDomain = {
+    #     NSStatusItemSpacing = 4; #設定菜單欄項目之間的間距。
+    #     NSStatusItemSelectionPadding = 2; #内边距
+    #   };
+    # };
   };
   system.startup.chime = false; #是否在啟動時播放開機音效。預設為 true。
   system.stateVersion = 4; #系統狀態版本。

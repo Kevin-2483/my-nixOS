@@ -46,7 +46,6 @@
 
     rustup
     nodejs
-    arc-browser
 
     spicetify-cli
     (texlive.combine { inherit (texlive) scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol; })

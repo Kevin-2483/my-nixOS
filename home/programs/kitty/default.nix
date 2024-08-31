@@ -19,14 +19,14 @@
 
     };
     keybindings = {
-      "ctrl+c" = "copy_to_clipboard";
-      "ctrl+v" = "paste_from_clipboard";
+      # "ctrl+c" = "copy_to_clipboard";
+      # "ctrl+v" = "paste_from_clipboard";
       # "right" = "paste_from_clipboard";
       "kitty_mod" = "ctrl+shift";
       "kitty_mod+s" = "pass_selection_to_program firefox";
     };
+    # map ctrl+shift+c send_text all \x03
     extraConfig = ''
-      map ctrl+shift+c send_text all \x03
       font_family      SpaceMono Nerd Font
       bold_font        auto
       italic_font      auto

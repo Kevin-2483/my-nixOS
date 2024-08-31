@@ -15,36 +15,29 @@
       yabai -m config    window_opacity               on             #窗口透明度开关
       yabai -m config    window_opacity_duration      0.2            #窗口透明度变化时间
       yabai -m config    active_window_opacity        1.0            #活动窗口透明度
-      yabai -m config    normal_window_opacity        0.80           #非活动窗口透明度
+      yabai -m config    normal_window_opacity        0.90           #非活动窗口透明度
       yabai -m config    insert_feedback_color        0xffd75f5f     #
       yabai -m config    split_ratio                  0.50           #分流比
       yabai -m config    split_type                   auto           #auto 为自动分割，vertical 为垂直分割，horizontal 为水平分割
       yabai -m config    auto_balance                 off            #自動平衡使得所有視窗始終佔據相同的空間，無論它們在視窗樹中嵌套的深度如何。當插入新視窗或刪除視窗時，分割比例將自動調整。
-
-      yabai -m config window_topmost               on                # 浮动窗口是否置顶
-
-      # ------------------------------------------------------------------------------------- #
-      # ---------------------------general space settings------------------------------------ #
-      # ------------------------------------------------------------------------------------- #
-
-
+      yabai -m config    window_topmost               on                # 浮动窗口是否置顶
       yabai -m config    top_padding                  20             # 窗口和屏幕边缘的距离（优先级低于 gap）
       yabai -m config    bottom_padding               20             
       yabai -m config    left_padding                 20             
       yabai -m config    right_padding                20             
       yabai -m config    window_gap                   20             # 窗口与窗口之间的间距（优先级高于 padding
       yabai -m config    layout                       bsp            #bsp 为二叉分割布局 float 为浮动布局 stack: 堆叠
-
-      # ==================================================== #
-      # ====================鼠标相关======================== #
-      # ==================================================== #
-
       yabai -m config    mouse_follows_focus          on             #on 为鼠标跟随焦点 off 为鼠标不跟随焦点
       yabai -m config    focus_follows_mouse          autofocus      #autofocus 为焦点跟随鼠标 autoraise 为焦点跟随鼠标并且自动提升窗口
       yabai -m config    mouse_modifier                alt            #鼠标操作的修饰键
       yabai -m config    mouse_action1                move           #左键拖动窗口
       yabai -m config    mouse_action2                resize         #右键调整大小
       yabai -m config    mouse_drop_action            swap           ## 在平铺管理情况下，拖动一个窗口到另一窗口位置时的操作
+      
+
+      yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機)$" manage=off
+      yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off 
+    '';
       # - swap: 交换窗口位置
       # - stack: 堆叠在旧窗口上
 
@@ -66,12 +59,5 @@
       # - below
       # - normal
       # - above
-
-      yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機)$" manage=off
-      yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off
-
-      
-      
-    '';
   };
 }

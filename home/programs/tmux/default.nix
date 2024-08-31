@@ -102,7 +102,8 @@ in
     escapeTime = 0;
     keyMode = "vi";
     mouse = true;
-    shell = "/etc/profiles/per-user/kevin/bin/nu";
+    shell = "${pkgs.nushell}/bin/nu";
+    # defaultCommand = "neofetch";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
       bind v copy-mode
@@ -110,8 +111,13 @@ in
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
       bind-key b set-option status
-      bind '"' split-window -v -c "#{pane_current_path}"
-      bind % split-window -h -c "#{pane_current_path}"
+      bind t split-window -v -c "#{pane_current_path}"
+      bind f split-window -h -c "#{pane_current_path}"
+
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
 
       set-option -g @indicator_color "yellow"
       set-option -g @window_color "magenta"
