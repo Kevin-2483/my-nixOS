@@ -6,18 +6,10 @@
       # force_auto_update = true;
       # clone_target
     }
-    {
-      name = "koekeishiya/formulae";
-    }
   ];
   homebrew.brews = [
     {
       name = "borders";
-      start_service = true;
-      restart_service = "changed";
-    }
-    {
-      name = "skhd";
       start_service = true;
       restart_service = "changed";
     }

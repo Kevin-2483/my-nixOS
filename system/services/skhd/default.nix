@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
   services.skhd = {
-    enable = false;
+    enable = true;
     package = pkgs.skhd;
     skhdConfig = ''
     # focus window
