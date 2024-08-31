@@ -2,7 +2,7 @@
 {
   imports = [
     ./yabai
-    # ./skhd
+    ./skhd
   ];
   services.nix-daemon = {
     enable = true;

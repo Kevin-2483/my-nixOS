@@ -20,10 +20,7 @@
 					"/sbin"
 			]
 			$env.EDITOR = "VIM"
-			$env.NIX_PATH = [
-					$"darwin-config=($env.HOME)/.nixpkgs/darwin-configuration.nix"
-					"/nix/var/nix/profiles/per-user/root/channels"
-			]
+			$env.NIX_PATH = $"darwin-config=($env.HOME)/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels"
 			$env.NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt"
 			$env.PAGER = "less -R"
 			$env.TERMINFO_DIRS = [
