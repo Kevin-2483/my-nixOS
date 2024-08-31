@@ -4,7 +4,7 @@
     enable = true;
     # font.name = "SpaceMono Nerd Font";
     theme = "Catppuccin-Mocha";
-    package = pkgs.kitty;
+    package = pkgs.stable.kitty;
     settings = {
       font_family = "Space Mono Nerd Font";
       bold_font = "auto";
