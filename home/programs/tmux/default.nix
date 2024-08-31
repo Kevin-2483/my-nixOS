@@ -102,7 +102,7 @@ in
     escapeTime = 0;
     keyMode = "vi";
     mouse = true;
-    shell = "${pkgs.nushell}/bin/nu";
+    # shell = "/etc/profiles/per-user/kevin/bin/nu";
     # defaultCommand = "neofetch";
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"

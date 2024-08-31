@@ -3,6 +3,6 @@
     ./bash
     ./zsh
     ./man.nix
-    ./nushell
+    ./tmux
   ];
 }
