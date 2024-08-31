@@ -3,5 +3,6 @@
     ./bash
     ./zsh
     ./man.nix
+    ./nushell
   ];
 }
