@@ -17,7 +17,7 @@
 	./neovim
 	./nushell
   ./kitty
-
+	./carapace
   ];
 
 }

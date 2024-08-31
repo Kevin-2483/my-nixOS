@@ -2,6 +2,6 @@
 {
   programs.tmux = {
     enable = true;
-    defaultCommand = "/bin/bash";
+    defaultCommand = "/etc/profiles/per-user/kevin/bin/nu";
   };
 }
