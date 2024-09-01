@@ -50,32 +50,31 @@ let
 
   battery = let
     percentage = pkgs.writeShellScript "percentage" ''
-      percentage=$(/usr/sbin/ioreg -l | grep "\"CurrentCapacity\"" | awk '{print $NF}')
+      percentage=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
       echo $percentage
     '';
 
-    # state = pkgs.writeShellScript "state" ''
-    #   path="/org/freedesktop/UPower/devices/DisplayDevice"
-    #   state=$(${pkgs.upower}/bin/upower -i $path | grep state | awk '{print $2}')
-    #   echo $state
-    # '';
-# state=$(${state})
-#       if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "󰂄"
+    state = pkgs.writeShellScript "state" ''
+      state=$(pmset -g batt | grep 'charg' | awk '{print $4}' | tr -d ';')
+      echo $state
+    '';
+
     icon = pkgs.writeShellScript "icon" ''
       percentage=$(${percentage})
-      
-      if [ $percentage -ge 75 ]; then echo "󱊣"
+      state=$(${state})
+      if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "󰂄"
+      elif [ $percentage -ge 75 ]; then echo "󱊣"
       elif [ $percentage -ge 50 ]; then echo "󱊢"
       elif [ $percentage -ge 25 ]; then echo "󱊡"
       elif [ $percentage -ge 0  ]; then echo "󰂎"
       fi
     '';
-# state=$(${state})
-#       if [ "$state" == "charging" ] || [ "$state" == "fully-charged" ]; then echo "green"
+
     color = pkgs.writeShellScript "color" ''
       percentage=$(${percentage})
-      
-      if [ $percentage -ge 75 ]; then echo "green"
+      state=$(${state})
+      if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "green"
+      elif [ $percentage -ge 75 ]; then echo "green"
       elif [ $percentage -ge 50 ]; then echo "${fg2}"
       elif [ $percentage -ge 30 ]; then echo "yellow"
       elif [ $percentage -ge 0  ]; then echo "red"

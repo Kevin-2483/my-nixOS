@@ -13,6 +13,11 @@
       ShowPathbar = true; #在查找器視窗中顯示路徑麵包屑。預設為 false。
       ShowStatusBar = true; #在查找器視窗底部顯示狀態欄，其中包含項目/磁碟空間統計資料。預設為 false。
     };
+    NSGlobalDomain= {
+      _HIHideMenuBar = true; #是否隱藏菜單欄。預設為 false。
+      "com.apple.swipescrolldirection" = false; #是否反轉滾動方向。預設為 true。
+      AppleICUForce24HourTime = true; #是否使用 24 小時制。
+    };
     LaunchServices.LSQuarantine = true; #是否對下載的應用程式啟用隔離。預設為 true。
     menuExtraClock = {
       IsAnalog = false; #是否顯示模擬時鐘。預設為 false。
