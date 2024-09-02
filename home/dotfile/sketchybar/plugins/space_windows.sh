@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$CONFIG_DIR/colors.sh"
+
 if [ "$SENDER" = "space_windows_change" ]; then
   space="$(echo "$INFO" | jq -r '.space')"
   apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
@@ -8,7 +10,7 @@ if [ "$SENDER" = "space_windows_change" ]; then
   if [ "${apps}" != "" ]; then
     while read -r app
     do
-      icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
+      icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
     done <<< "${apps}"
   else
     icon_strip=" —"

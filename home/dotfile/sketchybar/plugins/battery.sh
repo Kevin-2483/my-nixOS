@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$CONFIG_DIR/colors.sh"
+
 PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 CHARGING="$(pmset -g batt | grep 'charg' | awk '{print $4}' | tr -d ';')"
 
@@ -50,5 +52,5 @@ printf '󱊣 %.0s' $(seq 1 $COUNT )  # 根据COUNT重复󱊣
 )
 
 # 更新sketchybar的图标和标签
-sketchybar --set "$NAME" label="${ICON}" label.color=0xFF1e1e2e label.padding_right=8 background.color=0xFF89b4fa background.corner_radius=15 background.height=30 background.padding_left=10
+sketchybar --set "$NAME" label="${ICON}" label.color=$BAR_COLOR label.padding_right=8 background.color=$BLUE background.corner_radius=15 background.height=30 background.padding_left=10
 fi

@@ -4,4 +4,17 @@
 # the space invoking this script (with name: $NAME) is currently selected:
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 
-sketchybar --set "$NAME" background.drawing="$SELECTED"
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+
+if [ $SELECTED = true ]; then
+  sketchybar --set $NAME background.drawing=on \
+                         background.color=$BLUE \
+                         background.height=25 \
+                         background.corner_radius=13 \
+                         label.color=$BAR_COLOR \
+                         icon.color=$BAR_COLOR
+else
+  sketchybar --set $NAME background.drawing=off \
+                         label.color=$BLUE\
+                         icon.color=$BLUE
+fi

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+source "$CONFIG_DIR/colors.sh"
 # The volume_change event supplies a $INFO variable in which the current volume
 # percentage is passed to the script.
 
@@ -32,5 +33,5 @@ if [ "$COUNT" -gt 0 ]; then
   fi
   ICON="${ICON}${LAST_DIGIT_ICON}"  # 加上个位数对应的图标
 
-  sketchybar --set "$NAME" label="$ICON" label.color=0xFF1e1e2e label.padding_right=12 background.color=0xFF89b4fa background.corner_radius=15 background.height=30
+  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$BLUE background.corner_radius=15 background.height=30
 fi
