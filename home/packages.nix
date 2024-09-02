@@ -50,6 +50,7 @@
     spicetify-cli
     (texlive.combine { inherit (texlive) scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol; })
     imagemagick
+    jq
     # skhd
     
   ];

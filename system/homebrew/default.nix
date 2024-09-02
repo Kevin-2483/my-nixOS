@@ -6,12 +6,18 @@
       # force_auto_update = true;
       # clone_target
     }
+    {
+      name = "homebrew/cask-fonts";
+    }
   ];
   homebrew.brews = [
     {
       name = "borders";
       start_service = true;
       restart_service = "changed";
+    }
+    {
+      name = "font-sf-pro";
     }
   ];
   homebrew.casks = [
@@ -50,6 +56,9 @@
     }
     {
       name = "moonlight";
+    }
+    {
+      name = "sf-symbols";
     }
   ];
 }

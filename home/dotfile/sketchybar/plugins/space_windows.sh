@@ -8,7 +8,7 @@ if [ "$SENDER" = "space_windows_change" ]; then
   if [ "${apps}" != "" ]; then
     while read -r app
     do
-      icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
+      icon_strip+=" $($CONFIG_DIR/plugins/icon_map_fn.sh "$app")"
     done <<< "${apps}"
   else
     icon_strip=" —"

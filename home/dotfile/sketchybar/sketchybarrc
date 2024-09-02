@@ -37,7 +37,7 @@ sketchybar --default "${default[@]}"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 # source "$ITEM_DIR/weather.sh"
-source "$ITEM_DIR/space_nerd_icon.sh"
+# source "$ITEM_DIR/space_nerd_icon.sh"
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
