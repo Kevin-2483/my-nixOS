@@ -37,6 +37,9 @@
 
       yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機)$" manage=off
       yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off 
+
+      yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
+      yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
     '';
       # - swap: 交换窗口位置
       # - stack: 堆叠在旧窗口上
