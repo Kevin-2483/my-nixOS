@@ -13,7 +13,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=40 blur_radius=30 color=0xFF1e1e2e margin=15 y_offset=5 corner_radius=20
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -23,8 +23,8 @@ sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
 default=(
   padding_left=5
   padding_right=5
-  icon.font="SF Pro:Bold:16.0"
-  label.font="SF Pro:Bold:16.0"
+  icon.font="UbuntuMono Nerd Font:Bold:16.0"
+  label.font="UbuntuMono Nerd Font:Bold:16.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -52,8 +52,14 @@ source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 
-# sketchybar --add alias "截屏,Item-0" right \
-#            --set "截屏,Item-0" update_freq=2
+sketchybar --add alias "TextInputMenuAgent,Item-0" right \
+           --set "TextInputMenuAgent,Item-0" alias.color=0xFF1e1e2e alias.update_freq=1 width=30 \
+           --add alias "控制中心,WiFi" right \
+           --set "控制中心,WiFi" alias.color=0xFF1e1e2e alias.update_freq=1  width=30 padding_right=10 \
+           --add bracket bento "TextInputMenuAgent,Item-0" "控制中心,WiFi"\
+           --set bento background.color=0xFF89b4fa background.corner_radius=20 background.height=30
+           
+
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

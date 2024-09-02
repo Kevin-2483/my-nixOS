@@ -16,9 +16,6 @@
   ];
   homebrew.casks = [
     {
-      name = "spaceman";
-    }
-    {
       name = "chatgpt";
     }
     {

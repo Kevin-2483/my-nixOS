@@ -90,7 +90,7 @@ function __icon_map() {
    "Code" | "Code - Insiders")
         icon_result=":code:"
         ;;
-   "Color Picker" | "数码测色计")
+   "Color Picker" | "色彩同步工具程式")
         icon_result=":color_picker:"
         ;;
    "Cypress")
@@ -156,7 +156,7 @@ function __icon_map() {
    "Folx")
         icon_result=":folx:"
         ;;
-   "System Preferences" | "System Settings" | "系统设置")
+   "System Preferences" | "System Settings" | "系统设置" | "系統設定")
         icon_result=":gear:"
         ;;
    "GitHub Desktop")
@@ -225,7 +225,7 @@ function __icon_map() {
    "Logseq")
         icon_result=":logseq:"
         ;;
-   "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "邮件")
+   "Canary Mail" | "HEY" | "Mail" | "Mailspring" | "MailMate" | "邮件" | "郵件" )
         icon_result=":mail:"
         ;;
    "MAMP" | "MAMP PRO")
@@ -270,7 +270,7 @@ function __icon_map() {
    "mpv")
         icon_result=":mpv:"
         ;;
-   "Music" | "音乐")
+   "Music" | "音乐" | "音樂")
         icon_result=":music:"
         ;;
    "Neovide" | "neovide")
@@ -318,7 +318,7 @@ function __icon_map() {
    "Parallels Desktop")
         icon_result=":parallels:"
         ;;
-   "Preview" | "预览" | "Skim" | "zathura")
+   "Preview" | "預覽程式" | "Skim" | "zathura")
         icon_result=":pdf:"
         ;;
    "Pi-hole Remote")
@@ -351,7 +351,7 @@ function __icon_map() {
    "Reeder")
         icon_result=":reeder5:"
         ;;
-   "Reminders" | "提醒事项")
+   "Reminders" | "提醒事項")
         icon_result=":reminders:"
         ;;
    "Replit")

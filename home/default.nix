@@ -62,8 +62,12 @@
     source = ./dotfile/sketchybar;
     recursive = true;
     executable = true;
-  }
-
+  };
+ home.file.".config/imgs" = {
+  source = ./dotfile/imgs;
+  recursive = true;
+  executable = true;
+ };
   # home.file.".config/yabai" = {
   # 	source = ./dotfile/yabai;
   # 	recursive = true;

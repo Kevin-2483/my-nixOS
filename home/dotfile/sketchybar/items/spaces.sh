@@ -14,12 +14,13 @@ do
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=7
     icon.padding_right=7
-    background.color=0x40ffffff
-    background.corner_radius=5
-    background.height=25
+    background.color=0xFF89b4fa
+    background.corner_radius=15
+    background.height=30
     label.font="sketchybar-app-font:Regular:16.0"
     label.padding_right=20
     label.y_offset=-1
+    label.color=0xFF1e1e2e 
     script="$PLUGIN_DIR/space.sh"
     click_script="yabai -m space --focus $sid"
   )
@@ -31,7 +32,7 @@ done
 # only the properties deviating from the current defaults need to be set
 
 sketchybar --add item chevron left \
-           --set chevron icon=􀆊 label.drawing=off \
+           --set chevron label="" label.padding_left=50 \
            --set chevron script="$PLUGIN_DIR/space_windows.sh" \
            --subscribe chevron space_windows_change
 

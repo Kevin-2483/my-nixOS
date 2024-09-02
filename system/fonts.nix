@@ -10,6 +10,7 @@
       noto-fonts-emoji
       wqy_microhei
       wqy_zenhei
+      sketchybar-app-font
     ];
   };
 }
