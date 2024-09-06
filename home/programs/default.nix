@@ -18,6 +18,7 @@
 	./nushell
   ./kitty
 	./carapace
+	./pandoc
   ];
 
 }

@@ -6,6 +6,9 @@
       # force_auto_update = true;
       # clone_target
     }
+    {
+      name = "laishulu/cask-fonts";
+    }
   ];
   homebrew.brews = [
     {
@@ -56,6 +59,12 @@
     }
     {
       name = "font-sf-pro";
+    }
+    {
+      name = "remote-desktop-manager";
+    }
+    {
+      name = "font-sarasa-nerd";
     }
   ];
 }
