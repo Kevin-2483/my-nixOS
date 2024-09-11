@@ -9,6 +9,7 @@ let
     "FiraCode"
     "Mononoki"
     "SpaceMono"
+    "JetBrainsMono"
   ]; });
   font = {
     package = nerdfonts;

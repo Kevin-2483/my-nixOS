@@ -59,7 +59,7 @@
 
   };
   home.file.".config/sketchybar" = {
-    source = ./dotfile/sketchybarlua;
+    source = ./dotfile/sketchybar;
     recursive = true;
     executable = true;
   };

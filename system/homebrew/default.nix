@@ -16,6 +16,9 @@
       start_service = true;
       restart_service = "changed";
     }
+    {
+      name = "switchaudio-osx";
+    }
   ];
   homebrew.casks = [
     {

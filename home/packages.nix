@@ -53,6 +53,7 @@
     jq
     lua
     nix-prefetch-scripts
+    nowplaying-cli
     # skhd
   ];
 
