@@ -19,6 +19,9 @@
     {
       name = "switchaudio-osx";
     }
+    {
+      name = "tag";
+    }
   ];
   homebrew.casks = [
     {

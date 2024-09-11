@@ -1,0 +1,34 @@
+[[manager.prepend_keymap]]
+on   = [ "b", "r" ]
+run  = 'plugin mactag --args="add Red"'
+desc = "Tag selected files with red"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "R" ]
+run  = 'plugin mactag --args="remove Red"'
+desc = "Remove red tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = "T"
+run  = "plugin --sync max-preview"
+desc = "Maximize or restore preview"
+
+[[manager.prepend_keymap]]
+on   = "`"
+run  = "plugin jump-to-char"
+desc = "Jump to char"
+
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+[[manager.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
+[[manager.prepend_keymap]]
+on   = "<C-d>"
+run  = "plugin diff"
+desc = "Diff the selected with the hovered file"
