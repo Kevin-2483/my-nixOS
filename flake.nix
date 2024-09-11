@@ -11,6 +11,7 @@
           inputs.nixpkgs.follows = "nixpkgs";
         };
       catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin1";
+      sketchybar_lua.url = "custompkgs/skybarlua.nix";
   };
 
   outputs = { self, nixpkgs, home-manager, catppuccin, nixpkgs-stable, darwin, ... }@inputs: let

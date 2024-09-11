@@ -1,4 +1,4 @@
-#!/Users/xbunax/Documents/code/lua-5.4.4/src/lua
+#!/etc/profiles/per-user/kevin/bin/lua
 
 -- Load the sketchybar-package and prepare the helper binaries
 require("helpers")
