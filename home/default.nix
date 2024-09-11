@@ -68,6 +68,16 @@
   recursive = true;
   executable = true;
  };
+ home.file.".config/wezterm" = {
+  source = ./dotfile/wezterm;
+  recursive = true;
+  executable = true;
+ };
+ home.file.".config/mpv" = {
+  source = ./dotfile/mpv;
+  recursive = true;
+  executable = true;
+ };
   # home.file.".config/yabai" = {
   # 	source = ./dotfile/yabai;
   # 	recursive = true;

@@ -22,6 +22,9 @@
     {
       name = "tag";
     }
+    {
+      name = "mpv";
+    }
   ];
   homebrew.casks = [
     {

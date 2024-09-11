@@ -3,9 +3,10 @@
   programs.bash = {
     enable = true;
     interactiveShellInit = ''
-      if [ -f /etc/static/bashrc ]; then
-        . /etc/static/bashrc
-      fi
+    export PATH="/opt/homebrew/bin:$PATH"
+     if [ -f /etc/static/bashrc ]; then
+      . /etc/static/bashrc
+    fi
     '';
     enableCompletion = true;
   };

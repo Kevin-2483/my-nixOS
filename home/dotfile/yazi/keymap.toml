@@ -9,6 +9,66 @@ run  = 'plugin mactag --args="remove Red"'
 desc = "Remove red tag from selected files"
 
 [[manager.prepend_keymap]]
+on   = [ "b", "o" ]
+run  = 'plugin mactag --args="add Orange"'
+desc = "Tag selected files with orange"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "O" ]
+run  = 'plugin mactag --args="remove Orange"'
+desc = "Remove orange tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "g" ]
+run  = 'plugin mactag --args="add Green"'
+desc = "Tag selected files with green"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "G" ]
+run  = 'plugin mactag --args="remove Green"'
+desc = "Remove green tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "b" ]
+run  = 'plugin mactag --args="add Blue"'
+desc = "Tag selected files with blue"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "B" ]
+run  = 'plugin mactag --args="remove Blue"'
+desc = "Remove blue tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "b" ]
+run  = 'plugin mactag --args="add Purple"'
+desc = "Tag selected files with Purple"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "B" ]
+run  = 'plugin mactag --args="remove Purple"'
+desc = "Remove purple tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "b" ]
+run  = 'plugin mactag --args="add Yellow"'
+desc = "Tag selected files with yellow"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "B" ]
+run  = 'plugin mactag --args="remove Yellow"'
+desc = "Remove yellow tag from selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "b" ]
+run  = 'plugin mactag --args="add Grey"'
+desc = "Tag selected files with grey"
+
+[[manager.prepend_keymap]]
+on   = [ "b", "B" ]
+run  = 'plugin mactag --args="remove Grey"'
+desc = "Remove grey tag from selected files"
+
+[[manager.prepend_keymap]]
 on   = "T"
 run  = "plugin --sync max-preview"
 desc = "Maximize or restore preview"

@@ -26,6 +26,7 @@
   		};
 
   		initExtra = ''
+			export PATH="/opt/homebrew/bin:$PATH"
   		eval "$(starship init zsh)"
   		function yy() {
   			local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
