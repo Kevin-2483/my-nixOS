@@ -55,6 +55,7 @@
     nix-prefetch-scripts
     nowplaying-cli
     # skhd
+    wezterm
   ];
 
   nixpkgs = {

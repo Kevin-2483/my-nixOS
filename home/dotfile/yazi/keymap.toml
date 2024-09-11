@@ -39,32 +39,32 @@ run  = 'plugin mactag --args="remove Blue"'
 desc = "Remove blue tag from selected files"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "b" ]
+on   = [ "b", "p" ]
 run  = 'plugin mactag --args="add Purple"'
 desc = "Tag selected files with Purple"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "B" ]
+on   = [ "b", "P" ]
 run  = 'plugin mactag --args="remove Purple"'
 desc = "Remove purple tag from selected files"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "b" ]
+on   = [ "b", "y" ]
 run  = 'plugin mactag --args="add Yellow"'
 desc = "Tag selected files with yellow"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "B" ]
+on   = [ "b", "Y" ]
 run  = 'plugin mactag --args="remove Yellow"'
 desc = "Remove yellow tag from selected files"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "b" ]
+on   = [ "b", "h" ]
 run  = 'plugin mactag --args="add Grey"'
 desc = "Tag selected files with grey"
 
 [[manager.prepend_keymap]]
-on   = [ "b", "B" ]
+on   = [ "b", "H" ]
 run  = 'plugin mactag --args="remove Grey"'
 desc = "Remove grey tag from selected files"
 

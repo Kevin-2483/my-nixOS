@@ -12,7 +12,7 @@
 	./neofetch
 	./helix
 	./tmux
-	./wezterm
+	# ./wezterm
 	./btop
 	./neovim
 	./nushell
