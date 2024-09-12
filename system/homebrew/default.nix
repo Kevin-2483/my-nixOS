@@ -75,5 +75,8 @@
     {
       name = "font-sarasa-nerd";
     }
+    {
+      name = "texmaker";
+    }
   ];
 }

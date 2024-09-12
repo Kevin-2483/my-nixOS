@@ -3,6 +3,18 @@
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
+    "計算機")
+    icon_result=":calculator:"
+        ;;
+    "BetterTouchTool")
+        icon_result=":bettertouchtool:"
+        ;;
+    "LocalSend")
+        icon_result=":localsend:"
+        ;;
+    "ChatGPT")
+        icon_result=":openai:"
+        ;;
    "Live")
         icon_result=":ableton:"
         ;;
@@ -75,7 +87,7 @@ function __icon_map() {
    "Brave Browser")
         icon_result=":brave_browser:"
         ;;
-   "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie")
+   "Calendar" | "日历" | "Fantastical" | "Cron" | "Amie" | "行事曆")
         icon_result=":calendar:"
         ;;
    "Caprine")
@@ -90,7 +102,7 @@ function __icon_map() {
    "Code" | "Code - Insiders")
         icon_result=":code:"
         ;;
-   "Color Picker" | "色彩同步工具程式")
+   "Color Picker" | "色彩同步工具程式" | "數位測色計")
         icon_result=":color_picker:"
         ;;
    "Cypress")
@@ -231,7 +243,7 @@ function __icon_map() {
    "MAMP" | "MAMP PRO")
         icon_result=":mamp:"
         ;;
-   "Maps" | "Google Maps")
+   "Maps" | "Google Maps" | "地圖")
         icon_result=":maps:"
         ;;
    "Matlab")
@@ -240,7 +252,7 @@ function __icon_map() {
    "Mattermost")
         icon_result=":mattermost:"
         ;;
-   "Messages" | "信息" | "Nachrichten")
+   "Messages" | "信息" | "Nachrichten" | "訊息")
         icon_result=":messages:"
         ;;
    "Messenger")
@@ -285,7 +297,7 @@ function __icon_map() {
    "Notability")
         icon_result=":notability:"
         ;;
-   "Notes" | "备忘录")
+   "Notes" | "备忘录" | "備忘錄")
         icon_result=":notes:"
         ;;
    "Notion")
@@ -300,7 +312,7 @@ function __icon_map() {
    "Obsidian")
         icon_result=":obsidian:"
         ;;
-   "OBS")
+   "OBS" | "OBS Studio")
         icon_result=":obsstudio:"
         ;;
    "OmniFocus")
@@ -314,6 +326,9 @@ function __icon_map() {
         ;;
    "Pages" | "Pages 文稿")
         icon_result=":pages:"
+        ;;
+   "Parsec")
+        icon_result=":parsec:"
         ;;
    "Parallels Desktop")
         icon_result=":parallels:"
@@ -363,6 +378,9 @@ function __icon_map() {
    "Safari" | "Safari浏览器" | "Safari Technology Preview")
         icon_result=":safari:"
         ;;
+  "SF Symbols")
+        icon_result=":sf_symbols:"
+        ;;
    "Sequel Ace")
         icon_result=":sequel_ace:"
         ;;
@@ -405,7 +423,7 @@ function __icon_map() {
    "Telegram")
         icon_result=":telegram:"
         ;;
-   "Terminal" | "终端")
+   "Terminal" | "终端" | "終端機")
         icon_result=":terminal:"
         ;;
    "Typora")
