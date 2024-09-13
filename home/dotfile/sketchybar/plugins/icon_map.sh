@@ -3,6 +3,9 @@
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
+    "Microsoft Remote Desktop")
+        icon_result=":microsoft_remote_desktop:"
+        ;;
     "計算機")
     icon_result=":calculator:"
         ;;
@@ -483,7 +486,7 @@ function __icon_map() {
    "微信" | "WeChat")
         icon_result=":wechat:"
         ;;
-   "WezTerm")
+   "WezTerm" | "wezterm-gui")
         icon_result=":wezterm:"
         ;;
    "WhatsApp" | "‎WhatsApp")

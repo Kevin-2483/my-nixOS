@@ -25,6 +25,9 @@
     {
       name = "mpv";
     }
+    # {
+    #   name = "cava";
+    # }
   ];
   homebrew.casks = [
     {
@@ -76,7 +79,10 @@
       name = "font-sarasa-nerd";
     }
     {
-      name = "texmaker";
+      name = "qqmusic";
     }
+    # {
+    #   name = "background-music";
+    # }
   ];
 }
