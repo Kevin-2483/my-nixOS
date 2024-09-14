@@ -23,4 +23,4 @@ ICON=$(
 fi
 )
 
-sketchybar --set "$NAME" label="󰸘 $(date '+%d/%m') $ICON $(date '+%H:%M')" label.padding_right=8 label.color=$BAR_COLOR background.color=$BLUE background.corner_radius=15 background.height=30
+sketchybar --set "$NAME" label="󰸘 $(date '+%d/%m') $ICON $(date '+%H:%M')" label.color=$BLUE

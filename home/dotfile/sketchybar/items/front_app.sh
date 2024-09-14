@@ -8,7 +8,7 @@ front_app=(
   padding_right=10
 )
 
-sketchybar --add item front_app left \
+sketchybar --add item front_app right \
            --set front_app "${front_app[@]}" \
            --subscribe front_app front_app_switched
 

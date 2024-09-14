@@ -27,11 +27,11 @@ fi
 
   # 构建图标字符串
 if [ "$COUNT" -gt 0 ]; then
-    ICON=$(printf ' %.0s' $(seq 1 "$COUNT"))  # 根据COUNT重复音符图标
+    ICON=$(printf '  %.0s' $(seq 1 "$COUNT"))  # 根据COUNT重复音符图标
   else
     ICON=""  # 如果COUNT为0，则没有图标
   fi
   ICON="${ICON}${LAST_DIGIT_ICON}"  # 加上个位数对应的图标
 
-  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$BLUE background.corner_radius=15 background.height=30
+  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$BLUE background.corner_radius=15 background.height=24
 fi

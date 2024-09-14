@@ -13,7 +13,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0xFF1e1e2e margin=15 y_offset=5 corner_radius=20
+sketchybar --bar position=top height=34 blur_radius=30 color=0xFF1e1e2e margin=15 y_offset=6 corner_radius=20
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -35,8 +35,9 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
+
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
+
 # source "$ITEM_DIR/weather.sh"
 # source "$ITEM_DIR/space_nerd_icon.sh"
 
@@ -55,12 +56,13 @@ source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 
-sketchybar --add alias "TextInputMenuAgent,Item-0" right \
-           --set "TextInputMenuAgent,Item-0" alias.color=$BLACK alias.update_freq=1 width=30 \
-           --add alias "控制中心,WiFi" right \
-           --set "控制中心,WiFi" alias.color=$BLACK alias.update_freq=1  width=30 padding_right=10 \
-           --add bracket bento "TextInputMenuAgent,Item-0" "控制中心,WiFi"\
-           --set bento background.color=$BLUE background.corner_radius=20 background.height=30
+source "$ITEM_DIR/front_app.sh"
+# sketchybar --add alias "TextInputMenuAgent,Item-0" right \
+#            --set "TextInputMenuAgent,Item-0" alias.color=$BLACK alias.update_freq=1 width=30 \
+#            --add alias "控制中心,WiFi" right \
+#            --set "控制中心,WiFi" alias.color=$BLACK alias.update_freq=1  width=30 padding_right=10 \
+#            --add bracket bento "TextInputMenuAgent,Item-0" "控制中心,WiFi"\
+#            --set bento background.color=$BLUE background.corner_radius=13 background.height=24
            
 
 
