@@ -65,7 +65,7 @@
   recursive = true;
   executable = true;
  };
- home.file."Library/Fonts/Adobe Garamond Small Caps.ttf".source = "./dotfile/Fonts/Adobe Garamond Small Caps.ttf";
+ home.file."Library/Fonts/adobe_garamond_small_caps.ttf".source = "./dotfile/Fonts/adobe_garamond_small_caps.ttf";
  home.file."Library/Fonts/B2Hana-Medium.ttf".source = "./dotfile/Fonts/B2Hana-Medium.ttf";
  home.file."Library/Fonts/B2Hana-Regular-Lite.ttf".source = "./dotfile/Fonts/B2Hana-Regular-Lite.ttf";
  home.file."Library/Fonts/B2Hana-Regular.ttf".source = "./dotfile/Fonts/B2Hana-Regular.ttf";
