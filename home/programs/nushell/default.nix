@@ -7,6 +7,8 @@
 			''
 			$env.__NIX_DARWIN_SET_ENVIRONMENT_DONE = 1 
 
+			$env.LC_CTYPE = "en_US.UTF-8"
+			
 			$env.PATH = [
 					$"($env.HOME)/.cargo/bin"
 					$"($env.HOME)/.nix-profile/bin"

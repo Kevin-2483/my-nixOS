@@ -56,6 +56,8 @@
     nowplaying-cli
     # skhd
     wezterm
+    android-tools
+    scrcpy
   ];
 
   nixpkgs = {

@@ -84,5 +84,8 @@
     # {
     #   name = "background-music";
     # }
+    {
+      name = "squirrel";
+    }
   ];
 }

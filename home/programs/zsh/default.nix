@@ -26,6 +26,7 @@
   		};
 
   		initExtra = ''
+			export LC_CTYPE="en_US.UTF-8"
 			export PATH="/opt/homebrew/bin:$PATH"
   		eval "$(starship init zsh)"
   		function yy() {
