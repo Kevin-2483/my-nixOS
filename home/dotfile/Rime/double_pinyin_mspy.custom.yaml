@@ -1,7 +1,5 @@
-# Rime schema
-# encoding: utf-8
 patch:
-  schema/name: 自然码
+  schema/name: 微软双拼
   switches:
     - name: ascii_mode
       reset: 0
@@ -17,6 +15,8 @@ patch:
     - name: ascii_punct
       states: [ 。，, ．， ]
   engine/translators:
+    # - lua_translator@date_translator
+    # - lua_translator@week_translator
     - punct_translator
     - script_translator
     - table_translator@custom_phrase
@@ -25,7 +25,7 @@ patch:
     - simplifier
     - uniquifier
     #- charset_filter@gbk
-    #- single_char_filter
+    # - single_char_filter
   engine/processors:
     - ascii_composer
     - recognizer
@@ -35,21 +35,16 @@ patch:
     - selector
     - navigator
     - express_editor
-  # engine/segmentors:
-  #   - ascii_segmentor
-  #   - matcher
-  #   - abc_segmentor
-  #   - punct_segmentor
-  #   - fallback_segmentor
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     # tips: all
-  
+  reverse_lookup: {}
+
   #載入朙月拼音擴充詞庫
-  "translator/dictionary": luna_pinyin.extended
+  'translator/dictionary': luna_pinyin.extended
   'translator/preedit_format': {}
-  # translator/enable_correction: true
+
 
   # 自定义符号上屏
   punctuator:
@@ -82,6 +77,8 @@ patch:
 
   recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"
 
+    
+
   ### 双拼使用自定义词典 custom_phrase.txt
   custom_phrase:
     dictionary: ""
@@ -91,10 +88,10 @@ patch:
     enable_sentence: false
     initial_quality: 1
   "engine/translators/@5": table_translator@custom_phrase
+
 # Rx: BlindingDark/rime-easy-en:customize:schema=double_pinyin_flypy
-# 若要启用 easy_en，取消注释下面两行
   # __include: easy_en:/patch
-  # easy_en/enable_sentence: false # 中英文混输的设置
+  # easy_en/enable_sentence: false
 # Rx: lotem/rime-octagram-data:customize:schema=luna_pinyin,model=hans
   __include: grammar:/hant
 # Rx: BlindingDark/rime-lua-select-character:customize:schema=luna_pinyin
