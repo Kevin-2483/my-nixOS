@@ -33,5 +33,5 @@ if [ "$COUNT" -gt 0 ]; then
   fi
   ICON="${ICON}${LAST_DIGIT_ICON}"  # 加上个位数对应的图标
 
-  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$BLUE background.corner_radius=15 background.height=24
+  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$GREEN background.corner_radius=15 background.height=24
 fi

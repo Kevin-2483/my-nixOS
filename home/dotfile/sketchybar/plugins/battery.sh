@@ -2,7 +2,7 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-if [ "$SENDER" = "battery" ] || [ "$SENDER" = "system_woke" ] || [ "$SENDER" = "power_source_change" ]; then
+# if [ "$SENDER" = "battery" ] || [ "$SENDER" = "system_woke" ] || [ "$SENDER" = "power_source_change" ]; then
 
   PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
   CHARGING="$(pmset -g batt | grep 'charg' | awk '{print $4}' | tr -d ';')"
@@ -55,5 +55,5 @@ if [ "$SENDER" = "battery" ] || [ "$SENDER" = "system_woke" ] || [ "$SENDER" = "
   )
 
   # 更新sketchybar的图标和标签
-  sketchybar --set "$NAME" label="${ICON}" label.color=$BAR_COLOR label.padding_right=12 background.color=$BLUE background.corner_radius=15 background.height=24 background.padding_left=10
-fi
+  sketchybar --set "$NAME" label="${ICON}" label.color=$BAR_COLOR label.padding_right=12 background.color=$YELLOW background.corner_radius=15 background.height=24 background.padding_left=10
+# fi

@@ -8,7 +8,7 @@ source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
 if [ $SELECTED = true ]; then
   sketchybar --set $NAME background.drawing=on \
-                         background.color=$BLUE \
+                         background.color=$PINK \
                          background.height=24 \
                          background.corner_radius=13 \
                          label.color=$BAR_COLOR \

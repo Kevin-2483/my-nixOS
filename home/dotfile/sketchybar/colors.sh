@@ -11,6 +11,7 @@ export ORANGE=0xfffab387
 export MAGENTA=0xffcba6f7
 export GREY=0xffb4befe
 export TRANSPARENT=0x00000000
+export PINK=0xfff5c2e7
 
 # General bar colors
 export BAR_COLOR=0xb01e1e2e
