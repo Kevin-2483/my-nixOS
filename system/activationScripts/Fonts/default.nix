@@ -2,7 +2,7 @@
 {
   system.activationScripts.fonts = {
     enable = true;
-    copy = true;
+    # copy = true;
     source = ./myfonts;
     target = /Library/Fonts/myfonts;
   };

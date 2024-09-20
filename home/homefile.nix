@@ -65,6 +65,16 @@
   recursive = true;
   executable = true;
  };
+ home.file."Library/Fonts/adobe_garamond_small_caps.ttf".source = ./dotfile/Fonts/adobe_garamond_small_caps.ttf;
+ home.file."Library/Fonts/B2Hana-Medium.ttf".source = ./dotfile/Fonts/B2Hana-Medium.ttf;
+ home.file."Library/Fonts/B2Hana-Regular-Lite.ttf".source = ./dotfile/Fonts/B2Hana-Regular-Lite.ttf;
+ home.file."Library/Fonts/B2Hana-Regular.ttf".source = ./dotfile/Fonts/B2Hana-Regular.ttf;
+ home.file."Library/Fonts/B2HanaB-Medium.ttf".source = ./dotfile/Fonts/B2HanaB-Medium.ttf;
+ home.file."Library/Fonts/B2HanaB-Regular.ttf".source = ./dotfile/Fonts/B2HanaB-Regular.ttf;
+ home.file."Library/Fonts/HanaMinA.ttf".source = ./dotfile/Fonts/HanaMinA.ttf;
+ home.file."Library/Fonts/HanaMinB.ttf".source = ./dotfile/Fonts/HanaMinB.ttf;
+ home.file."Library/Fonts/sarasa-term-sc-nerd.ttc".source = ./dotfile/Fonts/sarasa-term-sc-nerd.ttc;
+ 
   # home.file.".config/yabai" = {
   # 	source = ./dotfile/yabai;
   # 	recursive = true;

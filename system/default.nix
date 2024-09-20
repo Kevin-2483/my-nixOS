@@ -12,7 +12,7 @@
       ./programs
       ./services
       ./homebrew
-      ./activityScripts
+      ./activationScripts
     ];
 
     nixpkgs = {
