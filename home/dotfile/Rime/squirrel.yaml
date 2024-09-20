@@ -68,8 +68,8 @@ style:
   # comment_font_point: 18
 
     # 预设的配色方案及代码（指定为 style/color_scheme 系统默认色系 - native）
-    color_scheme: catppuccin_latte                 # macos明亮主题
-    color_scheme_dark: catppuccin_macchiato        # macos黑暗主题
+    color_scheme: catppuccin_frappe                # macos明亮主题
+    color_scheme_dark: catppuccin_frappe           # macos黑暗主题
 
     inline_preedit: true                           # 非内嵌编码行
     #Squirrel 1.0 Breaking Changes: style/horizontal 即将废弃，1.0以上版本请使用 style/candidate_list_layout 和 style/text_orientation

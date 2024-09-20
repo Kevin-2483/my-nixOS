@@ -3,8 +3,8 @@
   programs.kitty = {
     enable = true;
     # font.name = "SpaceMono Nerd Font";
-    theme = "Catppuccin-Mocha";
-    package = pkgs.stable.kitty;
+    themeFile = ./themes/mocha.conf;
+    package = pkgs.kitty;
     settings = {
       font_family = "Space Mono Nerd Font";
       bold_font = "auto";
