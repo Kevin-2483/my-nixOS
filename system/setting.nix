@@ -37,7 +37,7 @@
     dock = {
       appswitcher-all-displays = false;
       # 是在所有顯示器上還是僅在主顯示器上顯示應用程式切換器。預設為 false。
-      orientation = "right"; #Dock 的位置。預設為 bottom。null or one of "left", "bottom", "right"
+      orientation = "bottom"; #Dock 的位置。預設為 bottom。null or one of "left", "bottom", "right"
       autohide = true;
       autohide-delay = 0.24; #設定自動隱藏延遲的速度。預設值0.24。
       autohide-time-modifier = 1.0; #設定自動隱藏的速度。預設值1。
