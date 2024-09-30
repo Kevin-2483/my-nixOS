@@ -17,5 +17,6 @@
     connect
     micro
     git-lfs
+    git-filter-repo
   ];
 }
