@@ -16,5 +16,6 @@
     xz
     connect
     micro
+    git-lfs
   ];
 }
