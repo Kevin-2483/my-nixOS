@@ -25,6 +25,9 @@
     {
       name = "mpv";
     }
+    {
+      name = "tree";
+    }
     # {
     #   name = "cava";
     # }
