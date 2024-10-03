@@ -58,6 +58,7 @@
     wezterm
     android-tools
     scrcpy
+    matugen
   ];
 
   nixpkgs = {

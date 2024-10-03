@@ -96,5 +96,8 @@
     {
       name = "keycastr";
     }
+    {
+      name = "zed";
+    }
   ];
 }
