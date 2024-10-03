@@ -1,6 +1,11 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   system.defaults = {
+    WindowManager = {
+      StandardHideDesktopIcons = true; #是否隱藏桌面上的圖示。預設為 null。
+      StandardHideWidgets = false; #是否隱藏桌面上的小工具。預設為 null。
+      EnableStandardClickToShowDesktop = false; #是否啟用單擊顯示桌面。預設為 null。
+    };
     finder = {
       _FXShowPosixPathInTitle = true; #是否在視窗標題中顯示完整的 POSIX 檔案路徑。預設為 false。
       AppleShowAllExtensions = true; #是否顯示所有檔案的擴展名。預設為 false。
@@ -117,7 +122,7 @@
     # };
   };
   system.startup.chime = false; #是否在啟動時播放開機音效。預設為 true。
-  system.stateVersion = 4; #系統狀態版本。
+  system.stateVersion = 5; #系統狀態版本。
   nix = {
     gc = {
       automatic = true; #是否自動執行垃圾回收。預設為 true。
@@ -141,6 +146,7 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
     useDaemon = true;
+    package = pkgs.nixVersions.git;
   };
 
 }

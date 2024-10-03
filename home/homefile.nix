@@ -33,13 +33,6 @@
     executable = true;  # 将其中所有文件添加「执行」权限
 
   };
-  home.file.".config/skhd" = {
-    # source = ~/.config/nix-darwin/home/dotfile/yazi;
-    source = ./dotfile/skhd;
-    recursive = true;   # 递归整个文件夹
-    executable = true;  # 将其中所有文件添加「执行」权限
-
-  };
   home.file.".config/sketchybar" = {
     source = ./dotfile/sketchybar;
     recursive = true;
@@ -74,7 +67,13 @@
  home.file."Library/Fonts/HanaMinA.ttf".source = ./dotfile/Fonts/HanaMinA.ttf;
  home.file."Library/Fonts/HanaMinB.ttf".source = ./dotfile/Fonts/HanaMinB.ttf;
  home.file."Library/Fonts/sarasa-term-sc-nerd.ttc".source = ./dotfile/Fonts/sarasa-term-sc-nerd.ttc;
- 
+
+  # home.file.".config/skhd" = {
+  #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
+  #   source = ./dotfile/skhd;
+  #   recursive = true;   # 递归整个文件夹
+  #   executable = true;  # 将其中所有文件添加「执行」权限
+  # };
   # home.file.".config/yabai" = {
   # 	source = ./dotfile/yabai;
   # 	recursive = true;

@@ -1,5 +1,5 @@
 
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, username, ... }:
 
 {
 
@@ -18,5 +18,6 @@
     micro
     git-lfs
     git-filter-repo
+    ncurses
   ];
 }

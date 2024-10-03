@@ -90,5 +90,11 @@
     {
       name = "squirrel";
     }
+    {
+      name = "motrix";
+    }
+    {
+      name = "keycastr";
+    }
   ];
 }
