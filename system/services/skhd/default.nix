@@ -75,7 +75,7 @@
 
     cmd - up : yabai -m window --move rel:0:-100
     cmd - down : yabai -m window --move rel:0:100
-    cmd - left : yabai -m window --move rel:-100:0   
+    cmd - left : yabai -m window --move rel:-100:0
     cmd - right : yabai -m window --move rel:100:0
 
 
@@ -91,6 +91,7 @@
     alt - x : wny
     # alt - u : open -a "System Settings"
     alt - j : open -a Calculator
+    alt - z : zed
     '';
   };
 }
