@@ -1,0 +1,8 @@
+prepend:
+  - 'PROCESS-PATH-REGEX,^/Applications/Zed\.app/Contents(/.*)?,Hello world'
+  - 'IP-CIDR,183.136.206.74/24,DIRECT'
+  - 'DOMAIN,kevin.2k2.cc,DIRECT'
+  - 'PROCESS-PATH,/System/Applications/App Store.app/Contents/MacOS/App Store,DIRECT'
+  - 'DOMAIN,cn.bing.com,DIRECT'
+append: []
+delete: []
