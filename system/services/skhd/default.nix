@@ -36,11 +36,11 @@
     alt - 0x21 : yabai -m space --move prev
     alt - 0x1E : yabai -m space --move next
 
-    alt - b : yabai -m space --balance
+    alt + cmd - b : yabai -m space --balance
     # yabai -m space --mirror x-axis
     # yabai -m space --mirror y-axis
     alt + shift - r : yabai -m space --rotate 90
-    alt - r : yabai -m window --toggle split
+    alt + cmd - r : yabai -m window --toggle split
 
     # yabai -m space --layout bsp
 
@@ -58,10 +58,10 @@
     alt + shift - 0 : yabai -m window --space 10
 
     # options: zoom-parent, zoom-fullscreen, native-fullscreen
-    alt - z : yabai -m window --toggle zoom-parent
+    alt + cmd - z : yabai -m window --toggle zoom-parent
     alt + shift - z : yabai -m window --toggle native-fullscreen
 
-    alt - m : yabai -m window --toggle float
+    alt + cmd - m : yabai -m window --toggle float
 
     ctrl - up : yabai -m window --resize top:0:-100
     ctrl - right : yabai -m window --resize right:100:0
