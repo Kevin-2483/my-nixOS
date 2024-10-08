@@ -9,6 +9,9 @@
     {
       name = "laishulu/cask-fonts";
     }
+    {
+      name = "mihomo-party-org/mihomo-party";
+    }
   ];
   homebrew.brews = [
     {
@@ -100,7 +103,7 @@
       name = "zed";
     }
     {
-      name = "mihomo-party-org/mihomo-party/mihomo-party"
+      name = "mihomo-party"
     }
   ];
 }
