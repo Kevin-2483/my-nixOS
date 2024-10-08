@@ -103,7 +103,7 @@
       name = "zed";
     }
     {
-      name = "mihomo-party"
+      name = "mihomo-party";
     }
   ];
 }

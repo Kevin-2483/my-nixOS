@@ -36,7 +36,7 @@
 
 
       yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機|Motrix|wezterm-gui|活動監視器|語音備忘錄|預覽程式|天氣|BetterTouchTool|QuickTime Player|Microsoft Remote Desktop)$" manage=off sticky=on
-      yabai -m rule --add app="^(哔哩哔哩)$" title!="^(哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili)$" manage=off sticky=on
+      yabai -m rule --add app="^(Mihomo Party)$" title =="^(Mihomo Party Floating)$" manage=off sticky=on
       yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
       yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
     '';
