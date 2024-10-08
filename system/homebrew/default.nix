@@ -99,5 +99,8 @@
     {
       name = "zed";
     }
+    {
+      name = "mihomo-party-org/mihomo-party/mihomo-party"
+    }
   ];
 }
