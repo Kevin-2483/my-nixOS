@@ -1,16 +1,16 @@
 { inputs, config, pkgs, outputs, lib, ... }:
 
 {
-  
+
   home.packages = with pkgs;[
-    
+
     neofetch
     zip
     xz
     unzip
     p7zip
     direnv
-    
+
     fzf # A command-line fuzzy finder
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     nix-output-monitor
@@ -59,6 +59,8 @@
     android-tools
     scrcpy
     matugen
+
+    easytier
   ];
 
   nixpkgs = {
