@@ -32,6 +32,20 @@
 
 使用flakes特性，来保证配置的统一，易读，便于扩展
 
+## 终端
+
+- [kitty](https://sw.kovidgoyal.net/kitty/)
+- [weztem](https://wezfurlong.org/wezterm/)
+- [tmux](https://github.com/tmux/tmux)
+
+## shell
+
+登入shell为zsh，与系统交互使用nushell，配置中向bash，zsh，nushell添加了完整的系统环境变量，包括nix，brew等。其中zsh和nushell使用[starship](https://starship.rs/)主题
+
+## 主题
+
+[catppuccin](https://catppuccin.com/) mocha主题
+
 ## 视窗调度
 
 使用[yabai](https://github.com/koekeishiya/yabai/tree/master)配合[skhd](https://github.com/koekeishiya/skhd)进行的视窗管理
