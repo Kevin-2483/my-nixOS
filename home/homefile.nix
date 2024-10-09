@@ -58,8 +58,11 @@
   recursive = true;
   executable = true;
  };
- home.file.".config/zed" = {
-  source = ./dotfile/zed;
+ home.file.".config/zed/settings.json" = {
+  source = ./dotfile/zed/settings.json;
+ };
+ home.file.".config/zed/themes" = {
+  source = ./dotfile/zed/themes;
   recursive = true;
   executable = true;
  };
