@@ -36,6 +36,10 @@
       ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.tmux}/bin/tmux attach -t "$@"
   fi
   '';
+  yabai-reload = pkgs.writeShellScriptBin "yabai-reload" ''
+  sudo launchctl stop org.nixos.yabai-sa
+  sudo launchctl start org.nixos.yabai-sa
+  ''; 
 in {
-  home.packages = [ ny kny wny wez wtm ktm tm ];
+  home.packages = [ ny kny wny wez wtm ktm tm yabai-reload ];
 }
