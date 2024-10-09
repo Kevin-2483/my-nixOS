@@ -23,8 +23,11 @@
 系統的一切，從系統設定，到程式安裝，從環境變量，到用戶配置等等都由Nix管理。
 
 > homebrew 及 cask 也在nix-darwin的管理之下，但homebrew程式本身不由nix管理
+
 > App Store 安裝的程式暫時沒用被管理，我幾乎不使用App Store
+
 > 在部分軟件中，一些時常我經常更新，或具有時效性的的配置由 WebDAV 管理，比如我使用WebDAV管理訂閱，同步Obsidian筆記，但這些軟件本身和配置由nix管理
+
 > 闭源软件一般由brew cask下载而不通过Nixpkgs下载来保证软件是最新的
 
 使用flakes特性，来保证配置的统一，易读，便于扩展
@@ -34,6 +37,7 @@
 使用[yabai](https://github.com/koekeishiya/yabai/tree/master)配合[skhd](https://github.com/koekeishiya/skhd)进行的视窗管理
 
 > 我關閉了系統完整性保護
+
 > 使用darwin-rebuild switch切換到新的代之後需要使用yabai-reload命令來恢復使用cli控制yabai服務的功能
 
 ## 輸入法及語言
@@ -43,6 +47,7 @@
 ![Rime](./screenshot/rime.png)
 
 > 我的系統使用繁體中文作爲系統語言，部分配置和簡體中文應該不一樣，比如yabai規則。
+
 > 为什么有的时候我用简体有的时候用繁体，我不懂繁体中文，但我用繁体中文作为计算机和各种电子设备的显示语言七八年了，简体中文是我及我身边的人的母语，但我认为繁体中文更具汉字美感，并且更易读。在计算机上不用担心繁体中文难写所以我会选择在计算机上使用繁体中文，但书面表达偏向于大陆语境 ：）
 
 ## skhd組合鍵
