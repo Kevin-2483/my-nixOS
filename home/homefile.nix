@@ -1,7 +1,7 @@
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-  
+
   # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
   home.file.".config/micro" = {
     # source = ~/.config/nix-darwin/home/dotfile/micro;
@@ -10,7 +10,7 @@
     executable = true;  # 将其中所有文件添加「执行」权限
 
   };
-    
+
   home.file.".config/nvim" = {
     # source = ~/.config/nix-darwin/home/dotfile/nvim;
     source = ./dotfile/nvim;
@@ -18,7 +18,7 @@
     executable = true;  # 将其中所有文件添加「执行」权限
 
   };
-    
+
   home.file.".config/yazi" = {
     # source = ~/.config/nix-darwin/home/dotfile/yazi;
     source = ./dotfile/yazi;
@@ -55,6 +55,11 @@
  };
  home.file."Library/Rime" = {
   source = ./dotfile/Rime;
+  recursive = true;
+  executable = true;
+ };
+ home.file.".config/zed" = {
+  source = ./dotfile/zed;
   recursive = true;
   executable = true;
  };
