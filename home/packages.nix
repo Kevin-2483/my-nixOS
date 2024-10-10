@@ -15,7 +15,7 @@
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     nix-output-monitor
     glow # markdown previewer in terminal
-
+    mdcat # cat for markdown
     btop  # replacement of htop/nmon
     iftop # network monitoring
 
@@ -61,6 +61,14 @@
     matugen
 
     easytier
+    xdragon
+
+    cloc
+    mediainfo
+    ouch
+    lazygit
+    clipboard-jh
+
   ];
 
   nixpkgs = {

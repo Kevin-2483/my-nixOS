@@ -58,14 +58,12 @@
   recursive = true;
   executable = true;
  };
- home.file.".config/zed/settings.json" = {
-  source = ./dotfile/zed/settings.json;
- };
- home.file.".config/zed/themes" = {
-  source = ./dotfile/zed/themes;
+ home.file.".config/zed" = {
+  source = ./dotfile/zed;
   recursive = true;
   executable = true;
  };
+
  home.file."Library/Fonts/adobe_garamond_small_caps.ttf".source = ./dotfile/Fonts/adobe_garamond_small_caps.ttf;
  home.file."Library/Fonts/B2Hana-Medium.ttf".source = ./dotfile/Fonts/B2Hana-Medium.ttf;
  home.file."Library/Fonts/B2Hana-Regular-Lite.ttf".source = ./dotfile/Fonts/B2Hana-Regular-Lite.ttf;

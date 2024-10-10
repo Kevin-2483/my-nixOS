@@ -12,7 +12,7 @@
       bold_italic_font = "auto";
       font_size = "14";
       disable_ligatures = "cursor";
-      shell = "${pkgs.nushell}/bin/nu -e neofetch";
+      shell = "${pkgs.nushell}/bin/nu -l -e neofetch";
       # shell = ''
       # /run/current-system/sw/bin/bash -c "source /etc/static/bashrc; nu -e neofetch"
       # '';
@@ -40,7 +40,7 @@
       tab_bar_edge                top
       tab_bar_style               powerline
       tab_powerline_style         round
-      macos_option_as_alt yes 
+      macos_option_as_alt yes
       map cmd+1 combine : send_key ctrl+space : send_key 1
       map cmd+2 combine : send_key ctrl+space : send_key 2
       map cmd+3 combine : send_key ctrl+space : send_key 3
