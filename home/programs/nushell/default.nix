@@ -22,7 +22,7 @@
 					"/sbin"
 					"/opt/homebrew/bin"
 			]
-			$env.EDITOR = "VIM"
+			$env.EDITOR = "lvim"
 			$env.NIX_PATH = $"darwin-config=($env.HOME)/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels"
 			$env.NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt"
 			$env.PAGER = "less -R"
@@ -101,6 +101,8 @@
 			};
 			shellAliases = {
 			pc4 = "proxychains4";
+      vi = "lvim";
+      vim = "lvim";
 			};
 
 	};

@@ -22,56 +22,175 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
-    { run = 'nvim "$@"', block = true, for = "unix" },
-    { run = 'code "%*"', orphan = true, for = "windows" },
+    { run = 'lvim "$@"', desc = "Open with lunarVim", block = true, for = "unix" },
+    { run = 'code "$@"', desc = "Open with VSCode", for = "unix" },
+    { run = 'kitty lvim "$@"', desc = "Open with LunarVim in new window", for = "unix" },
+    { run = 'zed "$@"', desc = "Open with Zed", for = "macos" },
+    { run = 'code "%*"', desc = "Open with VSCode", orphan = true, for = "windows" },
 ]
+
+micro = [
+    { run = 'micro "$@"', desc = "Open with micro", block = true, for = "unix" },
+]
+
 open = [
     { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
     { run = 'open "$@"', desc = "Open", for = "macos" },
     { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
+
 reveal = [
     { run = 'open -R "$1"', desc = "Reveal", for = "macos" },
     { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
     { run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF", for = "unix" },
 ]
+
 extract = [
     { run = 'unar "$1"', desc = "Extract here", for = "unix" },
     { run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
-play = [
+
+playvideo = [
     { run = 'mpv --vo=libmpv --geometry=50% --no-border --focus-on=open --mute=yes "$@"', orphan = true, for = "unix" },
     { run = 'mpv "%1"', orphan = true, for = "windows" },
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
+
+playaudio = [
+    { run = 'wezterm-gui -e mpv --vo=libmpv --mute=no "$@"', desc = "Play audio with mpv in new window", orphan = true, for = "unix" },
+    { run = 'mpv "%1"', orphan = true, for = "windows" },
+    { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
+]
+
 zathura = [{ run = 'zathura "$1"', orphan = true, for = "unix" }]
 rootbrowse = [{ run = 'rootbrowse "$1"', orphan = true, for = "unix" }]
 
+dragon = [
+    { run = 'dragon -x -i -T "$1"', desc = "Open with dargon", for = "unix" },
+]
+
+ouch = [
+    { run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
+    { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+]
+
 [open]
 rules = [
-    { name = "*/", use = ["edit", "open", "reveal"] },
+    { name = "*/", use = [
+        "edit",
+        "open",
+        "dragon",
+        "reveal",
+    ] },
 
-    { mime = "text/*", use = ["edit", "reveal"] },
-    { mime = "image/*", use = ["open", "reveal"] },
-    { mime = "video/*", use = ["play", "reveal"] },
-    { mime = "audio/*", use = ["play", "reveal"] },
-    { mime = "inode/x-empty", use = ["edit", "reveal"] },
+    { mime = "text/*", use = [
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
 
-    { mime = "application/json", use = ["edit", "reveal"] },
-    { mime = "application/pdf", use = ["zathura", "reveal"] },
-    { mime = "*/javascript", use = ["edit", "reveal"] },
-    { name = "*.root", use = ["rootbrowse"] },
+    { mime = "image/*", use = [
+        "open",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "video/*", use = [
+        "open",
+        "playvideo",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "audio/*", use = [
+        "playaudio",
+        "open",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "inode/x-empty", use = [
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
 
-    { name = "*.zip", use = ["extract", "reveal"] },
-    # { mime = "application/gzip",            use = [ "extract", "reveal" ] },
-    # { mime = "application/x-tar",           use = [ "extract", "reveal" ] },
-    # { mime = "application/x-bzip",          use = [ "extract", "reveal" ] },
-    # { mime = "application/x-bzip2",         use = [ "extract", "reveal" ] },
-    # { mime = "application/x-7z-compressed", use = [ "extract", "reveal" ] },
-    # { mime = "application/x-rar",           use = [ "extract", "reveal" ] },
-    # { mime = "application/xz",              use = [ "extract", "reveal" ] },
+    { mime = "application/json", use = [
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/pdf", use = [
+        "zathura",
+        "open",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "*/javascript", use = [
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
+    { name = "*.root", use = [
+        "rootbrowse",
+    ] },
 
-    { mime = "*", use = ["open", "reveal"] },
+    { name = "*.zip", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/gzip", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/x-tar", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/x-bzip", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/x-bzip2", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/x-7z-compressed", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/x-rar", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+    { mime = "application/xz", use = [
+        "ouch",
+        "extract",
+        "dragon",
+        "reveal",
+    ] },
+
+    { mime = "*", use = [
+        "open",
+        "edit",
+        "dragon",
+        "reveal",
+    ] },
 ]
 
 [tasks]

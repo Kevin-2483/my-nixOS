@@ -5,7 +5,7 @@
 
   environment.shells = with pkgs; [ nushell bash zsh ];
   environment.variables = rec {
-  	EDITOR = "micro";
+  	EDITOR = "lvim";
   	# JAVA_HOME = "/home/kevin/AzulJDK/zing24.02.0.0-6-jdk17.0.10-linux_x64";
   	# PATH = "$JAVA_HOME/bin:$PATH";
   	};

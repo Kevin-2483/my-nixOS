@@ -61,14 +61,12 @@
     matugen
 
     easytier
-    xdragon
-
     cloc
     mediainfo
     ouch
     lazygit
     clipboard-jh
-
+    lunarvim
   ];
 
   nixpkgs = {

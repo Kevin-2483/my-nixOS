@@ -105,5 +105,8 @@
     {
       name = "mihomo-party";
     }
+    {
+      name = "shottr";
+    }
   ];
 }

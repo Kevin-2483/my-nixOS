@@ -93,10 +93,11 @@ on = "<C-d>"
 run = "plugin diff"
 desc = "Diff the selected with the hovered file"
 
+
 [[manager.prepend_keymap]]
-on = "<C-n>"
+on = "<C-s>"
 run = '''
-	shell 'dragon -x -i -T "$1"' --confirm
+	shell 'open -R "$1"' --confirm
 '''
 
 [[manager.prepend_keymap]]

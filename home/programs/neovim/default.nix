@@ -4,8 +4,8 @@
 		enable = true;
 		defaultEditor = true;
 		package = pkgs.neovim-unwrapped;
-		vimAlias = true;
-		viAlias = true;
+		vimAlias = false;
+		viAlias = false;
 		# configure = {};
 	};
 }
