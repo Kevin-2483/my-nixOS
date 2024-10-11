@@ -97,6 +97,7 @@
 | <kbd>Alt</kbd> - <kbd>-</kbd>                                | 摧毁Space                           |
 | <kbd>Alt</kbd> - <kbd>[</kbd>                                | 当前Space与上一個交换               |
 | <kbd>Alt</kbd> - <kbd>]</kbd>                                | 当前Space与下一個交换               |
+| <kbd>Alt</kbd> - <kbd>`</kbd>                                | 回到上一个Space                     |
 | <kbd>Alt</kbd> + <kbd>Command</kbd> - b                      | 平衡Space中视窗分割                 |
 | <kbd>Alt</kbd> + <kbd>Shift</kbd> - r                        | 旋轉Space                           |
 | <kbd>Alt</kbd> + <kbd>Command</kbd> - r                      | 切換當前parent分割方向              |
@@ -108,7 +109,7 @@
 | <kbd>Alt</kbd> + <kbd>Command</kbd> - m                      | 切換聚焦視窗至懸浮模式              |
 | <kbd>Ctrl</kbd> - 方向鍵                                     | 向指定方位拉伸聚焦視窗以放大之      |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> - 方向鍵                  | 向指定方位擠壓聚焦視窗以縮小之      |
-| <kbd>Command</kbd> - 方向鍵                                  | 向指定方位移動聚焦視窗              |
+| <kbd>Command</kbd> + <kbd>Shift</kbd> - 方向鍵               | 向指定方位移動聚焦視窗              |
 | <kbd>Alt</kbd> - a                                           | 打開應用Arc Browser                 |
 | <kbd>Alt</kbd> - s                                           | 打開應用Spotify                     |
 | <kbd>Alt</kbd> - t                                           | 執行指令 kitty                      |

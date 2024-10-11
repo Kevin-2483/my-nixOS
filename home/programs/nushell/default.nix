@@ -5,10 +5,10 @@
 		package = pkgs.nushell;
 		envFile = { text =
 			''
-			$env.__NIX_DARWIN_SET_ENVIRONMENT_DONE = 1 
+			$env.__NIX_DARWIN_SET_ENVIRONMENT_DONE = 1
 
 			$env.LC_CTYPE = "en_US.UTF-8"
-			
+
 			$env.PATH = [
 					$"($env.HOME)/.cargo/bin"
 					$"($env.HOME)/.nix-profile/bin"
@@ -61,13 +61,13 @@
 			if (false in (ls -l `/nix/var/nix`| where type == dir | where name == "/nix/var/nix/db" | get mode | str contains "w")) {
 					$env.NIX_REMOTE = "daemon"
 			}
-			
+
 			mkdir ~/.cache/starship
 			starship init nu | save -f ~/.cache/starship/init.nu
 			'';
 			};
-		configFile = { 
-			text = 
+		configFile = {
+			text =
 			''
 			use ~/.cache/starship/init.nu
 			def --env yy [...args] {
@@ -85,24 +85,24 @@
 			def nupen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
 			alias open = ^open
 
-			def "cargo search" [ query: string, --limit=10] { 
+			def "cargo search" [ query: string, --limit=10] {
 					^cargo search $query --limit $limit
-					| lines 
-					| each { 
-							|line| if ($line | str contains "#") { 
-									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)" +# (?P<description>.+)' 
-							} else { 
-									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)"' 
-							} 
-					} 
+					| lines
+					| each {
+							|line| if ($line | str contains "#") {
+									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)" +# (?P<description>.+)'
+							} else {
+									$line | parse --regex '(?P<name>.+) = "(?P<version>.+)"'
+							}
+					}
 					| flatten
 			}
 			'';
 			};
 			shellAliases = {
 			pc4 = "proxychains4";
-      vi = "lvim";
-      vim = "lvim";
+            vi = "lvim";
+            vim = "lvim";
 			};
 
 	};

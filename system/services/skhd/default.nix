@@ -35,6 +35,7 @@
     alt - 0x1B : yabai -m space --destroy
     alt - 0x21 : yabai -m space --move prev
     alt - 0x1E : yabai -m space --move next
+    alt - 0x32 : yabai -m space --focus recent
 
     alt + cmd - b : yabai -m space --balance
     # yabai -m space --mirror x-axis
@@ -73,10 +74,10 @@
     ctrl + shift - down : yabai -m window --resize top:0:100
     ctrl + shift - left : yabai -m window --resize right:-100:0
 
-    cmd - up : yabai -m window --move rel:0:-100
-    cmd - down : yabai -m window --move rel:0:100
-    cmd - left : yabai -m window --move rel:-100:0
-    cmd - right : yabai -m window --move rel:100:0
+    cmd + shift - up : yabai -m window --move rel:0:-100
+    cmd + shift - down : yabai -m window --move rel:0:100
+    cmd + shift - left : yabai -m window --move rel:-100:0
+    cmd + shift - right : yabai -m window --move rel:100:0
 
 
     alt - a : open -a arc

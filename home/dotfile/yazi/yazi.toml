@@ -66,7 +66,7 @@ zathura = [{ run = 'zathura "$1"', orphan = true, for = "unix" }]
 rootbrowse = [{ run = 'rootbrowse "$1"', orphan = true, for = "unix" }]
 
 dragon = [
-    { run = 'dragon -x -i -T "$1"', desc = "Open with dargon", for = "unix" },
+    { run = 'dragon -x -i -T "$1"', desc = "Open with dargon", for = "linux" },
 ]
 
 ouch = [
@@ -132,10 +132,16 @@ rules = [
         "dragon",
         "reveal",
     ] },
+    { name = "*.html", use = [
+        "open",
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
     { name = "*.root", use = [
         "rootbrowse",
     ] },
-
     { name = "*.zip", use = [
         "ouch",
         "extract",
@@ -200,35 +206,6 @@ bizarre_retry = 5
 image_alloc = 536870912  # 512MB
 image_bound = [0, 0]
 suppress_preload = false
-
-[plugin]
-prepend_previewers = [{ mime = "text/csv", run = "miller" }]
-previewers = [
-    { name = "*/", run = "folder", sync = true },
-    # Code
-    { mime = "text/*", run = "code" },
-    { mime = "*/xml", run = "code" },
-    { mime = "*/javascript", run = "code" },
-    { mime = "*/x-wine-extension-ini", run = "code" },
-    # JSON
-    { mime = "application/json", run = "json" },
-    # Image
-    { mime = "image/vnd.djvu", run = "noop" },
-    { mime = "image/*", run = "image" },
-    # Video
-    { mime = "video/*", run = "video" },
-    # PDF
-    { mime = "application/pdf", run = "pdf" },
-    # Archive
-    { mime = "application/zip", run = "archive" },
-    { mime = "application/gzip", run = "archive" },
-    { mime = "application/x-tar", run = "archive" },
-    { mime = "application/x-bzip", run = "archive" },
-    { mime = "application/x-bzip2", run = "archive" },
-    { mime = "application/x-7z-compressed", run = "archive" },
-    { mime = "application/x-rar", run = "archive" },
-    { mime = "application/xz", run = "archive" },
-]
 
 [input]
 # cd
@@ -321,7 +298,10 @@ name = "*"
 run = "mime-ext"
 prio = "high"
 
+
+[plugin]
 prepend_previewers = [
+    { mime = "text/csv", run = "miller" },
     { name = "*.md", run = "glow" },
     { mime = "{image,audio,video}/*", run = "mediainfo" },
     { mime = "application/x-subrip", run = "mediainfo" },
@@ -332,5 +312,39 @@ prepend_previewers = [
     { mime = "application/x-7z-compressed", run = "ouch" },
     { mime = "application/x-rar", run = "ouch" },
     { mime = "application/x-xz", run = "ouch" },
-
+]
+previewers = [
+    { name = "*/", run = "folder", sync = true },
+    # Code
+    { mime = "text/*", run = "code" },
+    { mime = "*/xml", run = "code" },
+    { mime = "*/javascript", run = "code" },
+    { mime = "*/x-wine-extension-ini", run = "code" },
+    { name = "*.md", run = "glow" },
+    # JSON
+    { mime = "application/json", run = "json" },
+    # # Image
+    # { mime = "image/vnd.djvu", run = "noop" },
+    # { mime = "image/*", run = "image" },
+    # # Video
+    # { mime = "video/*", run = "video" },
+    { mime = "{image,audio,video}/*", run = "mediainfo" },
+    { mime = "application/x-subrip", run = "mediainfo" },
+    # PDF
+    { mime = "application/pdf", run = "pdf" },
+    { mime = "application/*zip", run = "ouch" },
+    { mime = "application/x-tar", run = "ouch" },
+    { mime = "application/x-bzip2", run = "ouch" },
+    { mime = "application/x-7z-compressed", run = "ouch" },
+    { mime = "application/x-rar", run = "ouch" },
+    { mime = "application/x-xz", run = "ouch" },
+    # Archive
+    # { mime = "application/zip", run = "archive" },
+    # { mime = "application/gzip", run = "archive" },
+    # { mime = "application/x-tar", run = "archive" },
+    # { mime = "application/x-bzip", run = "archive" },
+    # { mime = "application/x-bzip2", run = "archive" },
+    # { mime = "application/x-7z-compressed", run = "archive" },
+    # { mime = "application/x-rar", run = "archive" },
+    # { mime = "application/xz", run = "archive" },
 ]

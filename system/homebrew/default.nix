@@ -108,5 +108,8 @@
     {
       name = "shottr";
     }
+    {
+        name = "qq";
+    }
   ];
 }
