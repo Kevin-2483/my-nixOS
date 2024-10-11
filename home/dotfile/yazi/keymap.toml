@@ -1,70 +1,70 @@
 [[manager.prepend_keymap]]
-on = ["b", "r"]
+on = ["B", "r"]
 run = 'plugin mactag --args="add Red"'
 desc = "Tag selected files with red"
 
 [[manager.prepend_keymap]]
-on = ["b", "R"]
+on = ["B", "R"]
 run = 'plugin mactag --args="remove Red"'
 desc = "Remove red tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "o"]
+on = ["B", "o"]
 run = 'plugin mactag --args="add Orange"'
 desc = "Tag selected files with orange"
 
 [[manager.prepend_keymap]]
-on = ["b", "O"]
+on = ["B", "O"]
 run = 'plugin mactag --args="remove Orange"'
 desc = "Remove orange tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "g"]
+on = ["B", "g"]
 run = 'plugin mactag --args="add Green"'
 desc = "Tag selected files with green"
 
 [[manager.prepend_keymap]]
-on = ["b", "G"]
+on = ["B", "G"]
 run = 'plugin mactag --args="remove Green"'
 desc = "Remove green tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "b"]
+on = ["B", "b"]
 run = 'plugin mactag --args="add Blue"'
 desc = "Tag selected files with blue"
 
 [[manager.prepend_keymap]]
-on = ["b", "B"]
+on = ["B", "B"]
 run = 'plugin mactag --args="remove Blue"'
 desc = "Remove blue tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "p"]
+on = ["B", "p"]
 run = 'plugin mactag --args="add Purple"'
 desc = "Tag selected files with Purple"
 
 [[manager.prepend_keymap]]
-on = ["b", "P"]
+on = ["B", "P"]
 run = 'plugin mactag --args="remove Purple"'
 desc = "Remove purple tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "y"]
+on = ["B", "y"]
 run = 'plugin mactag --args="add Yellow"'
 desc = "Tag selected files with yellow"
 
 [[manager.prepend_keymap]]
-on = ["b", "Y"]
+on = ["B", "Y"]
 run = 'plugin mactag --args="remove Yellow"'
 desc = "Remove yellow tag from selected files"
 
 [[manager.prepend_keymap]]
-on = ["b", "h"]
+on = ["B", "h"]
 run = 'plugin mactag --args="add Grey"'
 desc = "Tag selected files with grey"
 
 [[manager.prepend_keymap]]
-on = ["b", "H"]
+on = ["B", "H"]
 run = 'plugin mactag --args="remove Grey"'
 desc = "Remove grey tag from selected files"
 
@@ -120,6 +120,11 @@ desc = "Compress with ouch"
 on = ["u", "a"]
 run = "plugin yamb --args=save"
 desc = "Add bookmark"
+
+[[manager.prepend_keymap]]
+on = ["b"]
+run = "plugin yamb --args=jump_by_key"
+desc = "Jump bookmark by key"
 
 [[manager.prepend_keymap]]
 on = ["u", "g"]
