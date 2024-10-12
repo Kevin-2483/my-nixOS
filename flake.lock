@@ -2,16 +2,16 @@
   "nodes": {
     "catppuccin": {
       "locked": {
-        "lastModified": 1724676462,
-        "narHash": "sha256-OUk7oj1mfzQekvuXrM/Wqk58ioLzfjYTTsfHDwfLyBw=",
+        "lastModified": 1728762872,
+        "narHash": "sha256-x3d7Bxf1+aCVqD//w1wTLGogR8YT9wp1Cw5vAEM8P3Y=",
         "owner": "Kevin-2483",
-        "repo": "catppuccin-for-nix-darwin1",
-        "rev": "9cd1745a7069e9e3d369b52f1281655834ebbcc1",
+        "repo": "catppuccin-for-nix-darwin",
+        "rev": "3abcca0e716a000a3881a0d72ddb22f4a6eeecb8",
         "type": "github"
       },
       "original": {
         "owner": "Kevin-2483",
-        "repo": "catppuccin-for-nix-darwin1",
+        "repo": "catppuccin-for-nix-darwin",
         "type": "github"
       }
     },

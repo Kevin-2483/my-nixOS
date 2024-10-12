@@ -10,7 +10,7 @@
           url = "github:nix-community/home-manager";          
           inputs.nixpkgs.follows = "nixpkgs";
         };
-      catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin1";
+      catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin";
   };
 
   outputs = { self, nixpkgs, home-manager, catppuccin, nixpkgs-stable, darwin, ... }@inputs: let

@@ -2,7 +2,7 @@
 {
   programs.helix = {
     enable = true;
-
+    catppuccin.enable = true; 
     extraPackages = with pkgs; with nodePackages; [
       # vscode-langservers-extracted
       # gopls
@@ -52,7 +52,7 @@
         };        
       };
 
-      theme = "base16_transparent";
+      # theme = "base16_transparent";
 
       editor = {
         line-number = "relative";
