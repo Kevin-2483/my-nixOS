@@ -46,12 +46,15 @@
 
 登入shell为zsh，与系统交互使用nushell，配置中向bash，zsh，nushell添加了完整的系统环境变量，包括nix，brew等。其中zsh和nushell使用[starship](https://starship.rs/)主题
 
+> [!TIP]
+> 初次构建后使用install_plugins 来进行插件安装
+
 ## Yazi
 
 加入了一些常用插件
 
 > [!TIP]
-> 使用darwin-rebuild switch切換到新的代之後需要使用`sudo ya pack -i`命令來安裝yazi插件
+> 使用darwin-rebuild switch 切換到新的代之後需要使用`sudo ya pack -i`命令來安裝yazi插件
 
 ## 主题
 

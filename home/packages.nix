@@ -61,7 +61,7 @@
     matugen
 
     easytier
-    cloc
+    tokei
     mediainfo
     ouch
     lazygit

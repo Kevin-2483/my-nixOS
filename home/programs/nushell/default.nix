@@ -23,7 +23,7 @@
 					"/opt/homebrew/bin"
 			]
 			$env.EDITOR = "lvim"
-			$env.NIX_PATH = $"darwin-config=($env.HOME)/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels"
+			$env.NIX_PATH = $"darwin-config=($env.HOME)/.config/nix-darwin/flake.nix:/nix/var/nix/profiles/per-user/root/channels"
 			$env.NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt"
 			$env.PAGER = "less -R"
 			$env.TERMINFO_DIRS = [
@@ -55,7 +55,7 @@
 			]
 
 			if ($"($env.HOME)/.nix-defexpr/channels" | path exists) {
-					$env.NIX_PATH = ($env.PATH | split row (char esep) | append $"($env.HOME)/.nix-defexpr/channels")
+					$env.NIX_PATH = ($env.NIX_PATH | split row (char esep) | append $"($env.HOME)/.nix-defexpr/channels")
 			}
 
 			if (false in (ls -l `/nix/var/nix`| where type == dir | where name == "/nix/var/nix/db" | get mode | str contains "w")) {
@@ -69,6 +69,50 @@
 		configFile = {
 			text =
 			''
+      def install_plugins [] {
+        [
+          # nu_plugin_polars
+          nu_plugin_gstat
+          nu_plugin_formats
+          nu_plugin_query
+          nu_plugin_net
+          nu_plugin_bash_env
+          nu_plugin_clipboard
+          nu_plugin_dns
+          nu_plugin_emoji
+          nu_plugin_image
+          nu_plugin_port_list
+          nu_plugin_port_scan
+        ] | each { |it|  
+              # 尝试安装插件，忽略失败的情况
+              try {
+                cargo install $it | ignore
+              } catch {
+                echo "Failed to install it"
+              }
+        } | ignore
+        [
+          # nu_plugin_polars
+          nu_plugin_gstat
+          nu_plugin_formats
+          nu_plugin_query
+          nu_plugin_net
+          nu_plugin_bash_env
+          nu_plugin_clipboard
+          nu_plugin_dns
+          nu_plugin_emoji
+          nu_plugin_image
+          nu_plugin_port_list
+          nu_plugin_port_scan
+        ] | each { |it|  
+              # 尝试安装插件，忽略失败的情况
+              try {
+                plugin add $"($env.HOME)/.cargo/bin/($it)" | ignore
+              } catch {
+                echo "Failed to install it"
+              }
+        }
+      }
 			use ~/.cache/starship/init.nu
 			def --env yy [...args] {
 			let tmp = (mktemp -t "yazi-cwd.XXXXXX")

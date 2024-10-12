@@ -9,6 +9,6 @@
       . /etc/static/bashrc
     fi
     '';
-    enableCompletion = true;
+    completion.enable = true;
   };
 }
