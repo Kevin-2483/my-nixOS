@@ -60,7 +60,7 @@
     scrcpy
     matugen
 
-    easytier
+    # easytier
     tokei
     mediainfo
     ouch

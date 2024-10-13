@@ -25,8 +25,8 @@
 > [!NOTE]
 > homebrew 及 cask 也在nix-darwin的管理之下，但homebrew程式本身不由nix管理
 
-> [!Important]
-> App Store 安裝的程式暫時沒用被管理，我幾乎不使用App Store
+> [!NOTE]
+> App Store 安裝的程式由mas管理，mas并不会在你从列表中移除应用时自动从系统删掉安装过的Apple Apps
 
 > [!Important]
 > 在部分軟件中，一些時常我經常更新，或具有時效性的的配置由 WebDAV 管理，比如我使用WebDAV管理訂閱，同步Obsidian筆記，但這些軟件本身和配置由nix管理
