@@ -80,9 +80,6 @@
        name = "font-sf-pro";
      }
      {
-       name = "remote-desktop-manager";
-     }
-     {
        name = "font-sarasa-nerd";
      }
      {
