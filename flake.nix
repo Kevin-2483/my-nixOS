@@ -1,7 +1,7 @@
 {
   description = "Kevin's flake for nix-darwin";
   inputs = {
-      
+      nixpkgs-master.url = "github:nixos/nixpkgs/master";
       nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
       nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
       darwin.url = "github:lnl7/nix-darwin";

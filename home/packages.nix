@@ -60,7 +60,7 @@
     scrcpy
     matugen
 
-    # easytier
+    master.easytier
     tokei
     mediainfo
     ouch
@@ -76,14 +76,14 @@
         overlays = [
           # Add overlays your own flake exports (from overlays and pkgs dir):
           outputs.overlays.stable-packages
+          outputs.overlays.master-packages
           #outputs.overlays.steam-env
         ];
         config = {
               allowUnfree = true;
               # Workaround for https://github.com/nix-community/home-manager/issues/2942
               allowUnfreePredicate = _: true;
+              allowBroken = true;
             };
         };
-  nixpkgs.config.allowBroken = true;
-
 }
