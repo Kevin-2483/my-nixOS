@@ -82,7 +82,13 @@ rules = [
         "dragon",
         "reveal",
     ] },
-
+    { name = "*.html", use = [
+        "open",
+        "edit",
+        "micro",
+        "dragon",
+        "reveal",
+    ] },
     { mime = "text/*", use = [
         "edit",
         "micro",
@@ -127,13 +133,6 @@ rules = [
         "reveal",
     ] },
     { mime = "*/javascript", use = [
-        "edit",
-        "micro",
-        "dragon",
-        "reveal",
-    ] },
-    { name = "*.html", use = [
-        "open",
         "edit",
         "micro",
         "dragon",

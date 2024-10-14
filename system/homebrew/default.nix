@@ -110,8 +110,11 @@
        name = "shottr";
      }
      {
-         name = "qq";
+       name = "qq";
      }
+     # {
+     #   name = "macfuse";
+     # }
    ];
    masApps = {
     windows-app = 1295203466;

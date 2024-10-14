@@ -67,6 +67,9 @@
     lazygit
     clipboard-jh
     lunarvim
+    coder
+    # sshfs
+    
   ];
 
   nixpkgs = {
