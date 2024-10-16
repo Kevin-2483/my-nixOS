@@ -35,7 +35,7 @@
       yabai -m config    mouse_drop_action            swap           ## 在平铺管理情况下，拖动一个窗口到另一窗口位置时的操作
 
 
-      yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機|Motrix|wezterm-gui|活動監視器|語音備忘錄|預覽程式|天氣|QuickTime Player|Shottr|dragon|Raycast)$" manage=off sticky=on
+      yabai -m rule --add app="^(系統設定|Finder|LocalSend|計算機|Motrix|rio|活動監視器|語音備忘錄|預覽程式|天氣|QuickTime Player|Shottr|dragon|Raycast|kitty)$" manage=off sticky=on
       yabai -m rule --add app="^(Mihomo Party)$" title =="^(Mihomo Party Floating)$" manage=off sticky=on
       yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
       yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"

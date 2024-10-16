@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, username,... }:
 {
   system.defaults = {
     WindowManager = {
@@ -59,16 +59,17 @@
       mru-spaces = false; #是否在 Dock 中顯示最近使用的空間。預設為 true。
       persistent-apps = [
         "/Applications/Visual Studio Code.app"
+        "/Applications/Zed.app"
         "/Applications/WeChat.app"
         "/Applications/Obsidian.app"
         "/Applications/ChatGPT.app"
         "/Applications/Arc.app"
-        "/Users/kevin/Applications/Home Manager Apps/kitty.app"
-        "/Users/kevin/Applications/Home Manager Apps/Spotify.app"
-        "/Users/kevin/Applications/Home Manager Apps/WezTerm.app"
+        "/Users/${username}/Applications/Home Manager Apps/kitty.app"
+        "/Users/${username}/Applications/Home Manager Apps/Spotify.app"
+        "/Users/${username}/Applications/Home Manager Apps/Rio.app"
       ]; #Dock 中的應用程式圖標。預設為空。
       persistent-others = [
-        "/Users/kevin/Downloads"
+        "/Users/${username}/Downloads"
       ];#Dock 中的持久資料夾。
       show-process-indicators = true; #是否在 Dock 中顯示應用程式的運行狀態。預設為 true。
       show-recents = false; #是否在 Dock 中顯示最近使用的應用程式。預設為 true。
@@ -131,11 +132,11 @@
         # Hour = 0; Minute = 0; 
       }; #垃圾回收的頻率。
       options = "-d"; #垃圾回收的選項。
-      user = "kevin"; #垃圾回收的用戶。
+      user = "${username}"; #垃圾回收的用戶。
     };
     optimise = { 
       automatic = true; #是否自動優化 Nix 存儲庫。預設為 false
-      user = "kevin"; #優化 Nix 存儲庫的用戶。
+      user = "${username}"; #優化 Nix 存儲庫的用戶。
       interval = { 
         Day = 3; 
         # Hour = 0; Minute = 0 ; 
@@ -147,6 +148,7 @@
     };
     useDaemon = true;
     package = pkgs.nixVersions.git;
+    documentation.info.enable = true;
   };
 
 }

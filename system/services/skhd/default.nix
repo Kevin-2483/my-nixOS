@@ -82,14 +82,14 @@
 
     alt - a : open -a arc
     alt - s : open -a spotify
-    alt - t : kitty -d ~
+    alt - t : open -a Tabby
     alt - c : code
     alt - f : open -a Finder
     alt - w : open -a wechat
     alt - l : LocalSend
     alt - o : open -a obsidian
-    alt - return : open -a WezTerm
-    alt - x : wny & sleep 0.5 && yabai -m window --focus $(yabai -m query --windows | jq '.[0] | select(.app == "wezterm-gui" and .title == "Yazi: ~/") | .id | tonumber')
+    alt - return : open -a kitty
+    alt - x : kny & sleep 0.5 && yabai -m window --focus $(yabai -m query --windows | jq '.[0] | select(.app == "kitty" and .title == "Yazi: ~/") | .id | tonumber')
     # alt - u : open -a "System Settings"
     alt - j : open -a Calculator
     alt - z : zed

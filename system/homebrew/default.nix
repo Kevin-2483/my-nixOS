@@ -112,7 +112,7 @@
      # {
      #   name = "macfuse";
      # }
-   ];
+     ];
    masApps = {
     windows-app = 1295203466;
     runcat = 1429033973;

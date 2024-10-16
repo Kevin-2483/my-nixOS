@@ -14,8 +14,8 @@ show_symlink = true
 
 [preview]
 tab_size = 2
-max_width = 5000
-max_height = 5000
+max_width = 600
+max_height = 600
 cache_dir = ""
 ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]

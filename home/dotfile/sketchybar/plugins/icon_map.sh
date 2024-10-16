@@ -3,9 +3,15 @@
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
-    "Microsoft Remote Desktop")
+    "Tabby")
+      icon_result=":terminal:"
+      ;;
+    "Windows App")
         icon_result=":microsoft_remote_desktop:"
         ;;
+    "Rio")
+    icon_result=":rio:"
+    ;;
     "計算機")
     icon_result=":calculator:"
         ;;

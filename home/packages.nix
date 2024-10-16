@@ -55,7 +55,7 @@
     nix-prefetch-scripts
     nowplaying-cli
     # skhd
-    wezterm
+    # wezterm
     android-tools
     scrcpy
     matugen
@@ -69,7 +69,9 @@
     lunarvim
     coder
     # sshfs
-    
+   rio 
+   # master.warp-terminal
+   telegram-desktop
   ];
 
   nixpkgs = {

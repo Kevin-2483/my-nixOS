@@ -43,8 +43,8 @@
   recursive = true;
   executable = true;
  };
- home.file.".config/wezterm" = {
-  source = ./dotfile/wezterm;
+ home.file.".config/rio" = {
+  source = ./dotfile/rio;
   recursive = true;
   executable = true;
  };
@@ -68,16 +68,21 @@ home.file.".config/lvim" = {
   recursive = true;
   executable = true;
 };
- home.file."Library/Fonts/adobe_garamond_small_caps.ttf".source = ./dotfile/Fonts/adobe_garamond_small_caps.ttf;
- home.file."Library/Fonts/B2Hana-Medium.ttf".source = ./dotfile/Fonts/B2Hana-Medium.ttf;
- home.file."Library/Fonts/B2Hana-Regular-Lite.ttf".source = ./dotfile/Fonts/B2Hana-Regular-Lite.ttf;
- home.file."Library/Fonts/B2Hana-Regular.ttf".source = ./dotfile/Fonts/B2Hana-Regular.ttf;
- home.file."Library/Fonts/B2HanaB-Medium.ttf".source = ./dotfile/Fonts/B2HanaB-Medium.ttf;
- home.file."Library/Fonts/B2HanaB-Regular.ttf".source = ./dotfile/Fonts/B2HanaB-Regular.ttf;
- home.file."Library/Fonts/HanaMinA.ttf".source = ./dotfile/Fonts/HanaMinA.ttf;
- home.file."Library/Fonts/HanaMinB.ttf".source = ./dotfile/Fonts/HanaMinB.ttf;
- home.file."Library/Fonts/sarasa-term-sc-nerd.ttc".source = ./dotfile/Fonts/sarasa-term-sc-nerd.ttc;
 
+ # home.file."Library/Fonts/adobe_garamond_small_caps.ttf".source = ./dotfile/Fonts/adobe_garamond_small_caps.ttf;
+ # home.file."Library/Fonts/B2Hana-Medium.ttf".source = ./dotfile/Fonts/B2Hana-Medium.ttf;
+ # home.file."Library/Fonts/B2Hana-Regular-Lite.ttf".source = ./dotfile/Fonts/B2Hana-Regular-Lite.ttf;
+ # home.file."Library/Fonts/B2Hana-Regular.ttf".source = ./dotfile/Fonts/B2Hana-Regular.ttf;
+ # home.file."Library/Fonts/B2HanaB-Medium.ttf".source = ./dotfile/Fonts/B2HanaB-Medium.ttf;
+ # home.file."Library/Fonts/B2HanaB-Regular.ttf".source = ./dotfile/Fonts/B2HanaB-Regular.ttf;
+ # home.file."Library/Fonts/HanaMinA.ttf".source = ./dotfile/Fonts/HanaMinA.ttf;
+ # home.file."Library/Fonts/HanaMinB.ttf".source = ./dotfile/Fonts/HanaMinB.ttf;
+ # home.file."Library/Fonts/sarasa-term-sc-nerd.ttc".source = ./dotfile/Fonts/sarasa-term-sc-nerd.ttc;
+
+home.file."Library/Fonts/myfonts" = {
+  source = ./dotfile/Fonts;
+  recursive = true;
+};
   # home.file.".config/skhd" = {
   #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
   #   source = ./dotfile/skhd;

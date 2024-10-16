@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   system.activationScripts.fonts = {
-    enable = true;
-    # copy = true;
-    source = ./myfonts;
-    target = /Library/Fonts/myfonts;
+    enable = false;
+    copy = true;
+    source = ../../../home/dotfile/Fonts;
+    target = /Users/${username}/Library/Fonts/myfonts;
   };
 }

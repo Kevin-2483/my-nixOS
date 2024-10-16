@@ -42,6 +42,10 @@ app_options:
     ascii_mode: true
   dev.zed.Zed:
     ascii_mode: true
+  com.raphaelamorim.rio:
+    ascii_mode: true
+  org.tabby:
+    ascii_mode: true
 
 style:
   # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
@@ -115,7 +119,7 @@ preset_color_schemes:
     author: catppuccin
     # 如果将字体设置为 PingFangSC-Regular
     # 会让 🈶🈚️🉑🈲🉐 这几个 Emoji 失去彩色效果，留空反而可以显示。。。
-    font_face: "B2花園-Medium" # 字体及大小
+    font_face: "B2 Hana-Medium" # 字体及大小
     font_point: 18
     label_font_face: "AGaramond RegularSC" # 序号字体及大小
     label_font_point: 12
@@ -137,20 +141,20 @@ preset_color_schemes:
     alpha: 1 # 透明度，0~1
     spacing: 10 # 拼音与候选项之间的距离 （inline_preedit: false）
     color_space: srgb # 色彩空间： srgb | display_p3
-    back_color: 0x1e1e2e # 底色
-    hilited_candidate_back_color: 0xf5c2e7 # 选中底色
-    label_color: 0xa6e3a1 # 序号颜色
-    hilited_candidate_label_color: 0xf38ba8 # 选中序号颜色
-    candidate_text_color: 0xfab387 # 文字颜色
-    hilited_candidate_text_color: 0x1e1e2e # 选中文字颜色
-    comment_text_color: 0xf5e0dc # 注颜色
-    hilited_comment_text_color: 0xcba6f7 # 选中注颜色
-    text_color: 0xeba0ac # 拼音颜色 （inline_preedit: false）
-    hilited_text_color: 0x89b4fa # 选中拼音颜色 （inline_preedit: false）
-    candidate_back_color: 0x1e1e2e # 候选项底色
-    preedit_back_color: 0x94e2d5 # 拼音底色 （inline_preedit: false）
-    hilited_back_color: 0xf9e2af # 选中拼音底色 （inline_preedit: false）
-    border_color: 0xb4befe # 外边框颜色
+    back_color: 0xff1e1e2e # 底色
+    hilited_candidate_back_color: 0xfff5c2e7 # 选中底色
+    label_color: 0xffa6e3a1 # 序号颜色
+    hilited_candidate_label_color: 0xfff38ba8 # 选中序号颜色
+    candidate_text_color: 0xfffab387 # 文字颜色
+    hilited_candidate_text_color: 0xff1e1e2e # 选中文字颜色
+    comment_text_color: 0xfff5e0dc # 注颜色
+    hilited_comment_text_color: 0xffcba6f7 # 选中注颜色
+    text_color: 0xffeba0ac # 拼音颜色 （inline_preedit: false）
+    hilited_text_color: 0xff89b4fa # 选中拼音颜色 （inline_preedit: false）
+    candidate_back_color: 0xff1e1e2e # 候选项底色
+    preedit_back_color: 0xff94e2d5 # 拼音底色 （inline_preedit: false）
+    hilited_back_color: 0xfff9e2af # 选中拼音底色 （inline_preedit: false）
+    border_color: 0xffb4befe # 外边框颜色
 
   # 下面是内置的皮肤 https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
 

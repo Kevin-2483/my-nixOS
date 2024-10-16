@@ -7,19 +7,18 @@
     ${pkgs.kitty}/bin/kitty ny "$@"
   fi
   '';
-  wny = pkgs.writeShellScriptBin "wny" ''
+  rny = pkgs.writeShellScriptBin "rny" ''
   if [ "$#" -eq 0 ]; then
-    ${pkgs.wezterm}/bin/wezterm -e ny "$HOME"
+    ${pkgs.rio}/bin/rio -e ny "$HOME"
   else
-    ${pkgs.wezterm}/bin/wezterm -e ny "$@"
+    ${pkgs.rio}/bin/rio -e ny "$@"
   fi
   '';
-  wez = pkgs.writeShellScriptBin "wez" ''${pkgs.wezterm}/bin/wezterm "$@"'';
-  wtm = pkgs.writeShellScriptBin "wtm" ''
+  rtm = pkgs.writeShellScriptBin "rtm" ''
   if [ "$#" -eq 0 ]; then
-     ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.wezterm}/bin/wezterm -e tmux attach -t default
+     ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.rio}/bin/rio -e tmux attach -t default
   else
-      ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.wezterm}/bin/wezterm -e tmux attach -t "$@"
+      ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.rio}/bin/rio -e tmux attach -t "$@"
   fi
   '';
   ktm = pkgs.writeShellScriptBin "ktm" ''
@@ -41,5 +40,5 @@
   sudo launchctl start org.nixos.yabai-sa
   ''; 
 in {
-  home.packages = [ ny kny wny wez wtm ktm tm yabai-reload ];
+  home.packages = [ ny kny rny rtm ktm tm yabai-reload ];
 }
