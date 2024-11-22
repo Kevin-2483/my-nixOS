@@ -1,0 +1,24 @@
+[plugin]
+deps = [
+    { use = "yazi-rs/plugins:git" },
+    { use = "yazi-rs/plugins:diff" },
+    { use = "yazi-rs/plugins:chmod" },
+    { use = "yazi-rs/plugins:full-border" },
+    { use = "yazi-rs/plugins:jump-to-char" },
+    { use = "yazi-rs/plugins:mactag" },
+    { use = "yazi-rs/plugins:max-preview" },
+    { use = "Reledia/miller" },
+    { use = "yazi-rs/plugins:mime-ext" },
+    { use = "yazi-rs/plugins:smart-filter" },
+    { use = "Rolv-Apneseth/starship" },
+    { use = "Reledia/glow" },
+    { use = "Ape/mediainfo" },
+    { use = "ndtoan96/ouch" },
+    { use = "Lil-Dank/lazygit" },
+    { use = "h-hg/yamb" },
+    { use = "orhnk/system-clipboard" },
+
+]
+
+[flavor]
+deps = []

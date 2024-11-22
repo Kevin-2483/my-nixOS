@@ -1,0 +1,18 @@
+[
+  "系統設定"
+  "Finder"
+  "LocalSend"
+  "計算機"
+  "Motrix"
+  "rio"
+  "活動監視器"
+  "語音備忘錄"
+  "預覽程式"
+  "天氣"
+  "QuickTime Player"
+  "Shottr"
+  "dragon"
+  "Raycast"
+  "WeChat"
+  "kitty"
+]

@@ -1,0 +1,10 @@
+prepend:
+  - "IP-CIDR,183.136.206.74/24,DIRECT"
+  - "DOMAIN,kevin.2k2.cc,DIRECT"
+  - 'PROCESS-PATH-REGEX,^/Applications/Zed\.app/Contents(/.*)?,Hello world'
+  - "DOMAIN-KEYWORD,copilot,Hello world"
+  - "DOMAIN-KEYWORD,github,Hello world"
+  - "PROCESS-PATH-REGEX,^/System/Applications(/.*)?,DIRECT"
+  - "DOMAIN,cn.bing.com,DIRECT"
+append: []
+delete: []
