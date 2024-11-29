@@ -45,4 +45,5 @@ let
     export PATH=$JAVA_HOME/bin:$PATH
     java -jar /Users/${username}/Library/minecraft/HMCL-3.5.9.jar
   '';
-in { home.packages = [ ny kny rny rtm ktm tm yabai-reload hmcl]; }
+in
+{ home.packages = [ ny kny rny rtm ktm tm yabai-reload hmcl ]; }

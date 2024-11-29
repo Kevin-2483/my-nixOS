@@ -6,91 +6,104 @@ let
   fg2 = "white";
   color = c: "#{@${c}}";
 
-  indicator = let
-    accent = color "indicator_color";
-    content = "  ";
-  in "#[fg=${accent}]#{?client_prefix,,}#[fg=${bg2},bg=${accent}]#{?client_prefix,${content},}#[fg=${accent},bg=${fg}]#{?client_prefix, ,}";
+  indicator =
+    let
+      accent = color "indicator_color";
+      content = "  ";
+    in
+    "#[fg=${accent}]#{?client_prefix,,}#[fg=${bg2},bg=${accent}]#{?client_prefix,${content},}#[fg=${accent},bg=${fg}]#{?client_prefix, ,}";
 
-  current_window = let
-    accent = color "main_accent";
-    index =
-      "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
-    name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
-    # flags = "#{?window_flags,#{window_flags}, }";
-  in "${index}${name}";
+  current_window =
+    let
+      accent = color "main_accent";
+      index =
+        "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
+      name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
+      # flags = "#{?window_flags,#{window_flags}, }";
+    in
+    "${index}${name}";
 
-  window_status = let
-    accent = color "window_color";
-    index =
-      "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
-    name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
-    # flags = "#{?window_flags,#{window_flags}, }";
-  in "${index}${name}";
+  window_status =
+    let
+      accent = color "window_color";
+      index =
+        "#[fg=${accent}]#[fg=${bg2},bg=${accent}] #I #[fg=${accent},bg=${fg2}]";
+      name = "#[fg=${bg2},bg=${fg2}] #W #[fg=${fg2},bg=${fg}] ";
+      # flags = "#{?window_flags,#{window_flags}, }";
+    in
+    "${index}${name}";
 
-  time = let
-    accent = color "main_accent";
-    format = "%H:%M";
+  time =
+    let
+      accent = color "main_accent";
+      format = "%H:%M";
 
-    icon = pkgs.writeShellScript "icon" ''
-      hour=$(date +%H)
-      if   [ "$hour" == "00" ] || [ "$hour" == "12" ]; then printf "󱑖"
-      elif [ "$hour" == "01" ] || [ "$hour" == "13" ]; then printf "󱑋"
-      elif [ "$hour" == "02" ] || [ "$hour" == "14" ]; then printf "󱑌"
-      elif [ "$hour" == "03" ] || [ "$hour" == "15" ]; then printf "󱑍"
-      elif [ "$hour" == "04" ] || [ "$hour" == "16" ]; then printf "󱑎"
-      elif [ "$hour" == "05" ] || [ "$hour" == "17" ]; then printf "󱑏"
-      elif [ "$hour" == "06" ] || [ "$hour" == "18" ]; then printf "󱑐"
-      elif [ "$hour" == "07" ] || [ "$hour" == "19" ]; then printf "󱑑"
-      elif [ "$hour" == "08" ] || [ "$hour" == "20" ]; then printf "󱑒"
-      elif [ "$hour" == "09" ] || [ "$hour" == "21" ]; then printf "󱑓"
-      elif [ "$hour" == "10" ] || [ "$hour" == "22" ]; then printf "󱑔"
-      elif [ "$hour" == "11" ] || [ "$hour" == "23" ]; then printf "󱑕"
-      fi
-    '';
+      icon = pkgs.writeShellScript "icon" ''
+        hour=$(date +%H)
+        if   [ "$hour" == "00" ] || [ "$hour" == "12" ]; then printf "󱑖"
+        elif [ "$hour" == "01" ] || [ "$hour" == "13" ]; then printf "󱑋"
+        elif [ "$hour" == "02" ] || [ "$hour" == "14" ]; then printf "󱑌"
+        elif [ "$hour" == "03" ] || [ "$hour" == "15" ]; then printf "󱑍"
+        elif [ "$hour" == "04" ] || [ "$hour" == "16" ]; then printf "󱑎"
+        elif [ "$hour" == "05" ] || [ "$hour" == "17" ]; then printf "󱑏"
+        elif [ "$hour" == "06" ] || [ "$hour" == "18" ]; then printf "󱑐"
+        elif [ "$hour" == "07" ] || [ "$hour" == "19" ]; then printf "󱑑"
+        elif [ "$hour" == "08" ] || [ "$hour" == "20" ]; then printf "󱑒"
+        elif [ "$hour" == "09" ] || [ "$hour" == "21" ]; then printf "󱑓"
+        elif [ "$hour" == "10" ] || [ "$hour" == "22" ]; then printf "󱑔"
+        elif [ "$hour" == "11" ] || [ "$hour" == "23" ]; then printf "󱑕"
+        fi
+      '';
 
-  in "#[fg=${accent}]#[fg=${bg2},bg=${accent}] ${format} #(${icon}) #[fg=${accent},bg=${fg}]";
+    in
+    "#[fg=${accent}]#[fg=${bg2},bg=${accent}] ${format} #(${icon}) #[fg=${accent},bg=${fg}]";
 
-  battery = let
-    percentage = pkgs.writeShellScript "percentage" ''
-      percentage=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
-      echo $percentage
-    '';
+  battery =
+    let
+      percentage = pkgs.writeShellScript "percentage" ''
+        percentage=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
+        echo $percentage
+      '';
 
-    state = pkgs.writeShellScript "state" ''
-      state=$(pmset -g batt | grep 'charg' | awk '{print $4}' | tr -d ';')
-      echo $state
-    '';
+      state = pkgs.writeShellScript "state" ''
+        state=$(pmset -g batt | grep 'charg' | awk '{print $4}' | tr -d ';')
+        echo $state
+      '';
 
-    icon = pkgs.writeShellScript "icon" ''
-      percentage=$(${percentage})
-      state=$(${state})
-      if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "󰂄"
-      elif [ $percentage -ge 75 ]; then echo "󱊣"
-      elif [ $percentage -ge 50 ]; then echo "󱊢"
-      elif [ $percentage -ge 25 ]; then echo "󱊡"
-      elif [ $percentage -ge 0  ]; then echo "󰂎"
-      fi
-    '';
+      icon = pkgs.writeShellScript "icon" ''
+        percentage=$(${percentage})
+        state=$(${state})
+        if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "󰂄"
+        elif [ $percentage -ge 75 ]; then echo "󱊣"
+        elif [ $percentage -ge 50 ]; then echo "󱊢"
+        elif [ $percentage -ge 25 ]; then echo "󱊡"
+        elif [ $percentage -ge 0  ]; then echo "󰂎"
+        fi
+      '';
 
-    color = pkgs.writeShellScript "color" ''
-      percentage=$(${percentage})
-      state=$(${state})
-      if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "green"
-      elif [ $percentage -ge 75 ]; then echo "green"
-      elif [ $percentage -ge 50 ]; then echo "${fg2}"
-      elif [ $percentage -ge 30 ]; then echo "yellow"
-      elif [ $percentage -ge 0  ]; then echo "red"
-      fi
-    '';
+      color = pkgs.writeShellScript "color" ''
+        percentage=$(${percentage})
+        state=$(${state})
+        if [ "$state" == "charging" ] || [ "$state" == "charged" ]; then echo "green"
+        elif [ $percentage -ge 75 ]; then echo "green"
+        elif [ $percentage -ge 50 ]; then echo "${fg2}"
+        elif [ $percentage -ge 30 ]; then echo "yellow"
+        elif [ $percentage -ge 0  ]; then echo "red"
+        fi
+      '';
 
-  in "#[fg=#(${color})]#(${icon}) #[fg=${fg}]#(${percentage})%";
+    in
+    "#[fg=#(${color})]#(${icon}) #[fg=${fg}]#(${percentage})%";
 
-  pwd = let
-    accent = color "main_accent";
-    icon = "#[fg=${accent}] ";
-    format = "#[fg=${fg}]#{b:pane_current_path}";
-  in "${icon}${format}";
-in {
+  pwd =
+    let
+      accent = color "main_accent";
+      icon = "#[fg=${accent}] ";
+      format = "#[fg=${fg}]#{b:pane_current_path}";
+    in
+    "${icon}${format}";
+in
+{
   programs.tmux = {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator yank ];

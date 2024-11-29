@@ -4,7 +4,7 @@
 
 ### 系統資訊
 
-![SystemInfo](./screenshot/systeminfo.png)
+![ SystemInfo ] (./screenshot/systeminfo.png)
 
 ### Kitty終端
 

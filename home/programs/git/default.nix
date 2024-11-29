@@ -1,7 +1,8 @@
 let
   email = "3244577394@qq.com";
   name = "Kevin-2483";
-in {
+in
+{
   programs.git = {
     enable = true;
     lfs.enable = true;

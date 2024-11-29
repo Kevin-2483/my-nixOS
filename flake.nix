@@ -13,8 +13,15 @@
     catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, nixpkgs-stable, darwin
-    , ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , catppuccin
+    , nixpkgs-stable
+    , darwin
+    , ...
+    }@inputs:
     let
       inherit (self) outputs;
       system = "aarch64-darwin";
@@ -24,7 +31,8 @@
         inherit system;
         config.allowUnfree = true;
       };
-    in {
+    in
+    {
 
       darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
         system = "aarch64-darwin";

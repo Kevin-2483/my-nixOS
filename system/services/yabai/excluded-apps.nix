@@ -1,4 +1,5 @@
 [
+  "Mihomo Party"
   "系統設定"
   "Finder"
   "LocalSend"

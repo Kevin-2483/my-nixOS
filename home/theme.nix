@@ -1,22 +1,20 @@
 { pkgs, ... }:
-let
-  nerdfonts = (pkgs.nerdfonts.override {
-    fonts = [
-      "Ubuntu"
-      "UbuntuMono"
-      "CascadiaCode"
-      "ComicShannsMono"
-      "FantasqueSansMono"
-      "FiraCode"
-      "Mononoki"
-      "SpaceMono"
-      "JetBrainsMono"
-    ];
-  });
-  font = { package = nerdfonts; };
-in {
+{
   home = {
-    packages = with pkgs; [ cantarell-fonts font-awesome font.package ];
+    packages = with pkgs; [
+      cantarell-fonts
+      font-awesome
+      nerd-fonts.ubuntu
+      nerd-fonts.ubuntu-mono
+      nerd-fonts.zed-mono
+      nerd-fonts.comic-shanns-mono
+      nerd-fonts.fantasque-sans-mono
+      nerd-fonts.fira-code
+      nerd-fonts.mononoki
+      nerd-fonts.space-mono
+      nerd-fonts.jetbrains-mono
+
+    ];
   };
   catppuccin.flavor = "mocha";
 }

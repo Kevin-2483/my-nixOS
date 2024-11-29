@@ -31,7 +31,7 @@
     micro
     go-musicfox
 
-    spotify
+    # spotify remove to homebrew
     icon-library
 
     libnotify
@@ -43,7 +43,12 @@
     localsend
     dotnet-sdk_8
 
-    rustup
+    (rustup.overrideAttrs (oldAttrs: {
+      # 移除特定的二进制文件
+      postInstall = oldAttrs.postInstall or "" + ''
+        rm $out/bin/rust-analyzer
+      '';
+    }))
     nodejs
 
     spicetify-cli
@@ -74,6 +79,8 @@
     rio
     # master.warp-terminal
     nixpkgs-fmt
+    master.packwiz
+    rust-analyzer
   ];
 
   nixpkgs = {
@@ -91,3 +98,15 @@
     };
   };
 }
+
+# { pkgs, ... }: {
+#   environment.systemPackages = [
+#     (pkgs.packageA.override {
+#       # 排除特定的二进制文件
+#       bintools = pkgs.bintools.override {
+#         removeReferencesToBinaries = [ "conflicting-binary" ];
+#       };
+#     })
+#     pkgs.packageB
+#   ];
+# }

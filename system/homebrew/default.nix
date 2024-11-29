@@ -55,6 +55,7 @@
       { name = "zen-browser"; }
       { name = "cursor"; }
       { name = "orbstack"; }
+      { name = "spotify"; }
     ];
     masApps = {
       windows-app = 1295203466;
