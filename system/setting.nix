@@ -52,7 +52,7 @@
       enable-spring-load-actions-on-all-items =
         true; # 啟用所有項目上的彈簧加載操作。預設為 false。
       expose-animation-duration = 1.0; # 設定任務控制動畫的速度。預設值1.0。
-      expose-group-by-app = true; # 是否按應用程式分組 Exposé。預設為 true。
+      expose-group-apps = true; # 是否按應用程式分組 Exposé。預設為 true。
       largesize = 64; # 懸停時放大的圖示大小。預設值為 16。
       launchanim = true; # 是否在啟動應用程式時顯示動畫。預設為 true。
       magnification = true; # 是否啟用 Dock 放大鏡。預設為 true。

@@ -56,7 +56,6 @@
       inherit (texlive)
         scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
     })
-    imagemagick
     jq
     lua
     nix-prefetch-scripts
@@ -81,7 +80,10 @@
     nixpkgs-fmt
     master.packwiz
     rust-analyzer
-  ];
+    graphviz
+    pywal
+    imagemagick
+  ];  
 
   nixpkgs = {
     overlays = [
