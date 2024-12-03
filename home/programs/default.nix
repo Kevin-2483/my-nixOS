@@ -8,7 +8,7 @@
     ./bat
     ./yazi
     ./zsh
-    ./pywal
+    #./pywal
     ./neofetch
     ./helix
     ./tmux
