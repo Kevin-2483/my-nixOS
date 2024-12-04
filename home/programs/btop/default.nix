@@ -4,9 +4,9 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop;
-    catppuccin.enable = true;
+    catppuccin.enable = false;
     settings = {
-      # color_theme = "${pkgs.btop}/share/btop/themes/dracula.theme";
+      color_theme = "TTY";
       theme_background = false;
       truecolor = true;
       force_tty = false;

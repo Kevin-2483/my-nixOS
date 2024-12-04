@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.gitui = {
     enable = true;
-    catppuccin.enable = true;
+    catppuccin.enable = false;
     package = pkgs.gitui;
     # keyConfig = ''
     #   exit: Some(( code: Char('c'), modifiers: ( bits: 2,),)),
