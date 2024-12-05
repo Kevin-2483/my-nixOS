@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source "$CONFIG_DIR/colors.sh" 
+# source "$CONFIG_DIR/colors.sh" 
 
 FONT="UbuntuMono Nerd Font"
 

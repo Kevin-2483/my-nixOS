@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # source "$HOME/.config/sketchybar/colors.sh"
-source "$CONFIG_DIR/colors.sh"
+# source "$CONFIG_DIR/colors.sh"
 
 CORE_COUNT=$(sysctl -n machdep.cpu.thread_count)
 CPU_INFO=$(ps -eo pcpu,user)

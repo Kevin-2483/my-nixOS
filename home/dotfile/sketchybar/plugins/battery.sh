@@ -1,6 +1,18 @@
 #!/bin/sh
 
-source "$CONFIG_DIR/colors.sh"
+CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+source "$CONFIG_FILE"
+if [ -z "${use_local_color+x}" ]; then
+    export use_local_color=true
+    echo "use_local_color=true" > "$CONFIG_FILE"
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "true" ]; then
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "false" ]; then
+    source "$HOME/.cache/wallust/colors.sh"
+fi
+
+source "$CONFIG_DIR/convert.sh"
 
 # if [ "$SENDER" = "battery" ] || [ "$SENDER" = "system_woke" ] || [ "$SENDER" = "power_source_change" ]; then
 
@@ -10,14 +22,18 @@ source "$CONFIG_DIR/colors.sh"
   if [ "$PERCENTAGE" = "" ]; then
     exit 0
   fi
+ 
+  b1=$color8
+  b2=$color7
+  b3=$color6
 
   # 根据 PERCENTAGE 设置 BGCOLOR
   if [ "$PERCENTAGE" -gt 50 ]; then
-      BGCOLOR=$GREEN
+      BGCOLOR=$b1
   elif [ "$PERCENTAGE" -ge 20 ]; then
-      BGCOLOR=$YELLOW
+      BGCOLOR=$b2
   else
-      BGCOLOR=$RED
+      BGCOLOR=$b3
   fi
 
   # 计算应该显示几个󱊣，最多显示4个
@@ -61,6 +77,11 @@ source "$CONFIG_DIR/colors.sh"
       printf ' 󱉞%.0s' $(seq 1 $MISSING_ICONS)
     fi
   )
+
+  b0=$color1
+  
+  BAR_COLOR=$(convert_to_argb "$b0")
+  BGCOLOR=$(convert_to_argb "$BGCOLOR")
 
   # 更新sketchybar的图标和标签
   sketchybar --set "$NAME" label="${ICON}" label.color=$BAR_COLOR label.padding_right=12 background.color=$BGCOLOR background.corner_radius=15 background.height=24 background.padding_left=5

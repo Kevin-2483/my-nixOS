@@ -4,17 +4,37 @@
 # the space invoking this script (with name: $NAME) is currently selected:
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+source "$CONFIG_FILE"
+if [ -z "${use_local_color+x}" ]; then
+    export use_local_color=true
+    echo "use_local_color=true" > "$CONFIG_FILE"
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "true" ]; then
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "false" ]; then
+    source "$HOME/.cache/wallust/colors.sh"
+fi
+
+source "$CONFIG_DIR/convert.sh"
+
+BAR_COLOR=$color1
+c1=$color4
+c2=$color2
+
+BAR_COLOR=$(convert_to_argb "$BAR_COLOR")
+c1=$(convert_to_argb "$c1")
+c2=$(convert_to_argb "$c2")
 
 if [ $SELECTED = true ]; then
   sketchybar --set $NAME background.drawing=on \
-                         background.color=$PINK \
+                         background.color=$c2 \
                          background.height=24 \
                          background.corner_radius=13 \
                          label.color=$BAR_COLOR \
                          icon.color=$BAR_COLOR
 else
   sketchybar --set $NAME background.drawing=off \
-                         label.color=$BLUE\
-                         icon.color=$BLUE
+                         label.color=$c1\
+                         icon.color=$c1
 fi

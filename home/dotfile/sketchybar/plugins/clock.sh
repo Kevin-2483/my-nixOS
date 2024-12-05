@@ -1,6 +1,16 @@
 #!/bin/sh
 
-source "$CONFIG_DIR/colors.sh"
+CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+source "$CONFIG_FILE"
+if [ -z "${use_local_color+x}" ]; then
+    export use_local_color=true
+    echo "use_local_color=true" > "$CONFIG_FILE"
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "true" ]; then
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "false" ]; then
+    source "$HOME/.cache/wallust/colors.sh"
+fi
 
 # The $NAME variable is passed from sketchybar and holds the name of
 # the item invoking this script:
@@ -23,4 +33,10 @@ ICON=$(
 fi
 )
 
-sketchybar --set "$NAME" label="󰸘 $(date '+%d/%m') $ICON $(date '+%H:%M')" label.color=$BLUE
+source "$CONFIG_DIR/convert.sh"
+
+color5=$(convert_to_argb "$color5")
+
+ck1=$color5
+
+sketchybar --set "$NAME" label="󰸘 $(date '+%d/%m') $ICON $(date '+%H:%M')" label.color=$ck1

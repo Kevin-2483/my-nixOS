@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
-
 # 使用 nix 读取 excluded-apps.nix 文件并将其转换为 Bash 数组
 skip_apps=($(nix-instantiate --eval --strict --json -E "import $CONFIG_DIR/excluded-apps.nix" | jq -r '.[]'))
 

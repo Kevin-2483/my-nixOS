@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+# source "$CONFIG_DIR/colors.sh"
 
 # if [ "$SENDER" = "media_change" ]; then
   MEDIAINFO="$(nowplaying-cli get-raw)" 
@@ -13,8 +13,8 @@ source "$CONFIG_DIR/colors.sh"
     ICON=""  # 播放图标
   fi
 
-  sketchybar --set "$NAME" icon="${ICON}" icon.color=$BAR_COLOR icon.padding_right=12 \
-              label="${LABEL}" label.color=$BAR_COLOR label.padding_right=12 \
+  sketchybar --set "$NAME" icon="${ICON}" icon.color=$color0 icon.padding_right=12 \
+              label="${LABEL}" label.color=$color0 label.padding_right=12 \
               background.color=$YELLOW background.corner_radius=15 \
               background.height=24 background.padding_left=10
 # fi

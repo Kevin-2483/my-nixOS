@@ -1,6 +1,17 @@
 #!/bin/sh
 
-source "$CONFIG_DIR/colors.sh"
+CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+source "$CONFIG_FILE"
+if [ -z "${use_local_color+x}" ]; then
+    export use_local_color=true
+    echo "use_local_color=true" > "$CONFIG_FILE"
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "true" ]; then
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "false" ]; then
+    source "$HOME/.cache/wallust/colors.sh"
+fi
+
 # The volume_change event supplies a $INFO variable in which the current volume
 # percentage is passed to the script.
 
@@ -33,5 +44,14 @@ if [ "$COUNT" -gt 0 ]; then
   fi
   ICON="${ICON}${LAST_DIGIT_ICON}"  # 加上个位数对应的图标
 
-  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$ORANGE background.corner_radius=15 background.height=24
+  source "$CONFIG_DIR/convert.sh"
+
+
+  v1=$color2
+  BAR_COLOR=$color1
+  
+  BAR_COLOR=$(convert_to_argb "$BAR_COLOR")
+  v1=$(convert_to_argb "$v1")
+
+  sketchybar --set "$NAME" label="$ICON" label.color=$BAR_COLOR label.padding_right=12 background.color=$v1 background.corner_radius=15 background.height=24
 fi
