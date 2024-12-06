@@ -1,12 +1,11 @@
 #!/bin/sh
 
+
 CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+COLOR_GROUP_FILE="$HOME/.cache/sketchybar/color_group.sh"
 source "$CONFIG_FILE"
-if [ -z "${use_local_color+x}" ]; then
-    export use_local_color=true
-    echo "use_local_color=true" > "$CONFIG_FILE"
-    source "$CONFIG_DIR/colors.sh"
-elif [ "$use_local_color" = "true" ]; then
+source "$COLOR_GROUP_FILE"
+if [ "$use_local_color" = "true" ]; then
     source "$CONFIG_DIR/colors.sh"
 elif [ "$use_local_color" = "false" ]; then
     source "$HOME/.cache/wallust/colors.sh"
@@ -22,10 +21,18 @@ source "$CONFIG_DIR/convert.sh"
   if [ "$PERCENTAGE" = "" ]; then
     exit 0
   fi
- 
+
+if [ "$color_group" = "0" ]; then
+  b0=$color1
   b1=$color8
   b2=$color7
   b3=$color6
+else
+  b0=$color9
+  b1=$color16
+  b2=$color15
+  b3=$color14
+fi
 
   # 根据 PERCENTAGE 设置 BGCOLOR
   if [ "$PERCENTAGE" -gt 50 ]; then
@@ -77,8 +84,6 @@ source "$CONFIG_DIR/convert.sh"
       printf ' 󱉞%.0s' $(seq 1 $MISSING_ICONS)
     fi
   )
-
-  b0=$color1
   
   BAR_COLOR=$(convert_to_argb "$b0")
   BGCOLOR=$(convert_to_argb "$BGCOLOR")

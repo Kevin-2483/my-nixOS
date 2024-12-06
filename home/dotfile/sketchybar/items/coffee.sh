@@ -8,8 +8,14 @@ sleep_disabled=$(pmset -g | grep "SleepDisabled" | awk '{print $2}')
 COFFEE=" 󰅶"
 NOCOFFEE=" 󰾫"
 
-c1=$color2
-c2=$color3
+if [ "$color_group" = "0" ]; then
+  c1=$color2
+  c2=$color3
+else
+  c1=$color10
+  c2=$color11
+fi
+
 
 # 检查 SleepDisabled 的值并根据条件执行相应的命令
 if [ "$sleep_disabled" -eq 0 ]; then

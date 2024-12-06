@@ -5,6 +5,7 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
+SCRIPT_DIR="$CONFIG_DIR/scripts"
 
 # 创建缓存目录
 mkdir -p "$HOME/.cache/sketchybar"
@@ -67,7 +68,12 @@ color14=$(convert_to_argb "$color14")
 color15=$(convert_to_argb "$color15")
 color16=$(convert_to_argb "$color16")
 
-BAR_COLOR=$color1
+
+if [ "$color_group" = "0" ]; then
+  BAR_COLOR=$color1
+else
+  BAR_COLOR=$color9
+fi
 
 
 sketchybar --bar position=top height=34 blur_radius=30 color=$BAR_COLOR margin=15 y_offset=6 corner_radius=20

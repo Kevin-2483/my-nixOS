@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -73,6 +74,7 @@
     recursive = true;
     executable = true;
   };
+  home.file.".config/sketchybar/sub_bar".source = "${pkgs.sketchybar}/bin/sketchybar";
 
   # home.file.".config/skhd" = {
   #   # source = ~/.config/nix-darwin/home/dotfile/yazi;

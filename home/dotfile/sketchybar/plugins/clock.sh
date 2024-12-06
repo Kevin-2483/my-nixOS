@@ -1,12 +1,11 @@
 #!/bin/sh
 
+
 CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+COLOR_GROUP_FILE="$HOME/.cache/sketchybar/color_group.sh"
 source "$CONFIG_FILE"
-if [ -z "${use_local_color+x}" ]; then
-    export use_local_color=true
-    echo "use_local_color=true" > "$CONFIG_FILE"
-    source "$CONFIG_DIR/colors.sh"
-elif [ "$use_local_color" = "true" ]; then
+source "$COLOR_GROUP_FILE"
+if [ "$use_local_color" = "true" ]; then
     source "$CONFIG_DIR/colors.sh"
 elif [ "$use_local_color" = "false" ]; then
     source "$HOME/.cache/wallust/colors.sh"
@@ -35,8 +34,12 @@ fi
 
 source "$CONFIG_DIR/convert.sh"
 
-color5=$(convert_to_argb "$color5")
+if [ "$color_group" = "0" ]; then
+  ck1=$color5
+else
+  ck1=$color13
+fi
 
-ck1=$color5
+ck1=$(convert_to_argb "$ck1")
 
 sketchybar --set "$NAME" label="󰸘 $(date '+%d/%m') $ICON $(date '+%H:%M')" label.color=$ck1

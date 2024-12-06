@@ -1,15 +1,20 @@
 #!/bin/bash
 
 # Color Palette
-export color1=0xb01e1e2e
-export color2=0xff11111b # black
-export color3=0xffcdd6f4 # white
-export color4=0xfff38ba8 # red
-export color5=0xffa6e3a1 # green
-export color6=0xff89b4fa # blue
-export color7=0xfff9e2af # yellow
-export color8=0xfffab387 # orange
-export color9=0xffcba6f7 # purple
-export color10=0xffb4befe #grey
-export color11=0x00000000
-export color12=0xfff5c2e7 # pink
+export color1=0xff1e1e2e
+export color2=0xff89b4fa
+export color3=0xffcdd6f4
+export color4=0xfff38ba8
+export color5=0xffcba6f7
+export color6=0xfff5c2e7
+export color7=0xfff9e2af
+export color8=0xff94e2d5
+
+export color9=0xff1e1e2e
+export color10=0xff89b4fa
+export color11=0xffcdd6f4
+export color12=0xfff38ba8
+export color13=0xffcba6f7
+export color14=0xfff5c2e7
+export color15=0xfff9e2af
+export color16=0xff94e2d5

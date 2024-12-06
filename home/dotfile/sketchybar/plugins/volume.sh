@@ -1,12 +1,10 @@
 #!/bin/sh
 
 CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+COLOR_GROUP_FILE="$HOME/.cache/sketchybar/color_group.sh"
 source "$CONFIG_FILE"
-if [ -z "${use_local_color+x}" ]; then
-    export use_local_color=true
-    echo "use_local_color=true" > "$CONFIG_FILE"
-    source "$CONFIG_DIR/colors.sh"
-elif [ "$use_local_color" = "true" ]; then
+source "$COLOR_GROUP_FILE"
+if [ "$use_local_color" = "true" ]; then
     source "$CONFIG_DIR/colors.sh"
 elif [ "$use_local_color" = "false" ]; then
     source "$HOME/.cache/wallust/colors.sh"
@@ -46,9 +44,13 @@ if [ "$COUNT" -gt 0 ]; then
 
   source "$CONFIG_DIR/convert.sh"
 
-
+if [ "$color_group" = "0" ]; then
   v1=$color2
   BAR_COLOR=$color1
+else
+  v1=$color10
+  BAR_COLOR=$color9
+fi
   
   BAR_COLOR=$(convert_to_argb "$BAR_COLOR")
   v1=$(convert_to_argb "$v1")

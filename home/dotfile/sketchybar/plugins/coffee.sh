@@ -1,12 +1,10 @@
 #!/bin/bash
 
 CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+COLOR_GROUP_FILE="$HOME/.cache/sketchybar/color_group.sh"
 source "$CONFIG_FILE"
-if [ -z "${use_local_color+x}" ]; then
-    export use_local_color=true
-    echo "use_local_color=true" > "$CONFIG_FILE"
-    source "$CONFIG_DIR/colors.sh"
-elif [ "$use_local_color" = "true" ]; then
+source "$COLOR_GROUP_FILE"
+if [ "$use_local_color" = "true" ]; then
     source "$CONFIG_DIR/colors.sh"
 elif [ "$use_local_color" = "false" ]; then
     source "$HOME/.cache/wallust/colors.sh"
@@ -20,10 +18,16 @@ NOCOFFEE=" 󰾫"
 
 source "$CONFIG_DIR/convert.sh"
 
-BAR_COLOR=$color1
+if [ "$color_group" = "0" ]; then
+  BAR_COLOR=$color1
+  c2=$color2
+  c3=$color3
+else
+  BAR_COLOR=$color9
+  c2=$color10
+  c3=$color11
+fi
 
-c2=$color2
-c3=$color3
 
 c2=$(convert_to_argb "$c2")
 c3=$(convert_to_argb "$c3")
