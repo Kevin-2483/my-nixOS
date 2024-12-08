@@ -132,4 +132,6 @@
 
 ## 未来可能增加的功能
 
-使用[matugen](https://github.com/InioX/matugen)等工具自动生产系统配色
+~~使用[matugen](https://github.com/InioX/matugen)等工具自动生产系统配色~~
+
+基本完成,使用wallust来根据壁纸和系统颜色生成主题,效果有待优化
