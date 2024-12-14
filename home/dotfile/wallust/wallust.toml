@@ -1,0 +1,6 @@
+[templates]
+neopywal.template = 'colors_neopywal.vim'
+neopywal.target = '~/.cache/wallust/colors_neopywal.vim'
+
+sketchybar.template = 'colors.sh'
+sketchybar.target = '~/.cache/wallust/colors.sh'

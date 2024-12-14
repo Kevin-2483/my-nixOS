@@ -147,7 +147,7 @@ lvim.plugins = {
         -- This option allows to use a custom built-in theme palettes like "catppuccin-mocha" or "tokyonight".
         -- To get the list of available themes take a look at `https://github.com/RedsXDD/neopywal.nvim#Alternative-Palettes`.
         -- Take note that this option takes precedence over `use_wallust` and `colorscheme_file`.
-        -- use_palette = "catppuccin-mocha",
+        use_palette = "catppuccin-mocha",
 
         -- Sets the background color of certain highlight groups to be transparent.
         -- Use this when your terminal opacity is < 1.
