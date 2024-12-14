@@ -30,6 +30,7 @@
     feh
     findutils
     fzf # A command-line fuzzy finder
+    ffmpeg_4-full
     glow # markdown previewer in terminal
     go-musicfox
     googler

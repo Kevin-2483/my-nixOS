@@ -41,7 +41,7 @@ open = [
 
 reveal = [
     { run = 'open -R "$1"', desc = "Reveal", for = "macos" },
-    { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
+    { run = 'explorer /toggle, "%1"', orphan = true, desc = "Reveal", for = "windows" },
     { run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 
@@ -113,7 +113,7 @@ rules = [
         "dragon",
         "reveal",
     ] },
-    { mime = "inode/x-empty", use = [
+    { mime = "inode/empty", use = [
         "edit",
         "micro",
         "dragon",
@@ -153,31 +153,31 @@ rules = [
         "dragon",
         "reveal",
     ] },
-    { mime = "application/x-tar", use = [
+    { mime = "application/tar", use = [
         "ouch",
         "extract",
         "dragon",
         "reveal",
     ] },
-    { mime = "application/x-bzip", use = [
+    { mime = "application/bzip", use = [
         "ouch",
         "extract",
         "dragon",
         "reveal",
     ] },
-    { mime = "application/x-bzip2", use = [
+    { mime = "application/bzip2", use = [
         "ouch",
         "extract",
         "dragon",
         "reveal",
     ] },
-    { mime = "application/x-7z-compressed", use = [
+    { mime = "application/7z-compressed", use = [
         "ouch",
         "extract",
         "dragon",
         "reveal",
     ] },
-    { mime = "application/x-rar", use = [
+    { mime = "application/rar", use = [
         "ouch",
         "extract",
         "dragon",
@@ -262,7 +262,7 @@ quit_title = "{n} task{s} running, sure to quit? (y/N)"
 quit_origin = "top-center"
 quit_offset = [0, 2, 50, 3]
 
-[select]
+[pick]
 open_title = "Open with:"
 open_origin = "hovered"
 open_offset = [0, 1, 50, 7]
@@ -270,15 +270,15 @@ open_offset = [0, 1, 50, 7]
 [log]
 enabled = false
 
-[[plugin.prepend_fetchers]]
-id = "mactag"
-name = "*"
-run = "mactag"
+# [[plugin.prepend_fetchers]]
+# id = "mactag"
+# name = "*"
+# run = "mactag"
 
-[[plugin.prepend_fetchers]]
-id = "mactag"
-name = "*/"
-run = "mactag"
+# [[plugin.prepend_fetchers]]
+# id = "mactag"
+# name = "*/"
+# run = "mactag"
 
 [[plugin.prepend_fetchers]]
 id = "git"
@@ -303,14 +303,14 @@ prepend_previewers = [
     { mime = "text/csv", run = "miller" },
     { name = "*.md", run = "glow" },
     { mime = "{image,audio,video}/*", run = "mediainfo" },
-    { mime = "application/x-subrip", run = "mediainfo" },
+    { mime = "application/subrip", run = "mediainfo" },
     # Archive previewer
     { mime = "application/*zip", run = "ouch" },
-    { mime = "application/x-tar", run = "ouch" },
-    { mime = "application/x-bzip2", run = "ouch" },
-    { mime = "application/x-7z-compressed", run = "ouch" },
-    { mime = "application/x-rar", run = "ouch" },
-    { mime = "application/x-xz", run = "ouch" },
+    { mime = "application/tar", run = "ouch" },
+    { mime = "application/bzip2", run = "ouch" },
+    { mime = "application/7z-compressed", run = "ouch" },
+    { mime = "application/rar", run = "ouch" },
+    { mime = "application/xz", run = "ouch" },
 ]
 previewers = [
     { name = "*/", run = "folder", sync = true },
@@ -318,7 +318,7 @@ previewers = [
     { mime = "text/*", run = "code" },
     { mime = "*/xml", run = "code" },
     { mime = "*/javascript", run = "code" },
-    { mime = "*/x-wine-extension-ini", run = "code" },
+    { mime = "*/wine-extension-ini", run = "code" },
     { name = "*.md", run = "glow" },
     # JSON
     { mime = "application/json", run = "json" },
@@ -328,22 +328,22 @@ previewers = [
     # # Video
     # { mime = "video/*", run = "video" },
     { mime = "{image,audio,video}/*", run = "mediainfo" },
-    { mime = "application/x-subrip", run = "mediainfo" },
+    { mime = "application/subrip", run = "mediainfo" },
     # PDF
     { mime = "application/pdf", run = "pdf" },
     { mime = "application/*zip", run = "ouch" },
-    { mime = "application/x-tar", run = "ouch" },
-    { mime = "application/x-bzip2", run = "ouch" },
-    { mime = "application/x-7z-compressed", run = "ouch" },
-    { mime = "application/x-rar", run = "ouch" },
-    { mime = "application/x-xz", run = "ouch" },
+    { mime = "application/tar", run = "ouch" },
+    { mime = "application/bzip2", run = "ouch" },
+    { mime = "application/7z-compressed", run = "ouch" },
+    { mime = "application/rar", run = "ouch" },
+    { mime = "application/xz", run = "ouch" },
     # Archive
     # { mime = "application/zip", run = "archive" },
     # { mime = "application/gzip", run = "archive" },
-    # { mime = "application/x-tar", run = "archive" },
-    # { mime = "application/x-bzip", run = "archive" },
-    # { mime = "application/x-bzip2", run = "archive" },
-    # { mime = "application/x-7z-compressed", run = "archive" },
-    # { mime = "application/x-rar", run = "archive" },
+    # { mime = "application/tar", run = "archive" },
+    # { mime = "application/bzip", run = "archive" },
+    # { mime = "application/bzip2", run = "archive" },
+    # { mime = "application/7z-compressed", run = "archive" },
+    # { mime = "application/rar", run = "archive" },
     # { mime = "application/xz", run = "archive" },
 ]

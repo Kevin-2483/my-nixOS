@@ -4,22 +4,22 @@ require("full-border"):setup({
 })
 require("git"):setup()
 require("starship"):setup()
-require("mactag"):setup {
-    -- You can change the colors of the tags here
-    colors = {
-        Red    = "#ee7b70",
-        Orange = "#f5bd5c",
-        Yellow = "#fbe764",
-        Green  = "#91fc87",
-        Blue   = "#5fa3f8",
-        Purple = "#cb88f8",
-        Gray   = "#b5b5b9",
-    },
-}
+-- require("mactag"):setup {
+--     -- You can change the colors of the tags here
+--     colors = {
+--         Red    = "#ee7b70",
+--         Orange = "#f5bd5c",
+--         Yellow = "#fbe764",
+--         Green  = "#91fc87",
+--         Blue   = "#5fa3f8",
+--         Purple = "#cb88f8",
+--         Gray   = "#b5b5b9",
+--     },
+-- }
 
 function Linemode:size_and_mtime()
     local year = os.date("%Y")
-    local time = (self._file.cha.modified or 0) // 1
+    local time = (self._file.cha.mtime or 0) // 1
 
     if time > 0 and os.date("%Y", time) == year then
         time = os.date("%b %d %H:%M", time)

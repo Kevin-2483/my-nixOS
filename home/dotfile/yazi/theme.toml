@@ -2,6 +2,10 @@
 [manager]
 cwd = { fg = "#94e2d5" }
 
+[flavor]
+dark  = "catppuccin-latte"
+light = "catppuccin-mocha"
+
 # Hovered
 hovered = { fg = "#1e1e2e", bg = "#89b4fa" }
 preview_hovered = { underline = true }
@@ -94,7 +98,7 @@ rules = [
 
 	# Archives
 	{ mime = "application/{,g}zip", fg = "#f5c2e7" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
+	{ mime = "application/{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
 
 	# Fallback
 	{ name = "*", fg = "#cdd6f4" },
