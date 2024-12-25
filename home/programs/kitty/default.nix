@@ -1,7 +1,4 @@
-{ pkgs, ... }: 
-let
-  myKitty = import ../../mypackage/kitty { inherit pkgs; };
-in {
+{ pkgs, outputs, ... }: {
   programs.kitty = {
     enable = true;
     # font.name = "SpaceMono Nerd Font";

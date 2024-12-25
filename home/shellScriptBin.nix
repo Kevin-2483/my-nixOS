@@ -3,9 +3,9 @@ let
   ny = pkgs.writeShellScriptBin "ny" ''${pkgs.nushell}/bin/nu -e "yy '$@'"'';
   kny = pkgs.writeShellScriptBin "kny" ''
     if [ "$#" -eq 0 ]; then
-      ${pkgs.kitty}/bin/kitty ny "$HOME"
+      ${pkgs.stable.kitty}/bin/kitty ny "$HOME"
     else
-      ${pkgs.kitty}/bin/kitty ny "$@"
+      ${pkgs.stable.kitty}/bin/kitty ny "$@"
     fi
   '';
   rny = pkgs.writeShellScriptBin "rny" ''
@@ -24,9 +24,9 @@ let
   '';
   ktm = pkgs.writeShellScriptBin "ktm" ''
     if [ "$#" -eq 0 ]; then
-       ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.kitty}/bin/kitty tmux attach -t default
+       ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.stable.kitty}/bin/kitty tmux attach -t default
     else
-        ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.kitty}/bin/kitty tmux attach -t "$@"
+        ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.stable.kitty}/bin/kitty tmux attach -t "$@"
     fi
   '';
   tm = pkgs.writeShellScriptBin "tm" ''
