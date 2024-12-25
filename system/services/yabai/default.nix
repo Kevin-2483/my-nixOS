@@ -42,6 +42,7 @@
 
         yabai -m rule --add app="${excludedAppsRegex}" manage=off sticky=on
         yabai -m rule --add app="^(Mihomo Party)$" title =="^(Mihomo Party Floating)$" manage=off sticky=on
+        yabai -m rule - -add app="^(Arc)$" title =="^$" manage=off sticky=on
         yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
         yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
       '';

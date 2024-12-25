@@ -77,9 +77,9 @@
   home.file.".config/sketchybar/sub_bar".source = "${pkgs.sketchybar}/bin/sketchybar";
 
   home.file."Library/Application Support/wallust" = {
-  source = ./dotfile/wallust;
-  recursive = true;
-  executable = true;
+    source = ./dotfile/wallust;
+    recursive = true;
+    executable = true;
   };
 
 

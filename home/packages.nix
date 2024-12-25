@@ -19,6 +19,7 @@
       inherit (texlive)
         scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
     })
+    (callPackage ./mypackage/tracker {})
     android-tools
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     autojump
@@ -69,6 +70,7 @@
     spicetify-cli
     tokei
     unzip
+    vhs
     wallust
     xz
     zip
