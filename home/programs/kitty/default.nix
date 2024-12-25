@@ -1,9 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+  myKitty = import ../../mypackage/kitty { inherit pkgs; };
+in {
   programs.kitty = {
     enable = true;
     # font.name = "SpaceMono Nerd Font";
     themeFile = "Catppuccin-Mocha";
-    package = pkgs.kitty;
+    package = pkgs.stable.kitty;
     settings = {
       font_family = "Space Mono Nerd Font";
       bold_font = "auto";
