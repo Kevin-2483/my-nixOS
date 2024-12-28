@@ -45,6 +45,9 @@
         yabai -m rule - -add app="^(Arc)$" title =="^$" manage=off sticky=on
         yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
         yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
+        yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+        yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
       '';
     # - swap: 交换窗口位置
     # - stack: 堆叠在旧窗口上

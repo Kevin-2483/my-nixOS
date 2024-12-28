@@ -14,8 +14,8 @@ show_symlink = true
 
 [preview]
 tab_size = 2
-max_width = 570
-max_height = 570
+max_width = 5000
+max_height = 5000
 cache_dir = ""
 ueberzug_scale = 1
 ueberzug_offset = [0, 0, 0, 0]
@@ -213,7 +213,7 @@ cd_origin = "top-center"
 cd_offset = [0, 2, 50, 3]
 
 # create
-create_title = "Create:"
+create_title = ["Create:", "Create (dir):"]
 create_origin = "top-center"
 create_offset = [0, 2, 50, 3]
 
@@ -296,6 +296,16 @@ if = "!mime"
 name = "*"
 run = "mime-ext"
 prio = "high"
+
+[[plugin.prepend_fetchers]]
+id   = "mactag"
+name = "*"
+run  = "mactag"
+
+[[plugin.prepend_fetchers]]
+id   = "mactag"
+name = "*/"
+run  = "mactag"
 
 
 [plugin]

@@ -4,18 +4,26 @@ require("full-border"):setup({
 })
 require("git"):setup()
 require("starship"):setup()
--- require("mactag"):setup {
---     -- You can change the colors of the tags here
---     colors = {
---         Red    = "#ee7b70",
---         Orange = "#f5bd5c",
---         Yellow = "#fbe764",
---         Green  = "#91fc87",
---         Blue   = "#5fa3f8",
---         Purple = "#cb88f8",
---         Gray   = "#b5b5b9",
---     },
--- }
+require("mactag"):setup {
+  -- Keys used to add or remove tags
+  keys = {
+    r = "Red",
+    o = "Orange",
+    y = "Yellow",
+    g = "Green",
+    b = "Blue",
+    p = "Purple",
+  },
+  -- Colors used to display tags
+  colors = {
+    Red    = "#ee7b70",
+    Orange = "#f5bd5c",
+    Yellow = "#fbe764",
+    Green  = "#91fc87",
+    Blue   = "#5fa3f8",
+    Purple = "#cb88f8",
+  },
+}
 
 function Linemode:size_and_mtime()
     local year = os.date("%Y")
@@ -44,6 +52,19 @@ Status:children_add(function()
         ui.Span(" "),
     }
 end, 500, Status.RIGHT)
+
+function Status:name()
+  local h = self._current.hovered
+  if not h then
+    return ""
+  end
+
+  local linked = ""
+  if h.link_to ~= nil then
+  	linked = " -> " .. tostring(h.link_to)
+  end
+  return ui.Line(" " .. h.name .. linked)
+end
 
 -- You can configure your bookmarks by lua language
 local bookmarks = {}

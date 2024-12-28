@@ -1,72 +1,22 @@
-# [[manager.prepend_keymap]]
-# on = ["B", "r"]
-# run = 'plugin mactag --args="add Red"'
-# desc = "Tag selected files with red"
+[[manager.prepend_keymap]]
+on   = [ "b", "a" ]
+run  = 'plugin mactag --args="add"'
+desc = "Tag selected files"
 
-# [[manager.prepend_keymap]]
-# on = ["B", "R"]
-# run = 'plugin mactag --args="remove Red"'
-# desc = "Remove red tag from selected files"
+[[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block'
+desc = "Open shell here"
 
-# [[manager.prepend_keymap]]
-# on = ["B", "o"]
-# run = 'plugin mactag --args="add Orange"'
-# desc = "Tag selected files with orange"
+[[manager.prepend_keymap]]
+on   = [ "b", "r" ]
+run  = 'plugin mactag --args="remove"'
+desc = "Untag selected files"
 
-# [[manager.prepend_keymap]]
-# on = ["B", "O"]
-# run = 'plugin mactag --args="remove Orange"'
-# desc = "Remove orange tag from selected files"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "g"]
-# run = 'plugin mactag --args="add Green"'
-# desc = "Tag selected files with green"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "G"]
-# run = 'plugin mactag --args="remove Green"'
-# desc = "Remove green tag from selected files"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "b"]
-# run = 'plugin mactag --args="add Blue"'
-# desc = "Tag selected files with blue"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "B"]
-# run = 'plugin mactag --args="remove Blue"'
-# desc = "Remove blue tag from selected files"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "p"]
-# run = 'plugin mactag --args="add Purple"'
-# desc = "Tag selected files with Purple"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "P"]
-# run = 'plugin mactag --args="remove Purple"'
-# desc = "Remove purple tag from selected files"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "y"]
-# run = 'plugin mactag --args="add Yellow"'
-# desc = "Tag selected files with yellow"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "Y"]
-# run = 'plugin mactag --args="remove Yellow"'
-# desc = "Remove yellow tag from selected files"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "h"]
-# run = 'plugin mactag --args="add Grey"'
-# desc = "Tag selected files with grey"
-
-# [[manager.prepend_keymap]]
-# on = ["B", "H"]
-# run = 'plugin mactag --args="remove Grey"'
-# desc = "Remove grey tag from selected files"
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
 
 [[manager.prepend_keymap]]
 on = "T"
@@ -181,3 +131,14 @@ run = "plugin parent-arrow --args=-1"
 [[manager.prepend_keymap]]
 on = "J"
 run = "plugin parent-arrow --args=1"
+
+[[manager.prepend_keymap]]
+on = "<C-p>"
+run = '''
+  shell 'qlmanage -p "$@"'
+'''
+
+[[manager.prepend_keymap]]
+on   = "t"
+run  = "plugin smart-tab"
+desc = "Create a tab and enter the hovered directory"

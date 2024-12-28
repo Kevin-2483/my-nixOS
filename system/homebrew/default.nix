@@ -7,7 +7,6 @@
         # force_auto_update = true;
         # clone_target
       }
-      { name = "laishulu/cask-fonts"; }
       { name = "mihomo-party-org/mihomo-party"; }
     ];
     brews = [
@@ -37,7 +36,7 @@
       { name = "moonlight"; }
       { name = "sf-symbols"; }
       { name = "font-sf-pro"; }
-      { name = "font-sarasa-nerd"; }
+      { name = "laishulu/homebrew/font-sarasa-nerd"; }
       { name = "qqmusic"; }
       # { name = "background-music"; }
       { name = "squirrel"; }
@@ -56,6 +55,7 @@
       { name = "cursor"; }
       { name = "orbstack"; }
       { name = "spotify"; }
+      { name = "ghostty"; }
     ];
     masApps = {
       windows-app = 1295203466;
