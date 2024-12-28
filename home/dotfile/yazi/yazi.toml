@@ -270,15 +270,6 @@ open_offset = [0, 1, 50, 7]
 [log]
 enabled = false
 
-# [[plugin.prepend_fetchers]]
-# id = "mactag"
-# name = "*"
-# run = "mactag"
-
-# [[plugin.prepend_fetchers]]
-# id = "mactag"
-# name = "*/"
-# run = "mactag"
 
 [[plugin.prepend_fetchers]]
 id = "git"

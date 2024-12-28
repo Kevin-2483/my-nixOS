@@ -80,11 +80,9 @@
 
 
       alt - a : open -a arc
-      alt - e : open -a Microsoft\ Edge
-      alt - b : open -a Zen\ Browser
       alt - s : open -a spotify
       alt - m : open -a QQMusic
-      alt - t : open -a Tabby
+      alt - t : open -a Ghostty
       alt - c : code
       alt - f : open -a Finder
       alt - w : open -a wechat

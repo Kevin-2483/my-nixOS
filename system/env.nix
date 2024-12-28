@@ -20,5 +20,6 @@
     git-filter-repo
     ncurses
     nushell
+    tmux
   ];
 }
