@@ -46,6 +46,8 @@ app_options:
     ascii_mode: true
   org.tabby:
     ascii_mode: true
+  com.mitchellh.ghostty:
+    ascii_mode: true
 
 style:
   # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。

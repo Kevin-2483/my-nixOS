@@ -67,7 +67,7 @@
         "/Applications/WeChat.app"
         "/Applications/Obsidian.app"
         "/Applications/ChatGPT.app"
-        "/Applications/Tabby.app"
+        "/Applications/Ghostty.app"
         # "/Users/${username}/Applications/Home Manager Apps/kitty.app"
         # "/Users/${username}/Applications/Home Manager Apps/Spotify.app"
         # "/Users/${username}/Applications/Home Manager Apps/Rio.app"
