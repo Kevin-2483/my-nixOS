@@ -4,6 +4,9 @@
   imports = [
     ../custom/newpam.nix
   ];
-  security.newpam.enableSudoTouchIdAuth = true;
+  security.newpam = {
+    enableSudoTouchIdAuth = true;
+    enablePamReattach = true;
+  };
 
 }
