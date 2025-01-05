@@ -1,15 +1,15 @@
 {
   homebrew = {
     enable = true;
-    taps = [
-      {
-        name = "FelixKratz/formulae";
-        # force_auto_update = true;
-        # clone_target
-      }
-      { name = "mihomo-party-org/mihomo-party"; }
-    ];
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    onActivation.cleanup = "zap";
+    # taps = [
+    #   { name = "mihomo-party-org/mihomo-party"; }
+    # ];
+    # use nix-homebrew taps
     brews = [
+      
       {
         name = "borders";
         start_service = true;
@@ -17,8 +17,6 @@
       }
       { name = "switchaudio-osx"; }
       { name = "tag"; }
-      { name = "mpv"; }
-      { name = "tree"; }
       # { name = "cava"; }
     ];
     casks = [
@@ -43,7 +41,7 @@
       { name = "motrix"; }
       { name = "keycastr"; }
       { name = "zed"; }
-      { name = "mihomo-party"; }
+      { name = "mihomo-party-org/mihomo-party/mihomo-party"; }
       { name = "shottr"; }
       { name = "qq"; }
       { name = "telegram"; }
@@ -51,8 +49,8 @@
       { name = "dingtalk"; }
       { name = "PlayCover/playcover/playcover-community"; }
       # { name = "microsoft-edge"; }
-      { name = "zen-browser"; }
-      { name = "cursor"; }
+      # { name = "zen-browser"; }
+      # { name = "cursor"; }
       { name = "orbstack"; }
       { name = "spotify"; }
       { name = "ghostty"; }

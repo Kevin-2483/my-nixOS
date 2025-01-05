@@ -7,6 +7,7 @@ options=(
 	active_color=0xffF8BBD0
     inactive_color=0xff90CAF9
     blacklist="Mihomo Party"
+    
 
 )
 

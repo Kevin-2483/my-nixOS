@@ -148,7 +148,8 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
     useDaemon = true;
-    package = pkgs.nixVersions.git;
+    # package = pkgs.nixVersions.git;
+    # use determinate nix
   };
   documentation.info.enable = true;
 }

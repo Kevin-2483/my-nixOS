@@ -27,13 +27,13 @@
     executable = true; # 将其中所有文件添加「执行」权限
 
   };
-  home.file.".config/borders" = {
-    # source = ~/.config/nix-darwin/home/dotfile/yazi;
-    source = ./dotfile/borders;
-    recursive = true; # 递归整个文件夹
-    executable = true; # 将其中所有文件添加「执行」权限
+  # home.file.".config/borders" = {
+  #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
+  #   source = ./dotfile/borders;
+  #   recursive = true; # 递归整个文件夹
+  #   executable = true; # 将其中所有文件添加「执行」权限
 
-  };
+  # };
   home.file.".config/sketchybar" = {
     source = ./dotfile/sketchybar;
     recursive = true;

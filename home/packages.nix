@@ -52,6 +52,7 @@
     mdcat # cat for markdown
     mediainfo
     micro
+    mpv
     nix-output-monitor
     nix-prefetch-scripts
     nixpkgs-fmt
@@ -69,6 +70,7 @@
     slides
     spicetify-cli
     tokei
+    tree
     unzip
     vhs
     wallust
