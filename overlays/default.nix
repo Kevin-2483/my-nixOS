@@ -14,9 +14,4 @@
       config.allowUnfree = true;
     };
   };
-  pam-overlay = final: _prev: {
-    pam = import ./newpam.nix {
-      inherit final;
-    };
-  };
 }

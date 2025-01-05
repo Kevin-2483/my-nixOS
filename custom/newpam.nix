@@ -3,11 +3,11 @@
 with lib;
 
 let
-  cfg = config.security.pam;
+  cfg = config.security.newpam;
 in
 {
   options = {
-    security.pam = {
+    security.newpam = {
       enableSudoTouchIdAuth = mkEnableOption "" // {
         description = ''
           Enable sudo authentication with Touch ID.

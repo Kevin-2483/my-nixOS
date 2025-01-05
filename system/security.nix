@@ -1,5 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 
 {
-  security.pam.enableSudoTouchIdAuth = true;
+  imports = [
+    ../custom/newpam.nix
+  ];
+  security.newpam.enableSudoTouchIdAuth = true;
+
 }

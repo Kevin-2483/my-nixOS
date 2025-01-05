@@ -2,14 +2,16 @@
   description = "Kevin's flake for nix-darwin";
   inputs = {
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
-    darwin.url = "github:lnl7/nix-darwin";
-    determinate.url = "github:DeterminateSystems/determinate";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-bundle = {
@@ -33,12 +35,11 @@
 
   outputs =
     { self
-    , nixpkgs
+    , nixpkgs-unstable
     , home-manager
     , catppuccin
     , nixpkgs-stable
     , nixpkgs-master
-    , determinate
     , nix-homebrew
     , homebrew-bundle
     , homebrew-core
@@ -52,7 +53,7 @@
       system = "aarch64-darwin";
       hostname = "Kevin-MBA-M2";
       username = "kevin";
-      pkgs = import nixpkgs {
+      pkgs = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
