@@ -9,12 +9,11 @@
     # ];
     # use nix-homebrew taps
     brews = [
-      
-      {
-        name = "borders";
-        start_service = true;
-        restart_service = "changed";
-      }
+      # {
+      #   name = "borders";
+      #   start_service = true;
+      #   restart_service = "changed";
+      # }
       { name = "switchaudio-osx"; }
       { name = "tag"; }
       # { name = "cava"; }
@@ -29,7 +28,7 @@
       { name = "steam"; }
       { name = "clash-verge-rev"; }
       { name = "visual-studio-code"; }
-      # { name = "arc"; }
+      { name = "arc"; }
       { name = "parsec"; }
       { name = "moonlight"; }
       { name = "sf-symbols"; }

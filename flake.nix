@@ -62,7 +62,6 @@
       darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          determinate.darwinModules.default
           # 这里导入之前我们使用的 configuration.nix，
           # 这样旧的配置文件仍然能生效
           ./system
