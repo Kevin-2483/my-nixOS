@@ -3,6 +3,7 @@
   imports = [
     ./starship
     ./fzf
+    ./fd
     ./git
     ./gitui
     ./bat
