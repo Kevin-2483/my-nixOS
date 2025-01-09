@@ -53,6 +53,7 @@
       { name = "orbstack"; }
       { name = "spotify"; }
       { name = "ghostty"; }
+      { name = "diffusionbee"; }
     ];
     masApps = {
       windows-app = 1295203466;

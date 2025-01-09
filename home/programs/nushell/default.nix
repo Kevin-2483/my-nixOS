@@ -150,8 +150,8 @@
     };
     shellAliases = {
       pc4 = "proxychains4";
-      vi = "lvim";
-      vim = "lvim";
+      vi = "nvim";
+      vim = "nvim";
     };
 
   };
