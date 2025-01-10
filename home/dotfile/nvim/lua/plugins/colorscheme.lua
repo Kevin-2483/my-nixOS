@@ -7,6 +7,7 @@ return {
       integrations = {
         aerial = true,
         alpha = true,
+        blink_cmp = true,
         cmp = true,
         dashboard = true,
         flash = true,
@@ -34,7 +35,8 @@ return {
         neotest = true,
         neotree = true,
         noice = true,
-        notify = true,
+                notify = true,
+        overseer = true,
         semantic_tokens = true,
         snacks = true,
         telescope = true,
