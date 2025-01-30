@@ -41,7 +41,7 @@
       { name = "moonlight"; }
       { name = "sf-symbols"; }
       { name = "font-sf-pro"; }
-      { name = "laishulu/homebrew/font-sarasa-nerd"; }
+      { name = "font-sarasa-nerd"; }
       { name = "qqmusic"; }
       # { name = "background-music"; }
       { name = "squirrel"; }
@@ -54,7 +54,7 @@
       { name = "telegram"; }
       # { name = "macfuse"; }
       { name = "dingtalk"; }
-      { name = "PlayCover/playcover/playcover-community"; }
+      { name = "playcover-community"; }
       # { name = "microsoft-edge"; }
       # { name = "zen-browser"; }
       # { name = "cursor"; }

@@ -33,10 +33,19 @@
       url = "github:mihomo-party-org/homebrew-mihomo-party";
       flake = false;
     };
-    xpipe-io = {
-      url = "github:xpipe-io/homebrew-tap";
+    playcover = {
+      url = "github:PlayCover/homebrew-playcover";
       flake = false;
     };
+    #for font-sarasa-nerd
+    laishulu = {
+      url = "github:laishulu/homebrew-homebrew";
+      flake = false;
+    };
+    # xpipe-io = {
+    #   url = "github:xpipe-io/homebrew-tap";
+    #   flake = false;
+    # };
     # Homebrew 解析 Tap 时，会将 <用户/组织名>/<Tap 名称> 转换为 GitHub 上的 homebrew-<Tap 名称> 形式的仓库。
     # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
     catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin";
@@ -104,7 +113,9 @@
                 "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
                 "homebrew/homebrew-services" = inputs.homebrew-services;
                 "mihomo-party-org/homebrew-mihomo-party" = inputs.mihomo-party;
-                "xpipe-io/homebrew-tap" = inputs.xpipe-io;
+                # "xpipe-io/homebrew-tap" = inputs.xpipe-io;
+                "PlayCover/homebrew-playcover" = inputs.playcover;
+                "laishulu/homebrew-homebrew" = inputs.laishulu;
               };
               # Automatically migrate existing Homebrew installations
               autoMigrate = false;
