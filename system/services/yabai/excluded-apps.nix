@@ -16,4 +16,6 @@
   "Raycast"
   "WeChat"
   "kitty"
+  "絕區零"
+  "崩壞:星穹鐵道"
 ]
