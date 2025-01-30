@@ -4,7 +4,6 @@
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
-    
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -15,21 +14,31 @@
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
+      url = "github:Homebrew/homebrew-bundle";
       flake = false;
     };
     homebrew-core = {
-      url = "github:homebrew/homebrew-core";
+      url = "github:Homebrew/homebrew-core";
       flake = false;
     };
     homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
+      url = "github:Homebrew/homebrew-cask";
       flake = false;
     };
     homebrew-services = {
       url = "github:Homebrew/homebrew-services";
       flake = false;
     };
+    mihomo-party = {
+      url = "github:mihomo-party-org/homebrew-mihomo-party";
+      flake = false;
+    };
+    xpipe-io = {
+      url = "github:xpipe-io/homebrew-tap";
+      flake = false;
+    };
+    # Homebrew 解析 Tap 时，会将 <用户/组织名>/<Tap 名称> 转换为 GitHub 上的 homebrew-<Tap 名称> 形式的仓库。
+    # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
     catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin";
   };
 
@@ -38,13 +47,7 @@
     , nixpkgs-unstable
     , home-manager
     , catppuccin
-    , nixpkgs-stable
-    , nixpkgs-master
     , nix-homebrew
-    , homebrew-bundle
-    , homebrew-core
-    , homebrew-cask
-    , homebrew-services
     , darwin
     , ...
     }@inputs:
@@ -91,14 +94,23 @@
               enableRosetta = true;
               # User owning the Homebrew prefix
               user = "${username}";
-              # Automatically migrate existing Homebrew installations
+              # 在这里添加Inputs中引入的taps
+              # 请确保taps中的tap名称包括了homebrew-前缀来正确定位到对应的仓库
+              # Intel: /usr/local/Homebrew/Library/Taps/
+              # Apple Silicon:   /opt/homebrew/Homebrew/Library/Taps/
               taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-                "homebrew/homebrew-bundle" = homebrew-bundle;
-                "homebrew/homebrew-services" = homebrew-services;
+                "homebrew/homebrew-core" = inputs.homebrew-core;
+                "homebrew/homebrew-cask" = inputs.homebrew-cask;
+                "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+                "homebrew/homebrew-services" = inputs.homebrew-services;
+                "mihomo-party-org/homebrew-mihomo-party" = inputs.mihomo-party;
+                "xpipe-io/homebrew-tap" = inputs.xpipe-io;
               };
-              autoMigrate = true;
+              # Automatically migrate existing Homebrew installations
+              autoMigrate = false;
+              # Optional: Enable fully-declarative tap management
+              #
+              # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
               mutableTaps = false;
             };
           }

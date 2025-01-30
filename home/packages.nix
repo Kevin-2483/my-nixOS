@@ -15,12 +15,12 @@
         rm $out/bin/rust-analyzer
       '';
     }))
-    (texlive.combine {
-      inherit (texlive)
-        scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
-    })
-    stable.lunarvim
-    (callPackage ./mypackage/tracker {})
+    #(texlive.combine {
+    # inherit (texlive)
+    #   scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
+    #})
+    lunarvim
+    #(callPackage ./mypackage/tracker {})
     android-tools
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     autojump
