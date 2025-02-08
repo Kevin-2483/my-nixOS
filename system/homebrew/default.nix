@@ -64,6 +64,7 @@
       { name = "diffusionbee"; }
       { name = "lm-studio"; }
       { name = "teamspeak-client@beta"; }
+      { name = "iina"; }
     ];
     masApps = {
       windows-app = 1295203466;

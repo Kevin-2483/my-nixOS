@@ -14,19 +14,19 @@
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-bundle = {
-      url = "github:Homebrew/homebrew-bundle";
+      url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
     homebrew-core = {
-      url = "github:Homebrew/homebrew-core";
+      url = "github:homebrew/homebrew-core";
       flake = false;
     };
     homebrew-cask = {
-      url = "github:Homebrew/homebrew-cask";
+      url = "github:homebrew/homebrew-cask";
       flake = false;
     };
     homebrew-services = {
-      url = "github:Homebrew/homebrew-services";
+      url = "github:homebrew/homebrew-services";
       flake = false;
     };
     mihomo-party = {
