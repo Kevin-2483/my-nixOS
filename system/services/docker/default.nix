@@ -6,7 +6,7 @@
   };
   boot.kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   systemd.services.promisc = {
-    enable = true;
+    enable = false;
     after = [ "network.target" ];
     serviceConfig = {
       type = "oneshot";
