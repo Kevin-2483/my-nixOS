@@ -7,51 +7,39 @@
 {
   imports =
     [
-    # ./proxy-set.nix
-    ./substituters.nix
-    ./env.nix
-    ./fonts.nix
-    ./locale.nix
-    ./security.nix
-    ./users.nix
-    ./services
-    ./programs
-    
+      ./network.nix
+      ./substituters.nix
+      ./env.nix
+      ./fonts.nix
+      ./locale.nix
+      ./security.nix
+      ./users.nix
+      ./services
+      ./programs
+
     ];
 
-    nixpkgs = {
-    	            overlays = [
-    	              # Add overlays your own flake exports (from overlays and pkgs dir):
-    	              outputs.overlays.unstable-packages
-    	            ];
-    	            config = {
-    	                  allowUnfree = true;
-    	                  # Workaround for https://github.com/nix-community/home-manager/issues/2942
-    	                  allowUnfreePredicate = _: true;
-    	                };
-    	            };
 
-  # Allow unfree packages
-  #nixpkgs.config.allowUnfree = true;
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "${hostname}"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  nixpkgs = {
+    overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      outputs.overlays.stable-packages
+      outputs.overlays.master-packages
+    ];
+    config = {
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+    };
+  };
+  nixpkgs.config.allowBroken = true;
 
   # This value determines the NixOS release from which the default
-    # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
-    # this value at the release version of the first install of this system.
-    # Before changing this value read the documentation for this option
-    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-    system.stateVersion = "23.11"; # Did you read the comment?
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }

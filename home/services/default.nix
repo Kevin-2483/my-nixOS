@@ -1,7 +1,6 @@
 {
-	imports = [
-		./cliphist
-		./kdeconnect
-		
-	];
+  imports = [
+    #./skhd
+
+  ];
 }

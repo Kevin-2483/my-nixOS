@@ -2,6 +2,7 @@
 
 {
   programs.fzf = {
-  		enable = true;
-  	};
+    enable = true;
+    catppuccin.enable = false;
+  };
 }
