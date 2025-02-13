@@ -22,5 +22,6 @@
     nushell
     tmux
     pam-reattach
+    yazi
   ];
 }

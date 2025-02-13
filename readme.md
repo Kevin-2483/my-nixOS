@@ -4,7 +4,7 @@
 
 ### 系统信息
 
-![SystemInfo](./screenshot/systeminfo.png)
+![ SystemInfo ] (./screenshot/systeminfo.png)
 
 ### Kitty 终端
 

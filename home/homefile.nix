@@ -79,7 +79,7 @@
     recursive = true;
     executable = true;
   };
-  
+
   home.file.".config/sketchybar/sub_bar".source = "${pkgs.sketchybar}/bin/sketchybar";
 
   home.file."Library/Application Support/wallust" = {

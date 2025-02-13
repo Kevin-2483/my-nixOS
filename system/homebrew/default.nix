@@ -65,6 +65,7 @@
       { name = "lm-studio"; }
       { name = "teamspeak-client@beta"; }
       { name = "iina"; }
+      { name = "element"; }
     ];
     masApps = {
       windows-app = 1295203466;
