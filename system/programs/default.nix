@@ -11,6 +11,6 @@
       ./nix-ld
       ./zsh
       ./proxychains-ng
-      #./noat
+      ./nix
     ];
 }

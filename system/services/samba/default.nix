@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.samba = {
     enable = true; # 启用 Samba 服务
@@ -49,7 +50,7 @@
         "guest ok" = "no"; # 禁止游客访问
         "comment" = "Private samba share."; # 私有共享注释
         "public" = "no"; # 私有共享
-      }
+      };
     };
   };
 }
