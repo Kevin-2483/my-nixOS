@@ -56,7 +56,7 @@
     nix-prefetch-scripts
     nixpkgs-fmt
     nodejs
-    nowplaying-cli
+    # nowplaying-cli
     nsxiv
     ouch
     p7zip

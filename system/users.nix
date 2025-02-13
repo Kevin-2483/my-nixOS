@@ -6,7 +6,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    description = ${username};
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
     openssh.authorizedKeys.keys = [
       # replace with your own public key

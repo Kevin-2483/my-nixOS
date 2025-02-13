@@ -4,19 +4,20 @@
     securityType = "user";
     openFirewall = true;
     nsswins = true;
-    extraConfig = ''
-      	    workgroup = smbnix
-      	    server string = smbnix
-      	    netbios name = smbnix
-      	    security = user 
-      	    #use sendfile = yes
-      	    #max protocol = smb2
-      	    # note: localhost is the ipv6 localhost ::1
-      	    hosts allow = 0.0.0.0/0
-      	    # hosts deny = 0.0.0.0/0
-      	    guest account = nobody
-      	    map to guest = bad user
-      	  '';
+    settings = {
+  global = {
+    workgroup = "smbnix";
+    "server string" = "smbnix";
+    "netbios name" = "smbnix";
+    security = "user";
+    "hosts allow" = "0.0.0.0/0";
+    # "hosts deny" = "0.0.0.0/0";
+    "guest account" = "nobody";
+    "map to guest" = "bad user";
+    # "use sendfile" = "yes"; # 取消注释启用
+    # "max protocol" = "smb2"; # 取消注释启用
+  };
+};
     shares = {
       # public = {
       #   path = "/home/kevin/services/samba/public";

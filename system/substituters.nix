@@ -8,7 +8,7 @@
     # given the users in this list the right to specify additional substituters via:
     #    1. `nixConfig.substituters` in `flake.nix`
     #    2. command line args `--options substituters http://xxx`
-    trusted-users = [ ${username} ];
+    trusted-users = [ "${username}" ];
 
     substituters = [
       # cache mirror located in China

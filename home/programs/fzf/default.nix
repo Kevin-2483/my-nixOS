@@ -3,6 +3,5 @@
 {
   programs.fzf = {
     enable = true;
-    catppuccin.enable = false;
   };
 }

@@ -4,7 +4,6 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop;
-    catppuccin.enable = false;
     settings = {
       color_theme = "TTY";
       theme_background = false;

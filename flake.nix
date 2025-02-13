@@ -5,7 +5,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
@@ -33,8 +33,8 @@
               useGlobalPkgs = false;
               useUserPackages = true;
               users.${username} = import ./home;
-              extraSpecialArgs = { inherit inputs hostname outputs; };
-            }
+              extraSpecialArgs = { inherit inputs hostname username outputs; };
+            };
               }
               {
               _module.args = { inherit inputs hostname outputs username;
