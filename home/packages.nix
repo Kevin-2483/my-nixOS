@@ -9,12 +9,12 @@
     # spotify remove to homebrew
     # sshfs
     # wezterm
-    (rustup.overrideAttrs (oldAttrs: {
-      # 移除特定的二进制文件
-      postInstall = oldAttrs.postInstall or "" + ''
-        rm $out/bin/rust-analyzer
-      '';
-    }))
+    # (rustup.overrideAttrs (oldAttrs: {
+    #   # 移除特定的二进制文件
+    #   postInstall = oldAttrs.postInstall or "" + ''
+    #     rm $out/bin/rust-analyzer
+    #   '';
+    # }))
     #(texlive.combine {
     # inherit (texlive)
     #   scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
