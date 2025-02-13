@@ -6,6 +6,6 @@
     hidden = false;
     package = pkgs.fd;
     ignores = [ ".git" "node_modules" "target" ];
-    extraOptions = [];
+    extraOptions = [ ];
   };
 }

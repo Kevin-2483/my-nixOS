@@ -1,7 +1,7 @@
-{
-  rustPlatform,
-  fetchFromGitHub,
-  lib,
+{ rustPlatform
+, fetchFromGitHub
+, lib
+,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -16,7 +16,7 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoHash = "sha256-Cb9Fxt61lhOZkSjXvBMFCklVQkwA4McDCNFwLk5mmEI=";
- 
+
   meta = {
     description = "A terminal-based real-time satellite tracking and orbit prediction application.";
     homepage = "https://github.com/ShenMian/tracker";

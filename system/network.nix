@@ -12,44 +12,44 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking = {
-  	networkmanager.enable = true;
-  	hostName = "${hostname}"; # Define your hostname.
-  	useDHCP = lib.mkDefault true;
-  	wireless.enable = false;  # Enables wireless support via wpa_supplicant.
-  	interfaces = 
-  	{
-  		enp6s18 = {
-  			useDHCP = lib.mkDefault false;
-  			ipv4.addresses = [{
-  				address = "10.1.0.102";
-  				prefixLength = 24;
-  			}];
-  		};
-  	};
-  	defaultGateway = {
-  		address = "10.1.0.10";
-  		interface = "enp6s18";
-  	};
-  	nameservers = [
-  	  "10.1.0.10"
-  	  "8.8.8.8"
-  	  "8.8.4.4"
-  	  "2001:4860:4860::8888"
-  	  "2001:4860:4860::8844"
-  	];
-  	# defaultGateway6 = {
-  	# 	address = "fe80::1";
-  	# 	interface = "ens3";
-  	# };
-  	# hosts = {
-	#	"127.0.0.2" = [ "other-localhost" ];
- 	#	"192.0.2.1" = [ "mail.example.com" "imap.example.com" ];
-  	# };
-  	# proxy = {
-  	# 	default = "http://user:password@proxy:port/";
-  	# 	noProxy = "127.0.0.1,localhost,internal.domain";
-  	# };
-  
+    networkmanager.enable = true;
+    hostName = "${hostname}"; # Define your hostname.
+    useDHCP = lib.mkDefault true;
+    wireless.enable = false; # Enables wireless support via wpa_supplicant.
+    interfaces =
+      {
+        enp6s18 = {
+          useDHCP = lib.mkDefault false;
+          ipv4.addresses = [{
+            address = "10.1.0.102";
+            prefixLength = 24;
+          }];
+        };
+      };
+    defaultGateway = {
+      address = "10.1.0.10";
+      interface = "enp6s18";
+    };
+    nameservers = [
+      "10.1.0.10"
+      "8.8.8.8"
+      "8.8.4.4"
+      "2001:4860:4860::8888"
+      "2001:4860:4860::8844"
+    ];
+    # defaultGateway6 = {
+    # 	address = "fe80::1";
+    # 	interface = "ens3";
+    # };
+    # hosts = {
+    #	"127.0.0.2" = [ "other-localhost" ];
+    #	"192.0.2.1" = [ "mail.example.com" "imap.example.com" ];
+    # };
+    # proxy = {
+    # 	default = "http://user:password@proxy:port/";
+    # 	noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+
   };
 
 }

@@ -35,10 +35,11 @@
               users.${username} = import ./home;
               extraSpecialArgs = { inherit inputs hostname username outputs; };
             };
-              }
-              {
-              _module.args = { inherit inputs hostname outputs username;
-          };
+          }
+          {
+            _module.args = {
+              inherit inputs hostname outputs username;
+            };
           }
         ];
       };
