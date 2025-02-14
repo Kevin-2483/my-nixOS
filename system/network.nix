@@ -22,7 +22,7 @@
         eth0 = {
           useDHCP = lib.mkDefault false;
           ipv4.addresses = [{
-            address = "10.1.0.102";
+            address = "10.1.0.101";
             prefixLength = 24;
           }];
         };
