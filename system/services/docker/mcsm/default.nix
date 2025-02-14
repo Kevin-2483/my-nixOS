@@ -28,5 +28,5 @@
       "23333:23333/tcp"
     ];
     log-driver = "journald";
-  }
+  };
 }
