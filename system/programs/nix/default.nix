@@ -10,7 +10,7 @@
 		};
 		optimise = {
 			automatic = true;
-			dates = "weekly";
+			dates = [ "6:00" ];
 			persistent = true;
 		};
 		settings = {
@@ -21,6 +21,5 @@
 			protocol = "ssh";
 			write = true;
 		};
-		
 	};
 }

@@ -11,6 +11,7 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  boot.kernelParams = [ "net.ifnames=0" ];
   networking = {
     networkmanager.enable = true;
     hostName = "${hostname}"; # Define your hostname.
@@ -18,7 +19,7 @@
     wireless.enable = false; # Enables wireless support via wpa_supplicant.
     interfaces =
       {
-        enp6s18 = {
+        eth0 = {
           useDHCP = lib.mkDefault false;
           ipv4.addresses = [{
             address = "10.1.0.102";
@@ -28,7 +29,7 @@
       };
     defaultGateway = {
       address = "10.1.0.10";
-      interface = "enp6s18";
+      interface = "eth0";
     };
     nameservers = [
       "10.1.0.10"

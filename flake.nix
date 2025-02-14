@@ -5,12 +5,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs-unstable, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -22,7 +22,7 @@
       };
     in
     {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostname} = nixpkgs-unstable.lib.nixosSystem {
         system = system;
         modules = [
           ./system

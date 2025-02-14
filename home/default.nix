@@ -14,7 +14,7 @@
     # ./theme.nix
     ./services
     ./homefile.nix
-    # ./shellScriptBin.nix
+    ./shellScriptBin.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

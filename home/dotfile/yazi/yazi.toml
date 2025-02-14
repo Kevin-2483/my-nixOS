@@ -22,7 +22,7 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
-    { run = 'vim "$@"', desc = "Open with NeoVim", block = true, for = "unix" },
+    { run = 'nvim "$@"', desc = "Open with NeoVim", block = true, for = "unix" },
     { run = 'code "$@"', desc = "Open with VSCode", for = "unix" },
     { run = 'kitty nvim "$@"', desc = "Open with NeoVim in new window", for = "unix" },
     { run = 'tmux new-window -t default "nvim "$@""', desc = "Open with NeoVim in Tmux", for = "unix" },

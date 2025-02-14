@@ -3,7 +3,7 @@
 {
   virtualisation.waydroid.enable = false;
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux-zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   # Bootloader.
   # 设置为 GRUB 启动加载器
   boot.loader.grub.device = "/dev/sda"; # 选择你安装系统的硬盘
