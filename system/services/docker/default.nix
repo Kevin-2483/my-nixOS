@@ -1,5 +1,8 @@
 { lib, pkgs, ... }:
 {
+  imports = [
+    ./portainer
+  ];
   virtualisation.docker.enable = true;
   virtualisation.docker.daemon.settings = {
     data-root = "/home/docker";
