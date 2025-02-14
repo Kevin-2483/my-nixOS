@@ -4,9 +4,11 @@
     ./portainer
   ];
   virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = true;
   virtualisation.docker.daemon.settings = {
     data-root = "/home/docker";
   };
+  virtualisation.oci-containers.backend = "docker";
   boot.kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   systemd.services.promisc = {
     enable = false;

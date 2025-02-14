@@ -2,6 +2,7 @@
   virtualisation.oci-containers.containers = {
     portainer = {
       image = "portainer/portainer-ee:2.21.5";
+      autoStart = true;
       ports = [
         "8000:8000"
         "9443:9443"
@@ -11,7 +12,7 @@
         "/home/kevin/services/docker/portainer/data:/data"
       ];
       extraOptions = [
-        "--restart=always"
+        # "--restart=unless-stopped"
       ];
     };
   };
