@@ -1,5 +1,6 @@
 {
-  programs.ssh.extraConfig = ''
+  programs.ssh = {
+    extraConfig = ''
     Host linux-builder
       User builder
       Hostname localhost
@@ -9,10 +10,13 @@
     Host server
       HostName kevin.2k2.cc
       User kevin
-      Port 5522
+      HostKeyAlias server
+      IdentityFile /Users/kevin/.ssh/id_rsa
+      Port 3322
     Host cloud
       HostName kevin.2k2.cc
       User kevin
       Port 22
   '';
+  };
 }
