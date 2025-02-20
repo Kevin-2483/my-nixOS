@@ -77,7 +77,7 @@
         modules = [
           # 这里导入之前我们使用的 configuration.nix，
           # 这样旧的配置文件仍然能生效
-          ./system
+          "./${hostname}"
           # 将 home-manager 配置为 nixos 的一个 module
           # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
           home-manager.darwinModules.home-manager

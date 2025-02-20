@@ -1,0 +1,1 @@
+{ programs.man.enable = true; }
