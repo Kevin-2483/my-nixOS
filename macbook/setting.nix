@@ -134,11 +134,9 @@
         # Hour = 0; Minute = 0; 
       }; # 垃圾回收的頻率。
       options = "-d"; # 垃圾回收的選項。
-      user = "${username}"; # 垃圾回收的用戶。
     };
     optimise = {
       automatic = true; # 是否自動優化 Nix 存儲庫。預設為 false
-      user = "${username}"; # 優化 Nix 存儲庫的用戶。
       interval = {
         Day = 3;
         # Hour = 0; Minute = 0 ; 
@@ -147,7 +145,6 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
-    useDaemon = true;
     package = pkgs.nixVersions.git;
   };
   documentation.info.enable = true;
