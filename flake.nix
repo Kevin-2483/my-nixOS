@@ -53,16 +53,16 @@
     catppuccin.url = "github:catppuccin/nix";
   };
   outputs =
-    { self , ... }@inputs:
+    { self, ... }@inputs:
     let
       inherit (self) outputs;
       machines = import ./machines.nix;
-      machine = machines.Kevin_MBA_M2 { inherit inputs; };
+      machine = machines.Kevin-MBA-M2 { inherit inputs outputs; };
       system = machine.system;
     in
     {
-      darwinConfigurations.${machine.hostname} = system == "x86_64-darwin" ? machine.machine-config : null;
-      nixosConfigurations.${machine.hostname} = system == "x86_64-linux" ? machine.machine-config : null;
+      darwinConfigurations.${machine.hostname} = if system == "aarch64-darwin" || "x86_64-darwin" then machine.machine-config else null;
+      nixosConfigurations.${machine.hostname} = if system == "x86_64-linux" || "aarch64-linux" then machine.machine-config else null;
       overlays = machine.overlays;
     };
 }

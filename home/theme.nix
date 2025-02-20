@@ -16,7 +16,7 @@
 
     ];
   };
-  catppuccin= {
+  catppuccin = {
     bat = {
       enable = true;
       flavor = "mocha";
@@ -25,7 +25,7 @@
       enable = true;
       flavor = "mocha";
     };
-    gitui = { 
+    gitui = {
       enable = true;
       flavor = "mocha";
     };

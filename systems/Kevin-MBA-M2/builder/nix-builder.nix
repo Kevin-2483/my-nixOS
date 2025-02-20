@@ -11,6 +11,6 @@
     protocol = "ssh-ng";
   }];
   nix.extraOptions = ''
-	  builders-use-substitutes = true
-	'';
+    	  builders-use-substitutes = true
+    	'';
 }

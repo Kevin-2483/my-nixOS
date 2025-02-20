@@ -40,7 +40,7 @@
     executable = true;
   };
   home.file.".config/sketchybar/excluded-apps.nix" = {
-    source = ../${hostname}/services/yabai/excluded-apps.nix;
+    source = ../systems/${hostname}/services/yabai/excluded-apps.nix;
     recursive = true;
     executable = true;
   };

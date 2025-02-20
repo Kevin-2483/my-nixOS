@@ -1,5 +1,6 @@
 {
-  Kevin-MBA-M2 = { inputs, ... }:{
+  Kevin-MBA-M2 = { inputs, outputs, ... }:
+    let
       system = "aarch64-darwin";
       hostname = "Kevin-MBA-M2";
       username = "kevin";
@@ -7,14 +8,16 @@
         inherit system;
         config.allowUnfree = true;
       };
-      darwin = inputs.darwin;
       nix-homebrew = inputs.nix-homebrew;
       home-manager = inputs.home-manager;
       catppuccin = inputs.catppuccin;
-      machine-config = darwin.lib.darwinSystem {
+    in
+    {
+      inherit system hostname username pkgs nix-homebrew home-manager catppuccin;
+      machine-config = inputs.darwin.lib.darwinSystem {
         system = system;
         modules = [
-          ./${hostname}
+          ./systems/${hostname}
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = false;
@@ -80,8 +83,9 @@
           };
         };
       };
-  };
-  moreNixmoreFine = { inputs, ... }:{
+    };
+  moreNixmoreFine = { inputs, outputs, ... }:
+    let
       system = "x86_64-linux";
       hostname = "moreNixmoreFine";
       username = "kevin";
@@ -89,17 +93,22 @@
         inherit system;
         config.allowUnfree = true;
       };
-      machine-config = nixos-unstable.lib.nixosSystem {
+      home-manager = inputs.home-manager;
+      catppuccin = inputs.catppuccin;
+    in
+    {
+      inherit system hostname username pkgs;
+      machine-config = inputs.nixos-unstable.lib.nixosSystem {
         system = system;
         modules = [
-          ./system
-          ./hardware-config
+          ./systems/${hostname}
+          ./systems/${hostname}/hardware-config
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = false;
               useUserPackages = true;
-              users.${username} = import ./home;
+              users.${username} = import [ catppuccin.homeManagerModules.catppuccin ./home ];
               extraSpecialArgs = { inherit inputs hostname username outputs; };
             };
           }
@@ -124,5 +133,5 @@
           };
         };
       };
-  };
+    };
 }

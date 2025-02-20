@@ -127,21 +127,22 @@
   system.startup.chime = false; # 是否在啟動時播放開機音效。預設為 true。
   system.stateVersion = 5; # 系統狀態版本。
   nix = {
-    gc = {
-      automatic = true; # 是否自動執行垃圾回收。預設為 true。
-      interval = {
-        Day = 3;
-        # Hour = 0; Minute = 0; 
-      }; # 垃圾回收的頻率。
-      options = "-d"; # 垃圾回收的選項。
-    };
-    optimise = {
-      automatic = true; # 是否自動優化 Nix 存儲庫。預設為 false
-      interval = {
-        Day = 3;
-        # Hour = 0; Minute = 0 ; 
-      }; # 優化 Nix 存儲庫的頻率。
-    };
+    enable = false;
+    # gc = {
+    #   automatic = true; # 是否自動執行垃圾回收。預設為 true。
+    #   interval = {
+    #     Day = 3;
+    #     # Hour = 0; Minute = 0; 
+    #   }; # 垃圾回收的頻率。
+    #   options = "-d"; # 垃圾回收的選項。
+    # };
+    # optimise = {
+    #   automatic = true; # 是否自動優化 Nix 存儲庫。預設為 false
+    #   interval = {
+    #     Day = 3;
+    #     # Hour = 0; Minute = 0 ; 
+    #   }; # 優化 Nix 存儲庫的頻率。
+    # };
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
