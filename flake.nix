@@ -3,13 +3,15 @@
   inputs = {
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
+    nixpkgs-stable-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -50,82 +52,17 @@
     # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
     catppuccin.url = "github:catppuccin/nix";
   };
-
   outputs =
-    { self
-    , nixpkgs-unstable
-    , home-manager
-    , catppuccin
-    , nix-homebrew
-    , darwin
-    , ...
-    }@inputs:
+    { self , ... }@inputs:
     let
       inherit (self) outputs;
-      system = "aarch64-darwin";
-      hostname = "Kevin-MBA-M2";
-      username = "kevin";
-      pkgs = import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      machines = import ./machines.nix;
+      machine = machines.Kevin_MBA_M2 { inherit inputs; };
+      system = machine.system;
     in
     {
-
-      darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
-        system = system;
-        modules = [
-          ./${hostname}
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = false;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username}.imports =
-              [ ./home catppuccin.homeManagerModules.catppuccin ];
-            # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
-            home-manager.extraSpecialArgs = {
-              inherit catppuccin inputs hostname outputs username;
-            };
-
-          }
-
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              # Install Homebrew under the default prefix
-              enable = true;
-              # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-              enableRosetta = true;
-              # User owning the Homebrew prefix
-              user = "${username}";
-              # 在这里添加Inputs中引入的taps
-              # 请确保taps中的tap名称包括了homebrew-前缀来正确定位到对应的仓库
-              # Intel: /usr/local/Homebrew/Library/Taps/
-              # Apple Silicon:   /opt/homebrew/Homebrew/Library/Taps/
-              taps = {
-                "homebrew/homebrew-core" = inputs.homebrew-core;
-                "homebrew/homebrew-cask" = inputs.homebrew-cask;
-                "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
-                "homebrew/homebrew-services" = inputs.homebrew-services;
-                "mihomo-party-org/homebrew-mihomo-party" = inputs.mihomo-party;
-                # "xpipe-io/homebrew-tap" = inputs.xpipe-io;
-                "PlayCover/homebrew-playcover" = inputs.playcover;
-                "laishulu/homebrew-homebrew" = inputs.laishulu;
-              };
-              # Automatically migrate existing Homebrew installations
-              autoMigrate = false;
-              # Optional: Enable fully-declarative tap management
-              #
-              # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-              mutableTaps = false;
-            };
-          }
-          {
-            _module.args = { inherit inputs hostname outputs username system; };
-          }
-          #(import ./overlays/steam.nix)
-        ];
-      };
-      overlays = import ./overlays { inherit inputs; };
+      darwinConfigurations.${machine.hostname} = system == "x86_64-darwin" ? machine.machine-config : null;
+      nixosConfigurations.${machine.hostname} = system == "x86_64-linux" ? machine.machine-config : null;
+      overlays = machine.overlays;
     };
 }
