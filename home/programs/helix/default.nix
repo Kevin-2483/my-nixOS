@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs.helix = {
     enable = true;
-    catppuccin.enable = true;
     extraPackages = with pkgs;
       with nodePackages; [
         # vscode-langservers-extracted

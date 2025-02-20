@@ -16,5 +16,47 @@
 
     ];
   };
-  catppuccin.flavor = "mocha";
+  catppuccin= {
+    bat = {
+      enable = true;
+      flavor = "mocha";
+    };
+    fzf = {
+      enable = true;
+      flavor = "mocha";
+    };
+    gitui = { 
+      enable = true;
+      flavor = "mocha";
+    };
+    yazi = {
+      enable = true;
+      flavor = "mocha";
+    };
+    helix = {
+      enable = true;
+      flavor = "mocha";
+    };
+    btop = {
+      enable = true;
+      flavor = "mocha";
+    };
+    kitty = {
+      enable = true;
+      flavor = "mocha";
+    };
+    lazygit = {
+      enable = true;
+      flavor = "mocha";
+    };
+    micro = {
+      enable = true;
+      flavor = "mocha";
+      transparent = true;
+    };
+    zed = {
+      enable = true;
+      flavor = "mocha";
+    };
+  };
 }

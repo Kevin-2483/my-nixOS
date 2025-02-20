@@ -48,7 +48,7 @@
     # };
     # Homebrew 解析 Tap 时，会将 <用户/组织名>/<Tap 名称> 转换为 GitHub 上的 homebrew-<Tap 名称> 形式的仓库。
     # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
-    catppuccin.url = "github:Kevin-2483/catppuccin-for-nix-darwin";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -78,7 +78,6 @@
           # 这里导入之前我们使用的 configuration.nix，
           # 这样旧的配置文件仍然能生效
           ./system
-          catppuccin.darwinModules.catppuccin
           # 将 home-manager 配置为 nixos 的一个 module
           # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
           home-manager.darwinModules.home-manager
