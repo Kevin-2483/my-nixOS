@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -40,7 +40,7 @@
     executable = true;
   };
   home.file.".config/sketchybar/excluded-apps.nix" = {
-    source = ../system/services/yabai/excluded-apps.nix;
+    source = ../${hostname}/services/yabai/excluded-apps.nix;
     recursive = true;
     executable = true;
   };

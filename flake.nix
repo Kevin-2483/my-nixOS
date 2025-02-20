@@ -75,7 +75,7 @@
       darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
         system = system;
         modules = [
-          ./${hostname}
+          ./{hostname}
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = false;
