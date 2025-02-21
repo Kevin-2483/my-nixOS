@@ -56,8 +56,8 @@
     { self, ... }@inputs:
     let
       inherit (self) outputs;
-      machines = import ./machines.nix;
-      machine = machines.Kevin-MBA-M2 { inherit inputs outputs; };
+      machines = import ./machines;
+      machine = machines.${hostname} { inherit inputs outputs; };
       system = machine.system;
     in
     {
