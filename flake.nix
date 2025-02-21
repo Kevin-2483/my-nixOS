@@ -53,7 +53,7 @@
     catppuccin.url = "github:catppuccin/nix";
   };
   outputs =
-    { self, flakeconfig, ... }@inputs:
+    { self, ... }@inputs:
     let
       inherit (self) outputs;
       machines = import ./machines;
