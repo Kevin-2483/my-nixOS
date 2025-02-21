@@ -72,10 +72,11 @@ let
   # Platform-specific packages
   platformSpecificPackages =
     (if isMacOS then [
-      yabai-reload hmcl
-    ] else []) ++
+      yabai-reload
+      hmcl
+    ] else [ ]) ++
     (if isLinux then [
-    ] else []);
+    ] else [ ]);
 in
 {
   home.packages = [ ny kny ktm tm pidof ] ++ platformSpecificPackages;

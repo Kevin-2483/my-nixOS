@@ -3,7 +3,7 @@ let
   # 判断当前平台
   isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
   isLinux = system == "x86_64-linux" || system == "aarch64-linux";
-  in
+in
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -90,7 +90,7 @@ let
     executable = true;
   };
 
-  home.file.".config/sketchybar/sub_bar"={
+  home.file.".config/sketchybar/sub_bar" = {
     enable = isMacOS;
     source = "${pkgs.sketchybar}/bin/sketchybar";
     executable = true;

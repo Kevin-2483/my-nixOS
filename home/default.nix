@@ -7,8 +7,8 @@ let
   platformSpecificSettings =
     (if isMacOS then [
       ./darwin.nix
-    ] else []) ++
-    (if isLinux then [ ] else []);
+    ] else [ ]) ++
+    (if isLinux then [ ] else [ ]);
 in
 {
 

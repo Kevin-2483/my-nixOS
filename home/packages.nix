@@ -7,10 +7,10 @@ let
   platformSpecificPackages = with pkgs;
     (if isMacOS then [
       nowplaying-cli
-    ] else []) ++
+    ] else [ ]) ++
     (if isLinux then [
       mpv
-    ] else []);
+    ] else [ ]);
 in
 {
 
