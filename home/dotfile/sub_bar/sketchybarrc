@@ -1,0 +1,81 @@
+#!/bin/bash
+
+ITEM_DIR="$CONFIG_DIR/items"
+
+# 创建缓存目录
+mkdir -p "$HOME/.cache/sketchybar"
+
+CONFIG_FILE="$HOME/.cache/sketchybar/config.sh"
+COLOR_GROUP_FILE="$HOME/.cache/sketchybar/color_group.sh"
+# 如果配置文件不存在，则创建空文件
+[ -f "$CONFIG_FILE" ] || touch "$CONFIG_FILE"
+[ -f "$COLOR_GROUP_FILE" ] || touch "$COLOR_GROUP_FILE"
+
+# 如果文件非空，加载配置
+if [ -s "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+fi
+
+if [ -s "$COLOR_GROUP_FILE" ]; then
+    source "$COLOR_GROUP_FILE"
+fi
+
+# 检查变量是否未定义
+if [ -z "${use_local_color+x}" ]; then
+    export use_local_color=true
+    echo "use_local_color=true" > "$CONFIG_FILE"
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "true" ]; then
+    source "$CONFIG_DIR/colors.sh"
+elif [ "$use_local_color" = "false" ]; then
+    source "$HOME/.cache/wallust/colors.sh"
+fi
+
+# 检查变量是否未定义
+if [ -z "${color_group+x}" ]; then
+    export color_group=0
+    echo "color_group=0" > "$COLOR_GROUP_FILE"
+fi
+
+source "$CONFIG_DIR/convert.sh"
+
+color1=$(convert_to_argb "$color1")
+color2=$(convert_to_argb "$color2")
+color3=$(convert_to_argb "$color3")
+color4=$(convert_to_argb "$color4")
+color5=$(convert_to_argb "$color5")
+color6=$(convert_to_argb "$color6")
+color7=$(convert_to_argb "$color7")
+color8=$(convert_to_argb "$color8")
+color9=$(convert_to_argb "$color9")
+color10=$(convert_to_argb "$color10")
+color11=$(convert_to_argb "$color11")
+color12=$(convert_to_argb "$color12")
+color13=$(convert_to_argb "$color13")
+color14=$(convert_to_argb "$color14")
+color15=$(convert_to_argb "$color15")
+color16=$(convert_to_argb "$color16")
+
+
+if [ "$color_group" = "0" ]; then
+  BAR_COLOR=$color1
+else
+  BAR_COLOR=$color9
+fi
+
+sketchybar --bar position=bottom height=34 blur_radius=30 color=$BAR_COLOR margin=15 y_offset=6 corner_radius=20 topmost=on
+
+default=(
+  padding_left=5
+  padding_right=5
+  icon.font="UbuntuMono Nerd Font:Bold:16.0"
+  label.font="UbuntuMono Nerd Font:Bold:16.0"
+  icon.color=$color0
+  label.color=$color0
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+)
+sketchybar --default "${default[@]}"
+
+sketchybar --update

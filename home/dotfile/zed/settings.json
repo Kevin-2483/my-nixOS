@@ -1,0 +1,46 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_fallbacks": ["FiraCode Nerd Font Mono"],
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha (Blur)"
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "file_types": {
+    "Shell Script": ["*rc"],
+    "Dockerfile": ["Dockerfile*"]
+  },
+  "hour_format": "hour24",
+  "terminal": {
+    "dock": "bottom",
+    "font_family": "ComicShannsMono Nerd Font Mono",
+    "line_height": "standard",
+    "copy_on_select": true,
+    "shell": {
+      "program": "nu"
+    }
+  },
+  "autosave": "on_focus_change",
+  "ui_font_family": "Ubuntu Nerd Font"
+}
