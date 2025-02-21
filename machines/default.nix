@@ -1,3 +1,5 @@
+# ./machines/default.nix
 {
-  imports = [ ./Kevin-MBA-M2 ./moreNixmoreFine ];
+  Kevin-MBA-M2 = import ./Kevin-MBA-M2;
+  moreNixmoreFine = import ./moreNixmoreFine;
 }

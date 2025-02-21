@@ -1,7 +1,5 @@
 {
   imports = [
-    # ./island
-    # ./Fonts
-    # ./HMApps
+    ./flakeconfig
   ];
 }

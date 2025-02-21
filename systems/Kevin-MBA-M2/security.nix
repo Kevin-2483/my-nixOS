@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../custom/newpam.nix
+    ../../custom/newpam.nix
   ];
   security.newpam = {
     enableSudoTouchIdAuth = true;
