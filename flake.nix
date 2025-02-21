@@ -51,7 +51,10 @@
     # Homebrew 解析 Tap 时，会将 <用户/组织名>/<Tap 名称> 转换为 GitHub 上的 homebrew-<Tap 名称> 形式的仓库。
     # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
     catppuccin.url = "github:catppuccin/nix";
-    flakeconfig.url = "path:/etc/flakeconfig";
+    flakeconfig= {
+      url = "path:/etc/flakeconfig";
+      flake = false;
+    };
   };
   outputs =
     { self, flakeconfig, ... }@inputs:

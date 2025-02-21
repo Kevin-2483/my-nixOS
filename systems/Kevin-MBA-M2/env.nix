@@ -11,9 +11,9 @@
   };
   environment.etc.flakeconfig = {
     enable = true;
-    source = ./systemfile/flakeconfig;
-    target = "flakeconfig";
-  }
+    source = ./systemfile/nixconfig.nix;
+    target = "flakeconfig.nix";
+  };
   environment.systemPackages = with pkgs; [
     wget
     curl
