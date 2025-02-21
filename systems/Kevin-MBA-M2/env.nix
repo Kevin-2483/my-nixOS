@@ -9,6 +9,11 @@
     JAVA_HOME = "/Users/kevin/Library/jdks/zulu21";
     PATH = "$JAVA_HOME/bin:$PATH";
   };
+  environment.etc.flakeconfig = {
+    enable = true;
+    source = ./systemfile/flakeconfig;
+    target = "flakeconfig";
+  }
   environment.systemPackages = with pkgs; [
     wget
     curl
