@@ -57,15 +57,14 @@
     },
     "flakeconfig": {
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-0uVgPqSTAcQSkTW2yEzlX1r0lb5VHNdEFMIEDPe6+5E=",
-        "path": "/nix/store/rh0xg0b2s9xm97blr27f68cwqb5hzl10-source/systems/Kevin-MBA-M2/systemfile/flakeconfig",
+        "path": "./flakeconfig",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/rh0xg0b2s9xm97blr27f68cwqb5hzl10-source/systems/Kevin-MBA-M2/systemfile/flakeconfig",
+        "path": "./flakeconfig",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "home-manager": {
       "inputs": {
