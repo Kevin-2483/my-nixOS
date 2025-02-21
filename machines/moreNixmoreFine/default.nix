@@ -23,12 +23,12 @@ in
           useGlobalPkgs = false;
           useUserPackages = true;
           users.${username} = import [ catppuccin.homeManagerModules.catppuccin ../../home ];
-          extraSpecialArgs = { inherit inputs hostname username outputs; };
+          extraSpecialArgs = { inherit inputs hostname username outputs system; };
         };
       }
       {
         _module.args = {
-          inherit inputs hostname outputs username;
+          inherit inputs hostname outputs username system;
         };
       }
     ];

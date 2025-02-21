@@ -1,5 +1,17 @@
-{ pkgs, outputs, ... }:
-
+{ pkgs, outputs, system, ... }:
+let
+  # 判断当前平台
+  isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
+  isLinux = system == "x86_64-linux" || system == "aarch64-linux";
+  # Platform-specific packages
+  platformSpecificPackages = with pkgs;
+    (if isMacOS then [
+      nowplaying-cli
+    ] else []) ++
+    (if isLinux then [
+      mpv
+    ] else []);
+in
 {
 
   home.packages = with pkgs; [
@@ -52,18 +64,16 @@
     mdcat # cat for markdown
     mediainfo
     micro
-    mpv
+    neofetch
     nix-output-monitor
     nix-prefetch-scripts
     nixpkgs-fmt
     nodejs
-    nowplaying-cli
     nsxiv
     ouch
     p7zip
     pciutils # lspci
     proxychains-ng
-    rio
     ripgrep
     rust-analyzer
     scrcpy
@@ -77,8 +87,7 @@
     xz
     zip
     neofetch
-
-  ];
+  ] ++ platformSpecificPackages;
 
   nixpkgs = {
     overlays = [

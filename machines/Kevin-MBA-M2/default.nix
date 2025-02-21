@@ -26,7 +26,7 @@ in
           [ ../../home catppuccin.homeManagerModules.catppuccin ];
         # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
         home-manager.extraSpecialArgs = {
-          inherit catppuccin inputs hostname outputs username;
+          inherit catppuccin inputs hostname outputs username system;
         };
 
       }

@@ -10,7 +10,6 @@
     ./yazi
     ./zsh
     #./pywal
-    ./neofetch
     ./helix
     ./tmux
     # ./wezterm

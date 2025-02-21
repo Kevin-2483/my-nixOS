@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, system, ... }:
 let
   ny = pkgs.writeShellScriptBin "ny" ''${pkgs.nushell}/bin/nu -e "yy '$@'"'';
   kny = pkgs.writeShellScriptBin "kny" ''
@@ -6,20 +6,6 @@ let
       ${pkgs.kitty}/bin/kitty ny "$HOME"
     else
       ${pkgs.kitty}/bin/kitty ny "$@"
-    fi
-  '';
-  rny = pkgs.writeShellScriptBin "rny" ''
-    if [ "$#" -eq 0 ]; then
-      ${pkgs.rio}/bin/rio -e ny "$HOME"
-    else
-      ${pkgs.rio}/bin/rio -e ny "$@"
-    fi
-  '';
-  rtm = pkgs.writeShellScriptBin "rtm" ''
-    if [ "$#" -eq 0 ]; then
-       ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.rio}/bin/rio -e tmux attach -t default
-    else
-        ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.rio}/bin/rio -e tmux attach -t "$@"
     fi
   '';
   ktm = pkgs.writeShellScriptBin "ktm" ''
@@ -80,7 +66,17 @@ let
       echo "$pids"
         fi
   '';
+  # 判断当前平台
+  isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
+  isLinux = system == "x86_64-linux" || system == "aarch64-linux";
+  # Platform-specific packages
+  platformSpecificPackages =
+    (if isMacOS then [
+      yabai-reload hmcl
+    ] else []) ++
+    (if isLinux then [
+    ] else []);
 in
 {
-  home.packages = [ ny kny rny rtm ktm tm yabai-reload hmcl pidof ];
+  home.packages = [ ny kny ktm tm pidof ] ++ platformSpecificPackages;
 }

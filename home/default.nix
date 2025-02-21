@@ -1,5 +1,15 @@
-{ username, ... }:
-
+{ username, system, ... }:
+let
+  # 判断当前平台
+  isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
+  isLinux = system == "x86_64-linux" || system == "aarch64-linux";
+  # Platform-specific packages
+  platformSpecificSettings =
+    (if isMacOS then [
+      ./darwin.nix
+    ] else []) ++
+    (if isLinux then [ ] else []);
+in
 {
 
   home = {
@@ -15,10 +25,7 @@
     ./services
     ./homefile.nix
     ./shellScriptBin.nix
-  ];
+  ] ++ platformSpecificSettings;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  targets.darwin.defaults."com.apple.desktopservices".DSDontWriteUSBStores = true; # 是否阻止在 USB 驅動器上寫入 .DS_Store 文件。
-  targets.darwin.defaults."com.apple.desktopservices".DSDontWriteNetworkStores = true; # 是否阻止在網絡卷上寫入 .DS_Store 文件。
-
 }

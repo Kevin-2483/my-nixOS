@@ -1,4 +1,9 @@
-{ pkgs, hostname, ... }:
+{ pkgs, hostname, system, ... }:
+let
+  # 判断当前平台
+  isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
+  isLinux = system == "x86_64-linux" || system == "aarch64-linux";
+  in
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -35,11 +40,13 @@
 
   # };
   home.file.".config/sketchybar" = {
+    enable = isMacOS;
     source = ./dotfile/sketchybar;
     recursive = true;
     executable = true;
   };
   home.file.".config/sketchybar/excluded-apps.nix" = {
+    enable = isMacOS;
     source = ../systems/${hostname}/services/yabai/excluded-apps.nix;
     recursive = true;
     executable = true;
@@ -50,16 +57,19 @@
     executable = true;
   };
   home.file.".config/rio" = {
+    enable = false;
     source = ./dotfile/rio;
     recursive = true;
     executable = true;
   };
   home.file.".config/mpv" = {
+    enable = isLinux;
     source = ./dotfile/mpv;
     recursive = true;
     executable = true;
   };
   home.file."Library/Rime" = {
+    enable = isMacOS;
     source = ./dotfile/Rime;
     recursive = true;
     executable = true;
@@ -80,15 +90,22 @@
     executable = true;
   };
 
-  home.file.".config/sketchybar/sub_bar".source = "${pkgs.sketchybar}/bin/sketchybar";
+  home.file.".config/sketchybar/sub_bar"={
+    enable = isMacOS;
+    source = "${pkgs.sketchybar}/bin/sketchybar";
+    executable = true;
+  };
 
   home.file."Library/Application Support/wallust" = {
+    enable = isMacOS;
     source = ./dotfile/wallust;
     recursive = true;
     executable = true;
   };
 
-
+  home.file.".config/neofetch/config.conf" = {
+    source = (if isMacOS then ./dotfile/neofetch/macos-config.conf else ./dotfile/neofetch/nixos-config.conf);
+  };
   # home.file.".config/skhd" = {
   #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
   #   source = ./dotfile/skhd;
