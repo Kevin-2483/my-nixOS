@@ -22,7 +22,7 @@ in
         home-manager = {
           useGlobalPkgs = false;
           useUserPackages = true;
-          users.${username} = import [ catppuccin.homeManagerModules.catppuccin ../../home ];
+          users.${username} = imports [ catppuccin.homeManagerModules.catppuccin ../../home ];
           extraSpecialArgs = { inherit inputs hostname username outputs system; };
         };
       }
