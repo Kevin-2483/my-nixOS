@@ -1,4 +1,4 @@
-{ username, system, ... }:
+{ username, system, lib, ... }:
 let
   # 判断当前平台
   isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
