@@ -57,13 +57,12 @@
     let
       inherit (self) outputs;
       machines = import ./machines;
-      flakeconfig = import ./config.nix;
-      machine = machines.${flakeconfig.vars.hostname} { inherit inputs outputs; };
+      hostname = builtins.getEnv "hostname";
+      machine = machines.${hostname} { inherit inputs outputs; };
       system = machine.system;
-    in
-    {
-      darwinConfigurations.${machine.hostname} = if system == "aarch64-darwin" || "x86_64-darwin" then machine.machine-config else null;
-      nixosConfigurations.${machine.hostname} = if system == "x86_64-linux" || "aarch64-linux" then machine.machine-config else null;
+    in {
+      darwinConfigurations.${machine.hostname} = if system == "aarch64-darwin" || system == "x86_64-darwin" then machine.machine-config else null;
+      nixosConfigurations.${machine.hostname} = if system == "x86_64-linux" || system == "aarch64-linux" then machine.machine-config else null;
       overlays = machine.overlays;
     };
 }

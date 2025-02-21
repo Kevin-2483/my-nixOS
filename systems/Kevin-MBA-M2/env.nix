@@ -7,6 +7,7 @@
     EDITOR = "lvim";
     JAVA_HOME = "/Users/kevin/Library/jdks/zulu21";
     PATH = "$JAVA_HOME/bin:$PATH";
+    hostname = "Kevin-MBA-M2";
   };
   environment.etc.flakeconfig = {
     enable = false;

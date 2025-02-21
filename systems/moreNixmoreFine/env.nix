@@ -15,7 +15,7 @@
   boot.loader.grub.efiInstallAsRemovable = false; # 如果需要设置为可移动设备
 
   environment.shells = with pkgs; [ nushell bash zsh ];
-  environment.variables = rec { EDITOR = "nvim"; };
+  environment.variables = rec { EDITOR = "nvim"; hostname = "moreNixmoreFine"; };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     wget
