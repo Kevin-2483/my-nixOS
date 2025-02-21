@@ -1,7 +1,6 @@
 { lib, config, pkgs, inputs, username, ... }:
 
 {
-
   environment.shells = with pkgs; [ nushell bash zsh ];
   environment.darwinConfig = "$HOME/.config/nix-darwin/flake.nix";
   environment.variables = rec {
@@ -10,7 +9,7 @@
     PATH = "$JAVA_HOME/bin:$PATH";
   };
   environment.etc.flakeconfig = {
-    enable = true;
+    enable = false;
     source = ./systemfile/nixconfig.nix;
     target = "flakeconfig.nix";
   };
