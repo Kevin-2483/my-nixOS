@@ -14,7 +14,7 @@ in
 
   home = {
     username = "${username}";
-    homeDirectory = "/Users/${username}";
+    homeDirectory = lib.mkDefault "/Users/${username}";
     stateVersion = "24.05";
   };
   imports = [
