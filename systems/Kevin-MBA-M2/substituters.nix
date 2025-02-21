@@ -1,6 +1,4 @@
 { lib, username, ... }: {
-
-  # ...
   nix.settings = {
     # given the users in this list the right to specify additional substituters via:
     #    1. `nixConfig.substituters` in `flake.nix`
@@ -8,12 +6,7 @@
     trusted-users = [ "${username}" ];
 
     substituters = [
-      # cache mirror located in China
-      # status: https://mirror.sjtu.edu.cn/
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      # status: https://mirrors.ustc.edu.cn/status/
       "https://mirrors.ustc.edu.cn/nix-channels/store"
-
       "https://cache.nixos.org"
       # nix community's cache server
       "https://nix-community.cachix.org"

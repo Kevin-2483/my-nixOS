@@ -1,3 +1,3 @@
 {
-  # imports = [ ./linux-builder.nix ./nix-builder.nix ];
+  imports = [ ./linux-builder.nix ./nix-builder.nix ];
 }
