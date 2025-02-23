@@ -39,6 +39,7 @@ in
     btop # replacement of htop/nmon
     clipboard-jh
     coder
+    comma
     direnv
     dotnet-sdk_8
     feh
@@ -85,6 +86,7 @@ in
     vhs
     wallust
     xz
+    youtube-dl
     zip
     neofetch
   ] ++ platformSpecificPackages;

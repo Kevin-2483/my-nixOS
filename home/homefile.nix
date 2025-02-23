@@ -46,7 +46,7 @@ in
     executable = true;
   };
   home.file.".config/sketchybar/excluded-apps.nix" = {
-    enable = isMacOS;
+    enable = false;
     source = ../systems/${hostname}/services/yabai/excluded-apps.nix;
     recursive = true;
     executable = true;
@@ -62,8 +62,8 @@ in
     recursive = true;
     executable = true;
   };
-  home.file.".config/mpv" = {
-    enable = isLinux;
+  home.file.".config/macos-mpv" = {
+    enable = isMacOS;
     source = ./dotfile/mpv;
     recursive = true;
     executable = true;
