@@ -66,6 +66,7 @@
       { name = "teamspeak-client@beta"; }
       { name = "iina"; }
       { name = "element"; }
+      { name = "follow"; }
     ];
     masApps = {
       windows-app = 1295203466;
