@@ -60,7 +60,8 @@
       hostname = builtins.getEnv "hostname";
       machine = machines.${hostname} { inherit inputs outputs; };
       system = machine.system;
-    in {
+    in
+    {
       darwinConfigurations.${machine.hostname} = if system == "aarch64-darwin" || system == "x86_64-darwin" then machine.machine-config else null;
       nixosConfigurations.${machine.hostname} = if system == "x86_64-linux" || system == "aarch64-linux" then machine.machine-config else null;
       overlays = machine.overlays;

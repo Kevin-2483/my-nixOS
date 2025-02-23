@@ -103,6 +103,9 @@ in
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
       allowBroken = true;
+      permittedInsecurePackages = [
+        "python3.12-youtube-dl-2021.12.17"
+      ];
     };
   };
 }
