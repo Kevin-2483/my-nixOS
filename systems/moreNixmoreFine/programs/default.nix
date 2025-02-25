@@ -12,5 +12,6 @@
       ./zsh
       ./proxychains-ng
       ./nix
+      ./direnv
     ];
 }

@@ -1,1 +1,1 @@
-{ imports = [ ./bash ./zsh ./man.nix ./tmux ./ssh ]; }
+{ imports = [ ./bash ./zsh ./man.nix ./tmux ./ssh ./direnv ]; }

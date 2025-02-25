@@ -40,7 +40,7 @@ in
     clipboard-jh
     coder
     comma
-    direnv
+    devenv
     dotnet-sdk_8
     feh
     findutils
@@ -88,7 +88,6 @@ in
     xz
     youtube-dl
     zip
-    neofetch
   ] ++ platformSpecificPackages;
 
   nixpkgs = {
