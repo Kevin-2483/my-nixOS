@@ -67,6 +67,7 @@
       { name = "iina"; }
       { name = "element"; }
       { name = "follow"; }
+      { name = "blackhole-2ch"; }
     ];
     masApps = {
       windows-app = 1295203466;

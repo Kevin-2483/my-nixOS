@@ -118,6 +118,7 @@ source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/coffee.sh"
+source "$ITEM_DIR/microphone.sh"
 # source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/front_app.sh"
 # sketchybar --add alias "TextInputMenuAgent,Item-0" right \
