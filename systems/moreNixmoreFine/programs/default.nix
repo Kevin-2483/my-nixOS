@@ -13,5 +13,6 @@
       ./proxychains-ng
       ./nix
       ./direnv
+      ./nix-index
     ];
 }
