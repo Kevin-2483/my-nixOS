@@ -19,7 +19,7 @@
     ./kitty
     ./carapace
     ./pandoc
-    ./command-not-found
+    # ./command-not-found
   ];
 
 }

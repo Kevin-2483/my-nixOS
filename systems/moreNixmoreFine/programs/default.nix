@@ -14,5 +14,6 @@
       ./nix
       ./direnv
       ./nix-index
+      ./command-not-found
     ];
 }
