@@ -65,6 +65,7 @@ in
     mdcat # cat for markdown
     mediainfo
     micro
+    mods
     neofetch
     nix-output-monitor
     nix-prefetch-scripts

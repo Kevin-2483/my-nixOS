@@ -23,6 +23,7 @@
       # }
       { name = "switchaudio-osx"; }
       { name = "tag"; }
+      { name = "kew"; }
       # { name = "cava"; }
     ];
     # 用于Cask（图形界面应用）的安装 --cask
@@ -68,6 +69,9 @@
       { name = "element"; }
       { name = "follow"; }
       { name = "blackhole-2ch"; }
+      { name = "rustdesk"; }
+      { name = "pot"; }
+      { name = "postman"; }
     ];
     masApps = {
       windows-app = 1295203466;

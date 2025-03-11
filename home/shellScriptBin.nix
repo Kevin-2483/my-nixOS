@@ -1,18 +1,18 @@
-{ pkgs, username, system, ... }:
+{ pkgs, username, system, outputs, ... }:
 let
   ny = pkgs.writeShellScriptBin "ny" ''${pkgs.nushell}/bin/nu -e "yy '$@'"'';
   kny = pkgs.writeShellScriptBin "kny" ''
     if [ "$#" -eq 0 ]; then
-      ${pkgs.kitty}/bin/kitty ny "$HOME"
+      ${pkgs.stable.kitty}/bin/kitty ny "$HOME"
     else
-      ${pkgs.kitty}/bin/kitty ny "$@"
+      ${pkgs.stable.kitty}/bin/kitty ny "$@"
     fi
   '';
   ktm = pkgs.writeShellScriptBin "ktm" ''
     if [ "$#" -eq 0 ]; then
-       ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.kitty}/bin/kitty tmux attach -t default
+       ${pkgs.tmux}/bin/tmux new-session -d -s default;${pkgs.stable.kitty}/bin/kitty tmux attach -t default
     else
-        ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.kitty}/bin/kitty tmux attach -t "$@"
+        ${pkgs.tmux}/bin/tmux new-session -d -s "$@";${pkgs.stable.kitty}/bin/kitty tmux attach -t "$@"
     fi
   '';
   tm = pkgs.writeShellScriptBin "tm" ''
@@ -80,4 +80,23 @@ let
 in
 {
   home.packages = [ ny kny ktm tm pidof ] ++ platformSpecificPackages;
+
+  nixpkgs = {
+    overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      outputs.overlays.stable-packages
+      outputs.overlays.master-packages
+      #outputs.overlays.steam-env
+    ];
+    config = {
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+      allowBroken = true;
+      permittedInsecurePackages = [
+        "python3.12-youtube-dl-2021.12.17"
+      ];
+    };
+  };
 }
+

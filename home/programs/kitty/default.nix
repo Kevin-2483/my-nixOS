@@ -3,7 +3,7 @@
     enable = true;
     # font.name = "SpaceMono Nerd Font";
     themeFile = "Catppuccin-Mocha";
-    package = pkgs.kitty;
+    package = pkgs.stable.kitty;
     settings = {
       font_family = "Space Mono Nerd Font";
       bold_font = "auto";
@@ -55,4 +55,23 @@
 
     '';
   };
+
+  nixpkgs = {
+    overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      outputs.overlays.stable-packages
+      outputs.overlays.master-packages
+      #outputs.overlays.steam-env
+    ];
+    config = {
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+      allowBroken = true;
+      permittedInsecurePackages = [
+        "python3.12-youtube-dl-2021.12.17"
+      ];
+    };
+  };
 }
+

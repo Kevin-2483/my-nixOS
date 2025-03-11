@@ -53,6 +53,7 @@ in
             # "xpipe-io/homebrew-tap" = inputs.xpipe-io;
             "PlayCover/homebrew-playcover" = inputs.playcover;
             "laishulu/homebrew-homebrew" = inputs.laishulu;
+            "pot-app/homebrew-tap" = inputs.pot;
           };
           # Automatically migrate existing Homebrew installations
           autoMigrate = false;
@@ -71,7 +72,7 @@ in
   # overlays = import ./overlays { inherit inputs; };
   overlays = {
     stable-packages = final: _prev: {
-      stable = import inputs.nixpkgs-stable {
+      stable = import inputs.nixpkgs-stable-darwin {
         system = final.system;
         config.allowUnfree = true;
       };

@@ -44,6 +44,10 @@
       url = "github:laishulu/homebrew-homebrew";
       flake = false;
     };
+    pot = {
+      url = "github:pot-app/homebrew-tap";
+      flake = false;
+    };
     # xpipe-io = {
     #   url = "github:xpipe-io/homebrew-tap";
     #   flake = false;
