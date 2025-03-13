@@ -35,6 +35,10 @@
       url = "github:mihomo-party-org/homebrew-mihomo-party";
       flake = false;
     };
+    p2p_file_system = {
+      # https://github.com/Kevin-2483/p2p_file_system
+      url = "github:Kevin-2483/p2p_file_system";
+    };
     playcover = {
       url = "github:PlayCover/homebrew-playcover";
       flake = false;

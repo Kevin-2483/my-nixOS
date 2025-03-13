@@ -1,4 +1,4 @@
-{ pkgs, outputs, system, ... }:
+{ pkgs, inputs, outputs, system, ... }:
 let
   # 判断当前平台
   isMacOS = system == "x86_64-darwin" || system == "aarch64-darwin";
@@ -89,6 +89,7 @@ in
     xz
     youtube-dl
     zip
+    inputs.p2p_file_system.packages.${system}.default
   ] ++ platformSpecificPackages;
 
   nixpkgs = {
