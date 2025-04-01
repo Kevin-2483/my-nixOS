@@ -72,6 +72,8 @@
       { name = "rustdesk"; }
       { name = "pot"; }
       { name = "postman"; }
+      { name = "Hoppscotch"; }
+      { name = "google-chrome"; }
     ];
     masApps = {
       windows-app = 1295203466;

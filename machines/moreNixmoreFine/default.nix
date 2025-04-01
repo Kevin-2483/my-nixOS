@@ -24,7 +24,7 @@ in
           useUserPackages = true;
           users.${username} = {
             imports = [
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
               ../../home
             ];
           };

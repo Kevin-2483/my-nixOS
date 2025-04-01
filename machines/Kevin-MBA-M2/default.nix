@@ -23,7 +23,7 @@ in
         home-manager.useGlobalPkgs = false;
         home-manager.useUserPackages = true;
         home-manager.users.${username}.imports =
-          [ ../../home catppuccin.homeManagerModules.catppuccin ];
+          [ ../../home catppuccin.homeModules.catppuccin ];
         # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
         home-manager.extraSpecialArgs = {
           inherit catppuccin inputs hostname outputs username system;

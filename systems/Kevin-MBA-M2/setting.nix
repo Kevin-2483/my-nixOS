@@ -146,7 +146,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
-    package = pkgs.nixVersions.git;
+    package = pkgs.nixVersions.latest;
   };
   documentation.info.enable = true;
 }
