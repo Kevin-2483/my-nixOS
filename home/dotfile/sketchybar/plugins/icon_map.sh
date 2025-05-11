@@ -3,10 +3,40 @@
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
+    "OrbStack")
+      icon_result=":orbstack:"
+      ;;
+    "Activity Monitor" | "活动监视器" | "活動監視器")
+      icon_result=":activity_monitor:"
+      ;;
+    "LM Studio")
+      icon_result=":lm_studio:"
+      ;;
+    "Passwords")
+      icon_reuslt=":passwords:"
+      ;;
+    "Freeform")
+      icon_result=":freeform:"
+      ;;
+    "TeamSpeak")
+      icon_result=":team_speak:"
+      ;;
+    "RustDesk")
+      icon_result=":rustdesk:"
+      ;;
+    "Postman")
+      icon_result=":postman:"
+      ;;
+    "Ghostty")
+      icon_result=":ghostty"
+      ;;
+    "IINA")
+      icon_result=":iina:"
+      ;;
     "Zen Browser")
       icon_result=":firefox_developer_edition:"
       ;;
-    "Tabby")
+    "Nex Terminal Mini")
       icon_result=":terminal:"
       ;;
     "Windows App")
