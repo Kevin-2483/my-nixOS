@@ -62,7 +62,6 @@
       { name = "orbstack"; }
       { name = "spotify"; }
       { name = "ghostty"; }
-      { name = "diffusionbee"; }
       { name = "lm-studio"; }
       { name = "teamspeak-client@beta"; }
       { name = "iina"; }
@@ -73,7 +72,7 @@
       { name = "pot"; }
       { name = "postman"; }
       { name = "Hoppscotch"; }
-      { name = "google-chrome"; }
+      { name = "gimp"; }
     ];
     masApps = {
       windows-app = 1295203466;

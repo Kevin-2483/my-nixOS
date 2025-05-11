@@ -48,7 +48,6 @@ in
     ffmpeg_4-full
     glow # markdown previewer in terminal
     go-musicfox
-    googler
     graphviz
     icon-library
     iftop # network monitoring

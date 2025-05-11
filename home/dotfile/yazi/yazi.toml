@@ -302,7 +302,6 @@ run  = "mactag"
 
 [plugin]
 prepend_previewers = [
-    { mime = "text/csv", run = "miller" },
     { name = "*.md", run = "glow" },
     { mime = "{image,audio,video}/*", run = "mediainfo" },
     { mime = "application/subrip", run = "mediainfo" },
