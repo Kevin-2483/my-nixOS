@@ -107,10 +107,10 @@ in
     source = (if isMacOS then ./dotfile/neofetch/macos-config.conf else ./dotfile/neofetch/nixos-config.conf);
   };
 
-  home.file."Library/Preferences/com.colliderli.iina.plist" = {
-    enable = isMacOS;
-    source = ./UserPreferences/com.colliderli.iina.plist;
-  };
+  # home.file."Library/Preferences/com.colliderli.iina.plist" = {
+  #   enable = isMacOS;
+  #   source = ./UserPreferences/com.colliderli.iina.plist;
+  # };
   # home.file.".config/skhd" = {
   #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
   #   source = ./dotfile/skhd;

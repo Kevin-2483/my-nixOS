@@ -5,8 +5,10 @@ local shaders = {
 
 local current = 1
 
-mp.add_key_binding("ctrl+f", "toggle-shader", function()
+function toggle_shader()
   mp.commandv("change-list", "glsl-shaders", "set", shaders[current])
   mp.osd_message("Shader: " .. shaders[current])
   current = current % #shaders + 1
-end)
+end
+
+mp.register_script_message("toggle-shader", toggle_shader)
