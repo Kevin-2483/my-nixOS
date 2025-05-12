@@ -13,7 +13,7 @@ function __icon_map() {
       icon_result=":lm_studio:"
       ;;
     "Passwords")
-      icon_reuslt=":passwords:"
+      icon_result=":passwords:"
       ;;
     "Freeform")
       icon_result=":freeform:"
@@ -28,7 +28,7 @@ function __icon_map() {
       icon_result=":postman:"
       ;;
     "Ghostty")
-      icon_result=":ghostty"
+      icon_result=":ghostty:"
       ;;
     "IINA")
       icon_result=":iina:"
