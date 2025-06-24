@@ -86,7 +86,6 @@ in
     vhs
     wallust
     xz
-    youtube-dl
     zip
     inputs.p2p_file_system.packages.${system}.default
   ] ++ platformSpecificPackages;
@@ -104,7 +103,7 @@ in
       allowUnfreePredicate = _: true;
       allowBroken = true;
       permittedInsecurePackages = [
-        "python3.12-youtube-dl-2021.12.17"
+        
       ];
     };
   };

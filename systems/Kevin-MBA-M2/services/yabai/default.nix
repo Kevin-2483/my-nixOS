@@ -40,10 +40,12 @@
         yabai -m config    mouse_action2                resize
         yabai -m config    mouse_drop_action            swap
 
-        yabai -m rule --add app="${excludedAppsRegex}" manage=off sticky=off
-        yabai -m rule --add app="^(Mihomo Party)$" title=="^(Mihomo Party Floating)$" manage=off sticky=on
-        yabai -m rule --add app="^(Arc)$" title=="^$" manage=off sticky=off
-        yabai -m rule --add app="^(pot)$" title=="^(Translate)$" manage=off sticky=off
+        yabai -m rule --add app=="${excludedAppsRegex}" manage=off sticky=off
+        yabai -m rule --add app=="^(Mihomo Party)$" title=="^(Mihomo Party Floating)$" manage=off sticky=on
+        yabai -m rule --add app="Mihomo Party" manage=off sticky=off
+        yabai -m rule --add app=="^Arc$" title=="^$" manage=off sticky=off
+        yabai -m rule --add app=="^pot$" title=="^Translate$" manage=off sticky=off
+        yabai -m rule --add app=="^ChatGPT$" title!="^ChatGPT$" manage=off sticky=off
         yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
         yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
       '';

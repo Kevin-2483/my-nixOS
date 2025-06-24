@@ -74,6 +74,12 @@ in
     recursive = true;
     executable = true;
   };
+  home.file.".local/share/fcitx5/rime" = {
+    enable = isMacOS;
+    source = ./dotfile/Rime;
+    recursive = true;
+    executable = true;
+  };
   home.file.".config/zed" = {
     source = ./dotfile/zed;
     recursive = true;

@@ -45,7 +45,7 @@
       { name = "font-sarasa-nerd"; }
       { name = "qqmusic"; }
       # { name = "background-music"; }
-      { name = "squirrel"; }
+      # { name = "squirrel"; }
       { name = "motrix"; }
       { name = "keycastr"; }
       { name = "zed"; }
@@ -56,7 +56,7 @@
       # { name = "macfuse"; }
       { name = "dingtalk"; }
       { name = "playcover-community"; }
-      # { name = "microsoft-edge"; }
+      { name = "microsoft-edge"; }
       # { name = "zen-browser"; }
       # { name = "cursor"; }
       { name = "orbstack"; }
@@ -73,6 +73,7 @@
       { name = "postman"; }
       { name = "Hoppscotch"; }
       { name = "gimp"; }
+      { name = "appcleaner"; }
     ];
     masApps = {
       windows-app = 1295203466;

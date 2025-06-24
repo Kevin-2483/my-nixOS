@@ -1,5 +1,4 @@
 [
-  "Mihomo Party"
   "系統設定"
   "System Settings"
   "Finder"
@@ -27,5 +26,4 @@
   "崩壞:星穹鐵道"
   "hkrpg"
   "IINA"
-  "小黑盒"
 ]
