@@ -34,7 +34,8 @@ schema:
 # abbrev: 默认的缩写取 states 的第一个字符，abbrev 可自定义一个字符
 switches:
   - name: ascii_mode
-    states: [ 中, Ａ ]
+    reset: 0
+    states: [ 中 ]
   - name: ascii_punct  # 中英标点
     states: [ ¥, $ ]
   - name: traditionalization
@@ -53,7 +54,7 @@ switches:
 engine:
   processors:
     - lua_processor@select_character          # 以词定字
-    - ascii_composer
+    # - ascii_composer
     - recognizer
     - key_binder
     - speller

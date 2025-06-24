@@ -95,7 +95,12 @@ in
     recursive = true;
     executable = true;
   };
-
+  home.file.".config/fcitx5" = {
+    source = ./dotfile/fcitx5;
+    enable = isMacOS;
+    recursive = true;
+    executable = true;
+  };
   home.file.".config/sketchybar/sub_bar" = {
     enable = isMacOS;
     source = "${pkgs.sketchybar}/bin/sketchybar";
