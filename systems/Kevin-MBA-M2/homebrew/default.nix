@@ -37,7 +37,7 @@
       { name = "steam"; }
       { name = "clash-verge-rev"; }
       { name = "visual-studio-code"; }
-      { name = "arc"; }
+      # { name = "arc"; }
       { name = "parsec"; }
       { name = "moonlight"; }
       { name = "sf-symbols"; }
@@ -66,7 +66,7 @@
       { name = "teamspeak-client@beta"; }
       { name = "iina"; }
       { name = "element"; }
-      { name = "follow"; }
+      { name = "folo"; }
       { name = "blackhole-2ch"; }
       { name = "rustdesk"; }
       { name = "pot"; }
@@ -74,6 +74,7 @@
       { name = "Hoppscotch"; }
       { name = "gimp"; }
       { name = "appcleaner"; }
+      { name = "keka"; }
     ];
     masApps = {
       windows-app = 1295203466;
