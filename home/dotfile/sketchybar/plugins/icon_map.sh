@@ -40,7 +40,7 @@ function __icon_map() {
       icon_result=":terminal:"
       ;;
     "Windows App")
-        icon_result=":microsoft_remote_desktop:"
+        icon_result=":windows_app:"
         ;;
     "Rio")
     icon_result=":rio:"

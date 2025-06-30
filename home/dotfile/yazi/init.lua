@@ -1,3 +1,24 @@
+THEME = {
+  git = {
+    -- 将颜色字符串改为 { fg = "颜色值" } 的格式
+    modified       = { fg = "#ffa500" },
+    added          = { fg = "#32cd32" },
+    deleted        = { fg = "#ff4500" },
+    untracked      = { fg = "#a9a9a9" },
+    ignored        = { fg = "#696969" },
+    updated        = { fg = "#1e90ff" },
+
+    -- 图标部分保持不变
+    modified_sign  = "",
+    added_sign     = "",
+    deleted_sign   = "",
+    untracked_sign = "",
+    ignored_sign   = "",
+    updated_sign   = "U",
+  }
+  -- ... 其他主题相关的配置
+}
+
 require("full-border"):setup({
     -- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
     type = ui.Border.ROUNDED,
@@ -65,41 +86,3 @@ function Status:name()
   end
   return ui.Line(" " .. h.name .. linked)
 end
-
--- You can configure your bookmarks by lua language
-local bookmarks = {}
-
-local path_sep = package.config:sub(1, 1)
-local home_path = ya.target_family() == "windows" and os.getenv("USERPROFILE") or os.getenv("HOME")
-if ya.target_family() == "windows" then
-    table.insert(bookmarks, {
-        tag = "Scoop Local",
-
-        path = (os.getenv("SCOOP") or home_path .. "\\scoop") .. "\\",
-        key = "p"
-    })
-    table.insert(bookmarks, {
-        tag = "Scoop Global",
-        path = (os.getenv("SCOOP_GLOBAL") or "C:\\ProgramData\\scoop") .. "\\",
-        key = "P"
-    })
-end
-table.insert(bookmarks, {
-    tag = "Desktop",
-    path = home_path .. path_sep .. "Desktop" .. path_sep,
-    key = "d"
-})
-
-require("yamb"):setup {
-    -- Optional, the path ending with path seperator represents folder.
-    bookmarks = bookmarks,
-    -- Optional, recieve notification everytime you jump.
-    jump_notify = true,
-    -- Optional, the cli of fzf.
-    cli = "fzf",
-    -- Optional, a string used for randomly generating keys, where the preceding characters have higher priority.
-    keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    -- Optional, the path of bookmarks
-    path = (ya.target_family() == "windows" and os.getenv("APPDATA") .. "\\yazi\\config\\bookmark") or
-        (os.getenv("HOME") .. "/.config/yazi/bookmark"),
-}
