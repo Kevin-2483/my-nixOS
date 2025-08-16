@@ -75,6 +75,15 @@ in
     p7zip
     pciutils # lspci
     proxychains-ng
+    python313
+    python313Packages.pip.out
+    (uv.overrideAttrs (oldAttrs: {
+    # 编译时包含 uv 和 uvx 两个可执行文件
+      cargoBuildFlags = [
+        "--bin" "uv"
+        "--bin" "uvx"
+      ];
+    }))
     ripgrep
     rust-analyzer
     scrcpy
@@ -88,6 +97,7 @@ in
     xz
     zip
     inputs.p2p_file_system.packages.${system}.default
+    inputs.drive-sync.packages.${system}.default
   ] ++ platformSpecificPackages;
 
   nixpkgs = {

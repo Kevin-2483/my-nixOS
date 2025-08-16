@@ -24,7 +24,7 @@
       { name = "switchaudio-osx"; }
       { name = "tag"; }
       { name = "kew"; }
-      { name = "gemini-cli"; }
+      { name = "cocoapods"; }
       # { name = "cava"; }
     ];
     # 用于Cask（图形界面应用）的安装 --cask

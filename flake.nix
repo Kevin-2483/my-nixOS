@@ -59,6 +59,11 @@
     # Homebrew 解析 Tap 时，会将 <用户/组织名>/<Tap 名称> 转换为 GitHub 上的 homebrew-<Tap 名称> 形式的仓库。
     # 例如 tap:mihomo-party-org/mihomo-party 会被解析为 github:mihomo-party-org/homebrew-mihomo-party
     catppuccin.url = "github:catppuccin/nix";
+    drive-sync = {
+      # url = "path:/Users/kevin/Documents/code/python/cs/drive-sync"; # 使用本地路径
+      # 或者，如果您将它上传到 GitHub:
+      url = "github:Kevin-2483/drive-sync";
+    };
   };
   outputs =
     { self, ... }@inputs:
