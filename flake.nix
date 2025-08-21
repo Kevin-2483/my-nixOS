@@ -52,6 +52,10 @@
       url = "github:pot-app/homebrew-tap";
       flake = false;
     };
+    lunar = {
+      url = "github:xwjdsh/homebrew-tap";
+      flake = false;
+    };
     # xpipe-io = {
     #   url = "github:xpipe-io/homebrew-tap";
     #   flake = false;

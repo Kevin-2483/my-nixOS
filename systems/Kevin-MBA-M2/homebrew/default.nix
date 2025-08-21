@@ -25,6 +25,8 @@
       { name = "tag"; }
       { name = "kew"; }
       { name = "cocoapods"; }
+      { name = "media-control"; }
+      { name = "lunar"; }
       # { name = "cava"; }
     ];
     # 用于Cask（图形界面应用）的安装 --cask
@@ -76,6 +78,7 @@
       { name = "gimp"; }
       { name = "appcleaner"; }
       { name = "keka"; }
+      { name = "zen"; }
     ];
     masApps = {
       windows-app = 1295203466;

@@ -63,7 +63,7 @@
       mru-spaces = false; # 是否在 Dock 中顯示最近使用的空間。預設為 true。
       persistent-apps = [
         "/Applications/Visual Studio Code.app"
-        "/Applications/Microsoft Edge.app"
+        "/Applications/Zen.app"
         "/Applications/WeChat.app"
         "/Applications/Obsidian.app"
         "/Applications/ChatGPT.app"

@@ -32,7 +32,7 @@ in
     #   scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
     #})
     lunarvim
-    #(callPackage ./mypackage/tracker {})
+    # (callPackage ./mypackage/tracker {})
     android-tools
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     autojump

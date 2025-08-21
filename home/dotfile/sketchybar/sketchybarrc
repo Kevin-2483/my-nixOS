@@ -7,6 +7,12 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
 SCRIPT_DIR="$CONFIG_DIR/scripts"
 
+# 调试日志配置
+LOG_DIR="$HOME/.cache/sketchybar/logs"
+mkdir -p "$LOG_DIR"
+MUSIC_LOG="$LOG_DIR/music.log"
+export LOG_DIR MUSIC_LOG
+
 # 创建缓存目录
 mkdir -p "$HOME/.cache/sketchybar"
 
@@ -76,7 +82,7 @@ else
 fi
 
 
-sketchybar --bar position=top height=34 blur_radius=30 color=$BAR_COLOR margin=6 y_offset=6 corner_radius=20
+sketchybar --bar position=top height=34 blur_radius=30 color=0xff${BAR_COLOR:4:6} margin=6 y_offset=6 corner_radius=20
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -86,13 +92,22 @@ sketchybar --bar position=top height=34 blur_radius=30 color=$BAR_COLOR margin=6
 default=(
   padding_left=5
   padding_right=5
-  icon.font="UbuntuMono Nerd Font:Bold:16.0"
-  label.font="UbuntuMono Nerd Font:Bold:16.0"
+  icon.font="Mononoki Nerd Font:Bold:16.0"
+  label.font="Mononoki Nerd Font:Bold:16.0"
   icon.color=$color0
   label.color=$color0
   icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
+  background.corner_radius=8
+  popup.background.border_width=1
+  popup.background.corner_radius=6
+  popup.background.border_color=$color4
+  popup.background.color=$color1
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+  scroll_texts=on
+  updates=when_shown
 )
 sketchybar --default "${default[@]}"
 
@@ -114,11 +129,11 @@ source "$ITEM_DIR/spaces.sh"
 # https://felixkratz.github.io/SketchyBar/config/events
 
 source "$ITEM_DIR/clock.sh"
-# source "$ITEM_DIR/nowplay.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/coffee.sh"
 source "$ITEM_DIR/microphone.sh"
+source "$ITEM_DIR/music.sh"
 # source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/front_app.sh"
 # sketchybar --add alias "TextInputMenuAgent,Item-0" right \

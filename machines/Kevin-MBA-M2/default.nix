@@ -54,6 +54,7 @@ in
             "PlayCover/homebrew-playcover" = inputs.playcover;
             "laishulu/homebrew-homebrew" = inputs.laishulu;
             "pot-app/homebrew-tap" = inputs.pot;
+            "xwjdsh/homebrew-tap" = inputs.lunar;
           };
           # Automatically migrate existing Homebrew installations
           autoMigrate = false;

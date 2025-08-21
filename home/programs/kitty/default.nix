@@ -50,9 +50,8 @@
       map cmd+8 combine : send_key ctrl+space : send_key 8
       map cmd+9 combine : send_key ctrl+space : send_key 9
       mouse_hide_wait 0.5
-      enable_cursor_trail yes
       cursor_trail 10
-
+      macos_quit_when_last_window_closed yes
     '';
   };
 

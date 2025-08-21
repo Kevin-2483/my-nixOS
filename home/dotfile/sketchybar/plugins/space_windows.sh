@@ -36,6 +36,6 @@ if [ "$SENDER" = "space_windows_change" ]; then
     icon_strip=" 󱁐"
   fi
 
-  # 更新 sketchybar
-  sketchybar --set space.$space label="$icon_strip"
+  # 更新 sketchybar，添加动画效果
+  sketchybar --animate tanh 10 --set space.$space label="$icon_strip"
 fi

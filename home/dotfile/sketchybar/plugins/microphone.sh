@@ -12,8 +12,8 @@ fi
 
 microphone_volume=$(osascript -e "input volume of (get volume settings)")
 
-microphone_on=" "
-mute=" "
+microphone_on=" 󰍬"
+mute=" 󰍮"
 
 source "$CONFIG_DIR/convert.sh"
 

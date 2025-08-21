@@ -25,5 +25,5 @@ fi
 f1=$(convert_to_argb "$f1")
 
 if [ "$SENDER" = "front_app_switched" ]; then
-  sketchybar --set "$NAME" label="$INFO" label.color=$f1 icon="$($CONFIG_DIR/plugins/icon_map.sh "$INFO")" icon.color=$f1 label.padding_right=100
+  sketchybar --set "$NAME" label="$INFO" label.color=$f1 icon="$($CONFIG_DIR/plugins/icon_map.sh "$INFO")" icon.color=$f1
 fi

@@ -5,8 +5,8 @@
 # 获取当前 SleepDisabled 的值
 microphone_volume=$(osascript -e "input volume of (get volume settings)")
 
-microphone_on=" "
-mute=" "
+microphone_on=" 󰍬"
+mute=" 󰍮"
 
 if [ "$color_group" = "0" ]; then
   c1=$color2
@@ -27,12 +27,13 @@ if [ "$microphone_volume" -eq 0 ]; then
            background.height=24 \
            icon="${mute}" \
            icon.color=$BAR_COLOR \
-           background.color=$c2 # background.padding_left=10 
+           background.color=$c2 # background.padding_left=10 \
+           icon.font="UbuntuMono Nerd Font:Bold:16.0"
   else
     sketchybar --add item microphone right \
            --set microphone click_script="$PLUGIN_DIR/microphone.sh" \
            label.drawing=off \
-           icon.padding_right=15 \
+           icon.padding_right=16 \
            background.corner_radius=15 \
            background.height=24 \
            icon="${microphone_on}" \

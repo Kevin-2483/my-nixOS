@@ -22,7 +22,7 @@ if [ "$sleep_disabled" -eq 0 ]; then
     sketchybar --add item coffee right \
            --set coffee click_script="$PLUGIN_DIR/coffee.sh" \
            label.drawing=off \
-           icon.padding_right=13 \
+           icon.padding_right=16 \
            background.corner_radius=15 \
            background.height=24 \
            icon="${NOCOFFEE}" \
@@ -32,7 +32,7 @@ if [ "$sleep_disabled" -eq 0 ]; then
     sketchybar --add item coffee right \
            --set coffee click_script="$PLUGIN_DIR/coffee.sh" \
            label.drawing=off \
-           icon.padding_right=13 \
+           icon.padding_right=16 \
            background.corner_radius=15 \
            background.height=24 \
            icon="${COFFEE}" \

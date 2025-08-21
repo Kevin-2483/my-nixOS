@@ -211,6 +211,22 @@
         "type": "github"
       }
     },
+    "lunar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1644561708,
+        "narHash": "sha256-RrpiDnSIW2CHN4P1uP2aM/6orTFrFvYnL5SSgCKgUk8=",
+        "owner": "xwjdsh",
+        "repo": "homebrew-tap",
+        "rev": "0b5cd678ffd2aeed4f5a8793247dfd93e02aeb88",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xwjdsh",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "mihomo-party": {
       "flake": false,
       "locked": {
@@ -435,6 +451,7 @@
         "homebrew-core": "homebrew-core",
         "homebrew-services": "homebrew-services",
         "laishulu": "laishulu",
+        "lunar": "lunar",
         "mihomo-party": "mihomo-party",
         "nix-homebrew": "nix-homebrew",
         "nixos-stable": "nixos-stable",

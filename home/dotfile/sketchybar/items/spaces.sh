@@ -17,7 +17,8 @@ fi
 
 
 sketchybar --add item spacelabel left                                           \
-           --set spacelabel label="" icon=" " icon.color=$s3 label.color=$s1  \
+           --set spacelabel label="﹄" icon=" " icon.color=$s3 label.color=$s1 \
+                 label.font="UbuntuMono Nerd Font:Bold:16.0" label.y_offset=-14  \
                  click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
                  popup.background.border_width=2                                \
                  popup.background.corner_radius=20                              \
@@ -62,10 +63,16 @@ do
     space=$sid
     icon=${SPACE_ICONS[i]}                                  
     icon.highlight_color=$s2
-    icon.padding_left=10
+    icon.padding_left=4
+    icon.font="B2花園:Medium:16.0"  # 为汉字设置专用字体和大小
+    icon.y_offset=1
     label.font="sketchybar-app-font:Regular:16.0" 
-    label.padding_right=20                     
-    label.y_offset=-1                          
+    label.padding_right=14
+    label.y_offset=-1
+    background.height=24
+    background.corner_radius=13
+    background.color=0x00000000
+    background.drawing=on
     script="$PLUGIN_DIR/space.sh"
     click_script="yabai -m space --focus $sid"
   )
@@ -74,9 +81,10 @@ do
 done
 
 sketchybar --add item space_separator left                           \
-           --set space_separator icon=" "                               \
+           --set space_separator icon="﹃"                               \
                                  icon.color=$s1                 \
+                                 icon.font="UbuntuMono Nerd Font:Bold:16.0" icon.y_offset=14  \
                                  label.drawing=off                     \
                                  background.drawing=off                \
                                  script="$PLUGIN_DIR/space_windows.sh" \
-           --subscribe space_separator space_windows_change                           
+           --subscribe space_separator space_windows_change

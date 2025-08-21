@@ -3,6 +3,12 @@
 ### START-OF-ICON-MAP
 function __icon_map() {
     case "$1" in
+    "WeCom")
+      icon_result=":wecom:"
+      ;;
+    "UTM")
+      icon_result=":utm:"
+      ;;
     "OrbStack")
       icon_result=":orbstack:"
       ;;
@@ -33,8 +39,8 @@ function __icon_map() {
     "IINA")
       icon_result=":iina:"
       ;;
-    "Zen Browser")
-      icon_result=":firefox_developer_edition:"
+    "Zen")
+      icon_result=":zen_browser:"
       ;;
     "Nex Terminal Mini")
       icon_result=":terminal:"

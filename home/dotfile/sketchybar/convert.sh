@@ -1,6 +1,6 @@
 convert_to_argb() {
     local input="$1"
-    local alpha="FF"  # 默认不透明
+    local alpha="FF"  # 保持输入的透明度
     local red green blue
 
     # 去掉前缀（# 或 0x）
