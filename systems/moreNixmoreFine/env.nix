@@ -6,7 +6,7 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   # Bootloader.
   # 设置为 GRUB 启动加载器
-  boot.loader.grub.device = "/dev/sda"; # 选择你安装系统的硬盘
+  boot.loader.grub.device = "/dev/sdb"; # 选择你安装系统的硬盘
   boot.loader.grub.enable = true; # 启用 GRUB
 
   # 如果你使用 UEFI 引导，可以启用如下设置
