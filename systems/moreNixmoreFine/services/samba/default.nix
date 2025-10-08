@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.samba = {
-    enable = true; # 启用 Samba 服务
+    enable = false; # 启用 Samba 服务
 
     package = pkgs.samba4Full; # 设置 Samba 包
 

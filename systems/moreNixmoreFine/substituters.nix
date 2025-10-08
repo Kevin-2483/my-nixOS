@@ -12,7 +12,7 @@
 
     substituters = [
       # status: https://mirrors.ustc.edu.cn/status/
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      #"https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       # nix community's cache server
       "https://nix-community.cachix.org"

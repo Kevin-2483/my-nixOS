@@ -1,7 +1,7 @@
 {
   virtualisation.oci-containers.containers = {
     portainer = {
-      image = "portainer/portainer-ee:2.27.0";
+      image = "portainer/portainer-ee:2.33.0";
       autoStart = true;
       ports = [
         "8000:8000"
@@ -16,7 +16,7 @@
       ];
     };
     portainer_agent = {
-      image = "portainer/agent:2.27.0";
+      image = "portainer/agent:2.33.0";
       autoStart = true;
       ports = [
         "9001:9001"

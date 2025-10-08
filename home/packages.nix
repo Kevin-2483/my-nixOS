@@ -21,12 +21,12 @@ in
     # spotify remove to homebrew
     # sshfs
     # wezterm
-    (rustup.overrideAttrs (oldAttrs: {
+    #(rustup.overrideAttrs (oldAttrs: {
       # 移除特定的二进制文件
-      postInstall = oldAttrs.postInstall or "" + ''
-        rm $out/bin/rust-analyzer
-      '';
-    }))
+      #postInstall = oldAttrs.postInstall or "" + ''
+      #  rm $out/bin/rust-analyzer
+      #'';
+      #  }))
     #(texlive.combine {
     # inherit (texlive)
     #   scheme-medium ctex xecjk tcolorbox environ tikzfill pdfcol;
@@ -38,7 +38,7 @@ in
     autojump
     btop # replacement of htop/nmon
     clipboard-jh
-    coder
+    #coder
     comma
     devenv
     dotnet-sdk_8
@@ -77,15 +77,15 @@ in
     proxychains-ng
     python313
     python313Packages.pip.out
-    (uv.overrideAttrs (oldAttrs: {
+      #(uv.overrideAttrs (oldAttrs: {
     # 编译时包含 uv 和 uvx 两个可执行文件
-      cargoBuildFlags = [
-        "--bin" "uv"
-        "--bin" "uvx"
-      ];
-    }))
+      # cargoBuildFlags = [
+      #   "--bin" "uv"
+      #   "--bin" "uvx"
+    # ];
+    #}))
     ripgrep
-    rust-analyzer
+    #rust-analyzer
     scrcpy
     slides
     spicetify-cli
