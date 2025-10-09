@@ -25,6 +25,13 @@ in
 
   };
 
+  home.file.".config/yabai" = {
+    # source = ~/.config/nix-darwin/home/dotfile/yabai;
+    source = ./dotfile/yabai;
+    recursive = true; # 递归整个文件夹
+    executable = true; # 将其中所有文件添加「执行」权限
+  };
+
   # home.file.".config/yazi" = {
   #   # source = ~/.config/nix-darwin/home/dotfile/yazi;
   #   source = ./dotfile/yazi;

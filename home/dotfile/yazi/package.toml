@@ -1,72 +1,44 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "5186af7"
-hash = "771f18427fb75fb19990ce602bb322f4"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:diff"
-rev = "5186af7"
-hash = "7a08e303167d5b655c06da6d570f0333"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "5186af7"
-hash = "f28138c2e11e87962b66d583fef724c3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "5186af7"
-hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:jump-to-char"
-rev = "5186af7"
-hash = "af11685de39c366ec1137fcbccacdbff"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mactag"
-rev = "5186af7"
-hash = "5f957d83569f0bdb52e0e2d1b8f1e64c"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:max-preview"
-rev = "5186af7"
-hash = "a8025f2bb311e869069364fba01abffc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "5186af7"
-hash = "b03f3d80d26b6d7bb490b1380e9cb754"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-filter"
-rev = "5186af7"
-hash = "b482f4f2d3c4e0aa3f8db89a95699439"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
-rev = "f6939fb"
-hash = "8ae899541dc7accb680ee4fd382a09c"
 
 [[plugin.deps]]
 use = "Reledia/glow"
-rev = "bd3eaa5"
-hash = "92b5c58159a51c567f82b618cee2b78"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "f565c5a"
-hash = "15d0dbb4e9ba84eb1f2dbb8e9e249bf6"
 
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "ce6fb75"
-hash = "ed6c185514109d7c5463f609282b220c"
 
 [[plugin.deps]]
 use = "Lil-Dank/lazygit"
-rev = "9f924e3"
-hash = "2b0c33928986f126d5c5a4cac31a6b46"
 
 [flavor]
 deps = []

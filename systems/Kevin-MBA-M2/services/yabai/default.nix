@@ -2,7 +2,7 @@
   services.yabai = {
     enable = true;
     enableScriptingAddition = true;
-    package = pkgs.yabai;
+    package = pkgs.master.yabai;
     extraConfig =
       let
         # 导入应用列表
@@ -31,7 +31,7 @@
         yabai -m config    bottom_padding               14
         yabai -m config    left_padding                 14
         yabai -m config    right_padding                14
-        yabai -m config    window_gap                   21
+        yabai -m config    window_gap                   6
         yabai -m config    layout                       bsp
         yabai -m config    mouse_follows_focus          on
         yabai -m config    focus_follows_mouse          autofocus

@@ -68,6 +68,7 @@
       # 或者，如果您将它上传到 GitHub:
       url = "github:Kevin-2483/drive-sync";
     };
+<<<<<<< HEAD
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -75,6 +76,11 @@
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
+=======
+    yabai = {
+      url = "github:koekeishiya/homebrew-formulae";
+      flake = false;
+>>>>>>> 634e030a58d01a352503e94e2da38630a4ddfd9e
     };
   };
   outputs =

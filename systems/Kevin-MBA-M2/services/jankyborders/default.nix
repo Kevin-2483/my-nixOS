@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   services.jankyborders = {
-    enable = true;
+    enable = false;
     package = pkgs.jankyborders;
     hidpi = true;
     ax_focus = false;
