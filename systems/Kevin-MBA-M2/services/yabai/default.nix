@@ -41,8 +41,8 @@
         yabai -m config    mouse_drop_action            swap
 
         yabai -m rule --add app=="${excludedAppsRegex}" manage=off sticky=off
-        yabai -m rule --add app=="^(Mihomo Party)$" title=="^(Mihomo Party Floating)$" manage=off sticky=on
-        yabai -m rule --add app="Mihomo Party" manage=off sticky=off
+        yabai -m rule --add app=="^(Clash Party)$" title=="^(Clash Party Floating)$" manage=off sticky=on
+        yabai -m rule --add app="Clash Party" manage=off sticky=off
         yabai -m rule --add app=="^Arc$" title=="^$" manage=off sticky=off
         yabai -m rule --add app=="^pot$" title=="^Translate$" manage=off sticky=off
         yabai -m rule --add app=="^ChatGPT$" title!="^ChatGPT$" manage=off sticky=off

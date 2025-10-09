@@ -41,7 +41,7 @@ in
     #coder
     comma
     devenv
-    dotnet-sdk_8
+    stable.dotnet-sdk_8
     feh
     findutils
     fzf # A command-line fuzzy finder
@@ -77,7 +77,7 @@ in
     proxychains-ng
     python313
     python313Packages.pip.out
-      (uv.overrideAttrs (oldAttrs: {
+    (uv.overrideAttrs (oldAttrs: {
     # 编译时包含 uv 和 uvx 两个可执行文件
       cargoBuildFlags = [
         "--bin" "uv"
