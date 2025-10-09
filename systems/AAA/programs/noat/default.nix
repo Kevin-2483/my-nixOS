@@ -7,4 +7,3 @@
     terminal = "foot";
   };
 }
-

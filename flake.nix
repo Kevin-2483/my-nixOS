@@ -68,6 +68,14 @@
       # 或者，如果您将它上传到 GitHub:
       url = "github:Kevin-2483/drive-sync";
     };
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
   outputs =
     { self, ... }@inputs:
