@@ -52,7 +52,7 @@
       { name = "motrix"; }
       { name = "keycastr"; }
       { name = "zed"; }
-      { name = "mihomo-party"; }
+      { name = "clash-party"; }
       { name = "shottr"; }
       { name = "qq"; }
       { name = "telegram"; }

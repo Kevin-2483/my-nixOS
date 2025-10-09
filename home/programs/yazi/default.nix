@@ -3,7 +3,7 @@
 {
 
   programs.yazi = {
-    package = pkgs.stable.yazi;
+    package = pkgs.yazi;
     enable = true;
   };
 }

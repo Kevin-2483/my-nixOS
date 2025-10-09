@@ -68,6 +68,10 @@
       # 或者，如果您将它上传到 GitHub:
       url = "github:Kevin-2483/drive-sync";
     };
+    yabai = {
+      url = "github:koekeishiya/homebrew-formulae";
+      flake = false;
+    };
   };
   outputs =
     { self, ... }@inputs:

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.gitui = {
     enable = true;
-    package = pkgs.gitui;
+    package = pkgs.stable.gitui;
     # keyConfig = ''
     #   exit: Some(( code: Char('c'), modifiers: ( bits: 2,),)),
     #   quit: Some(( code: Char('q'), modifiers: ( bits: 0,),)),
